@@ -1,0 +1,38 @@
+%%% Annotated Literature Set for PROJECTNAME
+%%% Eric Barefoot
+%%% Month YEAR
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[margin = 1in]{geometry}
+\usepackage[style=numeric]{biblatex}
+\usepackage{lipsum}
+\usepackage{changepage}
+\usepackage[utf8]{inputenc}
+
+\addbibresource{PROJECTNAME.bib}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{2ex}
+
+\newcommand{\ann}[2]{ \hrulefill \\ \fullcite{#1} \begin{adjustwidth}{1cm}{} #2 \end{adjustwidth} \vspace{1ex}}
+
+\begin{document}
+
+\begin{center}
+
+Literature for \verb|PROJECTNAME|
+
+Eric Barefoot
+
+\today
+
+\end{center}
+
+\ann{some_key}{Some text \\ \lipsum[3-4]}
+
+\nocite{*}
+
+\printbibliography
+
+\end{document}
