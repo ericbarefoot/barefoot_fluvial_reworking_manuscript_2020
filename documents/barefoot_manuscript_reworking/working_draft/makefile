@@ -1,4 +1,4 @@
-all: barefoot_manuscript_reworking.pdf
+all: barefoot_manuscript_reworking.pdf clean
 
 clean:
 	rm -f *.aux *.aux *.lof *.log *.lot *.fls *.out *.toc *.fmt
@@ -9,7 +9,7 @@ clean:
 barefoot_manuscript_reworking.pdf: barefoot_manuscript_reworking.tex # reworking_manuscript.bib
 	pdflatex	barefoot_manuscript_reworking.tex
 	# biber 		barefoot_manuscript_reworking.bcf
-	# pdflatex	barefoot_manuscript_reworking.tex
+	pdflatex	barefoot_manuscript_reworking.tex
 	# pdflatex	barefoot_manuscript_reworking.tex
 	make clean
 
