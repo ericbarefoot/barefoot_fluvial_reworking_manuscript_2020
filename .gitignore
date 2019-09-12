@@ -18,7 +18,7 @@
 ._.DS_Store
 *.mp4
 
-data/raw_data/gis_data/*
+data/*
 # documents/*
 images/*
 figures/outputs/*
