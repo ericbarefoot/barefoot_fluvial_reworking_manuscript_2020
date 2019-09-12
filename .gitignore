@@ -21,7 +21,7 @@
 data/raw_data/gis_data/*
 # documents/*
 images/*
-figures/*
+figures/outputs/*
 
 *.pdf
 
