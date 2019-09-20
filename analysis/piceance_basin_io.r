@@ -11,6 +11,7 @@ require(tidyverse)
 require(here)
 require(devtools)	# for the next thing
 require(paleohydror)
+require(sf)
 require(rgdal)
 
 #	set directories
@@ -128,8 +129,105 @@ field_data = field_ddd
 
 # read in shapefile data
 
-# do some operations
+# fields it should come with are:
+# 	id 					This is a unique id for the GIS, will be reassigned in here
+# 	formation		This is the member of the wasatch formation
+# 	structure		is it a bar? an intra-belt scour? an avulsion scour?
+# 	wp_num			waypoint using the convention in other piceance data
+# 	subset			in this particular case, we will use to group bars together
+# 	date				what day??
+# 	notes				denotes full or partial preservation or truncation
+	
+model_data_file = here('data','raw_data','model_data')
+
+dirs_to_iterate = list.dirs(model_data_file, recursive = FALSE)
+
+files = vector('list', length = length(dirs_to_iterate))
+joined_tab = vector('list', length = length(dirs_to_iterate))
+j = 1
+
+for (i in dirs_to_iterate) {
+	filelist = list.files(i)
+	match = grep('*.shp',filelist)
+	files[[j]] = st_read(file.path(i, filelist[match]))
+	files[[j]] = st_transform(files[[j]], 2152) # transform into UTM coordinates for 12 N
+	geom_tab = st_coordinates(files[[j]]) %>% as.data.frame()
+	att_tab = as.data.frame(files[[j]]) %>% select(-geometry)
+	joined_tab[[j]] = inner_join(att_tab, geom_tab, by = c('id' = 'L1'))
+	joined_tab[[j]]$id = joined_tab[[j]]$id + (j * 1000)
+	j = j + 1
+}
+
+bound_data = bind_rows(joined_tab) %>% as_tibble() %>% 
+select(-M, -meas_type) %>% 
+mutate(date = as.Date(date, format = "%Y-%m-%d"), id = as.factor(id))
+
+# %>% rowid_to_column(var = "id")
+
+# bound_data = bound_data 
+
+no_geom = bound_data %>% select(-X, -Y, -Z) %>% 
+unique()
+
+# There is some concern about how to handle it if there's different id numbers for each of the shapes across all the files, for now, that's being handled by having all of them with j*1000 added to the id number. This will not be sustainable long-term. 
+
+#  %>% rowid_to_column(var = "Uid")
+# 
+# do.call(dplyr::recode, c(list(bound_data), lookup))
+# 
+# 
+# bound_data = bound_data %>% recode(id, no_geom$Uid)
+
+# calculate the vertical relief on a structure.
+
+barThicknessMeas = bound_data %>% group_by(id) %>% 
+summarize(meas_type = 'thickness', meas_a = diff(range(Z))) 
+
+# this function calculates the distance along the mapped linear feature.
+
+barfaceDistFun = function(X, Y, Z) {
+	
+	x = cbind(X,Y,Z)
+	
+	dists = dist(x)
+	
+	disc = (1 - 4 * -2 * length(dists))
+
+	if (disc > 0) {
+		size = (-1 + sqrt(disc)) / 2
+	} else {
+		error('no solutions!')
+	}
+
+	face = numeric(size)
+
+	j = 0
+
+	for (i in 1:size) {
+		face[i] = i + j
+		j = j + size - i
+	}
+
+	barface_length = sum(dists[face])
+	
+	return(barface_length)
+}
+
+barFaceLengthMeas = bound_data %>% group_by(id) %>% 
+summarize(meas_type = 'face_length', meas_a = barfaceDistFun(X,Y,Z)) 
+
+measurements = bind_rows(barThicknessMeas, barFaceLengthMeas)
+
+model_data = inner_join(no_geom, measurements, by = 'id')
+
+# wrangle shapefile data so that it matches field_data format
+
+
+
+# join up with the original data
+
+comb_data = bind_rows(field_data, model_data)
 
 #	export as saved data file
 
-save(field_data, file = here('data','derived_data', 'piceance_paleoslope_data.rda'))
+save(comb_data, file = here('data','derived_data', 'piceance_paleoslope_data.rda'))
