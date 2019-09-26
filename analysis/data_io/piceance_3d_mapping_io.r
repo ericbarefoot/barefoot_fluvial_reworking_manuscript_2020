@@ -100,4 +100,4 @@ model_data = left_join(measurements, no_geom, by = 'id') %>% as_tibble() %>% sel
 
 model_data %>% mutate(units_a = 'm')
 
-save(model_data, file = here('data','derived_data', 'piceance_3d_model_data.rda'))
+saveRDS(model_data, file = here('data','derived_data', 'piceance_3d_model_data.rds'))

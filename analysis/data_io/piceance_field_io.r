@@ -121,4 +121,4 @@ field_ddd = field_ddd %>% mutate(units_b = unitsDelete)
 
 field_data = field_ddd
 
-save(field_data, file = here('data','derived_data', 'piceance_field_data.rda'))
+saveRDS(field_data, file = here('data','derived_data', 'piceance_field_data.rds'))
