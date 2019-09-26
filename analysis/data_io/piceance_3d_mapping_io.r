@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# script for importing shapefile data derived from 3d models 
+# script for importing shapefile data derived from 3d models, summarizing it, 
 # and putting it into a data table format to join with field data.
 #	Eric Barefoot
 #	Sep 2019
@@ -11,6 +11,10 @@ require(here)
 require(devtools)	# for the next thing
 require(paleohydror)
 require(sf)
+
+# source functions needed to summarize the data.
+
+source(here('analysis','metashape_models','shapefile_tools.r'))
 
 # read in shapefile data
 
