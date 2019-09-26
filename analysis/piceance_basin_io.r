@@ -194,35 +194,6 @@ barThicknessMeas = bound_data %>% group_by(id, interpretations) %>%
 summarize(meas_type = 'thickness', meas_a = diff(range(Z))) 
 
 # this function calculates the distance along the mapped linear feature.
-
-barfaceDistFun = function(X, Y, Z) {
-	
-	x = cbind(X,Y,Z)
-	
-	dists = dist(x)
-	
-	disc = (1 - 4 * -2 * length(dists))
-
-	if (disc > 0) {
-		size = (-1 + sqrt(disc)) / 2
-	} else {
-		error('no solutions!')
-	}
-
-	face = numeric(size)
-
-	j = 0
-
-	for (i in 1:size) {
-		face[i] = i + j
-		j = j + size - i
-	}
-
-	barface_length = sum(dists[face])
-	
-	return(barface_length)
-}
-
 barFaceLengthMeas = bound_data %>% group_by(id) %>% 
 summarize(meas_type = 'face_length', meas_a = barfaceDistFun(X,Y,Z)) 
 
