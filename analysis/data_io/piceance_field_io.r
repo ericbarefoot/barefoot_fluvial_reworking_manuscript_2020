@@ -10,8 +10,6 @@ require(here)
 require(devtools)	# for the next thing
 require(paleohydror)
 
-#	set directories
-
 #	load in field data
 
 fieldDataColumnTypes = cols(
