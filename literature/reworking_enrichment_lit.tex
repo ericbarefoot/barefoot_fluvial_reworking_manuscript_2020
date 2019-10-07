@@ -1,0 +1,41 @@
+%%% Annotated Literature Set for reworking_enrichment
+%%% Eric Barefoot
+%%% Month YEAR
+
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[margin = 1in]{geometry}
+\usepackage[style=numeric]{biblatex}
+\usepackage{lipsum}
+\usepackage{changepage}
+\usepackage[utf8]{inputenc}
+
+\addbibresource{reworking_enrichment.bib}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{2ex}
+
+\newenvironment{ann} [1]
+  {\hrulefill \\ \fullcite{#1} \\
+  \begin{adjustwidth}{1cm}{}}
+  {\end{adjustwidth} 
+  \vspace{1ex}}
+
+\begin{document}
+
+\begin{center}
+Literature for manuscript on channel mobility and reworking in the Piceance Basin \\
+Destination: \textit{Geology} \\
+Eric Barefoot \\
+\today
+\end{center}
+
+\begin{ann}{nanson_statistical_1986}
+Some text \\ \lipsum[3-4]
+\end{ann}
+
+\nocite{*}
+
+\printbibliography
+
+\end{document}
