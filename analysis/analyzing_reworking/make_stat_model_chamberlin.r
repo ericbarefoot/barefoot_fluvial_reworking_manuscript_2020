@@ -35,39 +35,48 @@ chamb_data = readRDS(file = here('data','derived_data', 'chamberlin_model_data.r
 # fixed-effects model with
 # fixed effects on % fully preserved structures
 
-fixed_model_null = lm(frac_supply ~ frac_elems, data = coded_data)
+fixed_model_null = lm(frac_supply ~ frac_elems, data = chamb_data)
 
 # fixed-effects model with
 # fixed effects on % fully preserved structures
 # fixed effects on input ratio
 
-fixed_model_input = lm(frac_supply ~ frac_elems + frac_input, data = coded_data)
+fixed_model_input = lm(frac_supply ~ frac_elems + frac_input, data = chamb_data)
+
+# fixed-effects model with
+# fixed effects on % fully preserved structures
+# fixed effects on input ratio
+# also interactions between two predictors.
+
+fixed_model_input_interactions = lm(frac_supply ~ frac_elems*frac_input, data = chamb_data)
+
+# AIC(fixed_model_null, fixed_model_input, fixed_model_input_interactions)
 
 # mixed-effects model with
 # fixed effects on % fully preserved structures
 # random effects on experiment set (proxy for input ratio) mean
 
-mixed_model_int_expSet = lmer(frac_supply ~ frac_elems + (1|exp_set), data = coded_data)
+mixed_model_int_expSet = lmer(frac_supply ~ frac_elems + (1|exp_set), data = chamb_data)
 
 # mixed-effects model with
 # fixed effects on % fully preserved structures
 # random effects on experiment set (proxy for input ratio) mean
 # random effects on avulsion type mean
 
-mixed_model_int_expSet_avulType = lmer(frac_supply ~ frac_elems + (1|exp_set) + (1|model), data = coded_data)
+mixed_model_int_expSet_avulType = lmer(frac_supply ~ frac_elems + (1|exp_set) + (1|model), data = chamb_data)
 
 # mixed-effects model with 
 # fixed effects on % fully preserved structures
 # random effects on experiment set (proxy for input ratio) mean and slope
 
-mixed_model_slp_expSet = lmer(frac_supply ~ frac_elems + (1 + frac_elems|exp_set), data = coded_data, REML = FALSE, control = lmerControl(optimizer = 'Nelder_Mead'))
+mixed_model_slp_expSet = lmer(frac_supply ~ frac_elems + (1 + frac_elems|exp_set), data = chamb_data, REML = FALSE, control = lmerControl(optimizer = 'Nelder_Mead'))
 
 # mixed-effects model with
 # fixed effects on % fully preserved structures
 # random effects on experiment set (proxy for input ratio) mean and slope
 # random effects on avulsion type mean and slope
 
-mixed_model_slp_expSet_avulType = lmer(frac_supply ~ frac_elems + (1+frac_elems|exp_set) + (1+frac_elems|model), data = coded_data, REML = FALSE)
+mixed_model_slp_expSet_avulType = lmer(frac_supply ~ frac_elems + (1+frac_elems|exp_set) + (1+frac_elems|model), data = chamb_data, REML = FALSE)
 
 # mixed-effects model with 
 # fixed effects on % fully preserved structures
@@ -75,7 +84,7 @@ mixed_model_slp_expSet_avulType = lmer(frac_supply ~ frac_elems + (1+frac_elems|
 # random effects on experiment set (proxy for input ratio) mean and slope
 # random effects on avulsion type mean and slope
 
-mixed_model_input_slp_expSet_avulType = lmer(frac_supply ~ frac_elems + frac_input + (1+frac_elems|model), data = coded_data, REML = FALSE)
+mixed_model_input_slp_expSet_avulType = lmer(frac_supply ~ frac_elems + frac_input + (1+frac_elems|model), data = chamb_data, REML = FALSE)
 
 # So after doing all of those models, we need to evaluate them. 
 
@@ -86,7 +95,7 @@ models_aic = AIC(fixed_model_null, fixed_model_input, mixed_model_int_expSet, mi
 
 # for fun, plot this model on the data.
 
-# chamb_data_pred = chamb_data %>% mutate(pred_supply = predict(fixed_model_input))
+# chamb_data_pred = chamb_data %>% mutate(pred_supply = predict(fixed_model_input_interactions))
 # 
 # ggplot(data = chamb_data_pred) + 
 # geom_point(aes(x = frac_elems, y = frac_supply, color = frac_input, shape = model)) + 
@@ -94,4 +103,4 @@ models_aic = AIC(fixed_model_null, fixed_model_input, mixed_model_int_expSet, mi
 
 # export the best model as a derived data product. 
 
-saveRDS(fixed_model_input, file = here('data','derived_data', 'chamberlin_stat_model.rds'))
+saveRDS(fixed_model_input_interactions, file = here('data','derived_data', 'chamberlin_stat_model.rds'))
