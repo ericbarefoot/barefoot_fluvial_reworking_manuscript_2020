@@ -13,17 +13,17 @@ library(rsample)
 
 model = readRDS(file = here('data','derived_data','piceance_3d_model_data.rds'))
 field = readRDS(file = here('data','derived_data','piceance_field_data.rds'))
-combined = loadRDS(file = here('data', 'derived_data', 'piceance_field_model_data.rds'))
+combined = readRDS(file = here('data', 'derived_data', 'piceance_field_model_data.rds'))
 
 # first, lets just look at the bars, and calculate the relative abundance of fully preserved barforms.
 
 just_bars_models = model %>% filter(interpretations %in% c('full','partial','truncated'))
 
-model_boots = bootstraps(just_bars_models, times = 200)
-
+model_boots = just_bars_models %>% nest(-formation) %>% mutate(boots = map(data, ~ bootstraps(., times = 200))) %>% unnest(boots)
+ 
 calcFullFrac = function(split)
 {
-  analysis(split) %>% group_by(formation, interpretations) %>% summarize(count = n())
+  analysis(split) %>% group_by(interpretations) %>% summarize(count = n())
 }
 
 boot_counts = model_boots %>% mutate(stats = map(splits, calcFullFrac))
