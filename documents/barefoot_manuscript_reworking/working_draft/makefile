@@ -6,9 +6,9 @@ clean:
 
 .PHONY = all clean
 
-barefoot_manuscript_reworking.pdf: barefoot_manuscript_reworking.tex # reworking_enrichment.bib
+barefoot_manuscript_reworking.pdf: barefoot_manuscript_reworking.tex  reworking_enrichment.bib
 	pdflatex	barefoot_manuscript_reworking.tex
-	# biber 		barefoot_manuscript_reworking.bcf
+	biber 		barefoot_manuscript_reworking.bcf
 	pdflatex	barefoot_manuscript_reworking.tex
 	# pdflatex	barefoot_manuscript_reworking.tex
 	make clean
