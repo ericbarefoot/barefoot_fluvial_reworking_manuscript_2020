@@ -211,9 +211,9 @@ Therefore we offer here a new interpretation of landscape response to shifting h
 
 
 
-*these prob belongs in the next section.
-  An individual parcel of floodplain material therefore had a higher likelihood of being reworked, which likely increased the exposure frequency of floodplain organic matter to oxidation
-  The converse of this assertion is sand is preferentially bypassed during Atwell and Shire time, likely due to stable channels that act as conduits for coarse sediment.
+% *these prob belongs in the next section.
+%   An individual parcel of floodplain material therefore had a higher likelihood of being reworked, which likely increased the exposure frequency of floodplain organic matter to oxidation
+%   The converse of this assertion is sand is preferentially bypassed during Atwell and Shire time, likely due to stable channels that act as conduits for coarse sediment.
 
 \section{Conclusions and Implications}
 
@@ -263,16 +263,16 @@ Our observations suggest that increased seasonality of precipitation is a viable
 In the process of excavating fine-grained silt and sand reservoirs, Molina rivers would have also re\"exposed carbon stored in those floodplain deposits to respiration.
 We propose that a global increase in precipitation seasonality may be the mechanism driving the excess flux in soil carbon after the initial PETM onset.
 
-In certain circumstances, the impact of climate modulation on channel dynamics may adjust conventional notions of where petroleum reservoirs are emplaced along the source-to-sink continuum.
-For example, a system under a highly seasonal hydrology would be expected to partition sand preferentially in the proximal parts of the source-to-sink system, and off-shore deposits would be expected to be rich in mud.
-As a result, knowledge of climate conditions during exploration could indicate that most reservoir-forming deposits may be located in terrestrial reservoirs during that interval.
-Additionally, reservoirs emplaced by laterally mobile systems like Molina river systems will exhibit greater reservoir connectivity due to the frequent interaction of sand bodies in the formation.
-
-The absolute timing of fluvial response as it relates to the onset of the PETM is difficult to constrain in the stratigraphic record.
-However, it is clear that channel dynamics in the Piceance Basin adjusted rapidly to new hydrological conditions.
-As humanity prepares for environmental impacts due to anthropogenic climate change, it will be important to consider the medium and long-term consequences for infrastructure situated on floodplains.
-Higher-intensity flooding in some regions may drive significant increases in channel mobility, threatening adjacent floodplain communities.
-Increased risk of avulsions due to changes in hydrological cycling would also present a threat to communities.
+% In certain circumstances, the impact of climate modulation on channel dynamics may adjust conventional notions of where petroleum reservoirs are emplaced along the source-to-sink continuum.
+% For example, a system under a highly seasonal hydrology would be expected to partition sand preferentially in the proximal parts of the source-to-sink system, and off-shore deposits would be expected to be rich in mud.
+% As a result, knowledge of climate conditions during exploration could indicate that most reservoir-forming deposits may be located in terrestrial reservoirs during that interval.
+% Additionally, reservoirs emplaced by laterally mobile systems like Molina river systems will exhibit greater reservoir connectivity due to the frequent interaction of sand bodies in the formation.
+% 
+% The absolute timing of fluvial response as it relates to the onset of the PETM is difficult to constrain in the stratigraphic record.
+% However, it is clear that channel dynamics in the Piceance Basin adjusted rapidly to new hydrological conditions.
+% As humanity prepares for environmental impacts due to anthropogenic climate change, it will be important to consider the medium and long-term consequences for infrastructure situated on floodplains.
+% Higher-intensity flooding in some regions may drive significant increases in channel mobility, threatening adjacent floodplain communities.
+% Increased risk of avulsions due to changes in hydrological cycling would also present a threat to communities.
 
 \pnote[how to wrap up? Come up with some kind of good ending idea.]
 
@@ -291,12 +291,12 @@ Increased risk of avulsions due to changes in hydrological cycling would also pr
 % %====================%%
 
 
-Previous work has generally relied on observations of sedimentary structures that correlate with channel and floodplain geometries, i.e. channel depths, channel widths, bedload grain size, and reach-averaged slope.
-Testing hypotheses of fluvial paleohydraulics with geometry-based methods is complicated by uncertainty inherent in the inversion relationships, as well as unknown variance fluvial geometries in the floodplain \pnote[this is vague, so just clarify later that you mean that we don't really know how variable channel depth is across a floodplain in the modern.].
-Furthermore, geometric models for paleohydraulics require extrapolation to infer the dynamics of the fluvial system, introducing additional error and uncertainty.
-
-However, recent work has highlighted new methods to directly estimate relative rates of channel processes, or derive a proxy for relative rates of channel kinematics.
-When combined with geometric observations, indicators of fluvial paleokinematics may help to capture both the total scale of the system and its behavior as the system evolved through PETM time.
+% Previous work has generally relied on observations of sedimentary structures that correlate with channel and floodplain geometries, i.e. channel depths, channel widths, bedload grain size, and reach-averaged slope.
+% Testing hypotheses of fluvial paleohydraulics with geometry-based methods is complicated by uncertainty inherent in the inversion relationships, as well as unknown variance fluvial geometries in the floodplain \pnote[this is vague, so just clarify later that you mean that we don't really know how variable channel depth is across a floodplain in the modern.].
+% Furthermore, geometric models for paleohydraulics require extrapolation to infer the dynamics of the fluvial system, introducing additional error and uncertainty.
+% 
+% However, recent work has highlighted new methods to directly estimate relative rates of channel processes, or derive a proxy for relative rates of channel kinematics.
+% When combined with geometric observations, indicators of fluvial paleokinematics may help to capture both the total scale of the system and its behavior as the system evolved through PETM time.
 
 % new tack: previous studies generally use geometry-based paleohydraulic methods or qualitative methods, but these do not tell the whole story, and are typically just partial proxies for fluvial dynamics.
 % recent work has highlighted new ways to estimate some aspects of fluvial kinematics, which, when combined with geometric models for paleohydraulics, offers new insight to constrain the fluvial response problem.
@@ -306,36 +306,36 @@ When combined with geometric observations, indicators of fluvial paleokinematics
 % it is not well understood whether increased fluxes of sediment are required to enrich the floodplain in sand.
 % Rather, channel mobility alone could be the culprit.
 
-Therefore, we return to the Piceance Basin, a field site previously studied as a case study of fluvial response to altered hydrological cycling during the PETM.
-Studies of the Piceance Basin to date \pnote[is it just BZF?] have remained equivocal as to the precise mechanisms generating fluvial response at the PETM boundary.
-In particular, it is not clear whether fluvial systems experienced net changes in sediment and water flux during the PETM.
-Increased fluxes and floodplain diffusivity implies (increasing/decreasing) river gradients and more active channel kinematics, which should be expected to be preserved in the stratigraphic record.
-Nonetheless, these predictions have not been tested with paleohydraulic techniques developed in recent years since the initial studies on the Piceance Basin.
-
-In particular, the \cnote[BZF] model predicts that higher sediment and water fluxes generated deeper, coarser channels, and higher floodplain diffusivity with a lower gradient.
-As a result, river channel geometries would be expected to grow, and estimates of slope are expected to decrease, while kinematics, or reworking, is expected to increase with a transient increase in sediment flux.
-We also consider an alternative case, where mean sediment flux and water discharge is constant, but intra-annual variability in the flow conditions changes during the PETM.
-
-Here, we deploy recently developed paleohydraulic techniques to evaluate hypothesized changes in fluvial geometries and kinematics and develop a new model for fluvial response to climatic perturbation.
-
-% To study the impacts of PETM-modulated changes in hydrological cycling, we turn to the Piceance Basin,  \cnote.
-
-A climate-induced change in hydrological cycling, therefore, is the most parsimonious explanation for observed facies changes and enrichment of sand in the Molina member.
-However, to better understand how the mechanisms by which fluvial systems responded to altered hydrological cycling, it is necessary to distinguish between a scenario involving increased sediment and water flux and a scenario where average sediment supply and discharge were constant, but channel dynamics were different.
-We will distinguish between these scenarios by employing detailed paleohydraulic reconstructions of Molina fluvial systems as contrasted with Atwell Gulch and Shire alluvial systems.
-The main geometric attribute that is hypothesized to distinguish between these two scenarios are the size of channel deposits (particularly depth) and the reach-averaged slope of channels.
-
-
-
-\mnote[We connect our estimates of paleohydraulic parameters to a simple box-model approach to determine how sand enrichment in the floodplain should vary as a function of channel dynamics versus sediment supply.]{are we actually going to use this?}
-This model takes as parameters fluvial sediment flux, grain size distribution (sand v mud), basin geometries, and subsidence rate.
-Floodplain sediment composition is determined in this model by the relative proportion of channel deposits vs overbank sediments, each of which have a predetermined sand concentration, where channels have a higher enrichment in sand.
-Channel sand-bodies rework overbank sediments, replacing them with channel deposits.
-By varying channel geometries and kinematic rates relative to subsidence rates, channel deposits occupy more or less of the morphodynamic reworking zone.
-In this way, based on observations of the total enrichment in sand, the abundance of channel deposits, and the frequency of cross-cutting relationships, inferences are made of channel geometries and kinematic rates as a function of floodplain parameters.
-
-
-
+% Therefore, we return to the Piceance Basin, a field site previously studied as a case study of fluvial response to altered hydrological cycling during the PETM.
+% Studies of the Piceance Basin to date \pnote[is it just BZF?] have remained equivocal as to the precise mechanisms generating fluvial response at the PETM boundary.
+% In particular, it is not clear whether fluvial systems experienced net changes in sediment and water flux during the PETM.
+% Increased fluxes and floodplain diffusivity implies (increasing/decreasing) river gradients and more active channel kinematics, which should be expected to be preserved in the stratigraphic record.
+% Nonetheless, these predictions have not been tested with paleohydraulic techniques developed in recent years since the initial studies on the Piceance Basin.
+% 
+% In particular, the \cnote[BZF] model predicts that higher sediment and water fluxes generated deeper, coarser channels, and higher floodplain diffusivity with a lower gradient.
+% As a result, river channel geometries would be expected to grow, and estimates of slope are expected to decrease, while kinematics, or reworking, is expected to increase with a transient increase in sediment flux.
+% We also consider an alternative case, where mean sediment flux and water discharge is constant, but intra-annual variability in the flow conditions changes during the PETM.
+% 
+% Here, we deploy recently developed paleohydraulic techniques to evaluate hypothesized changes in fluvial geometries and kinematics and develop a new model for fluvial response to climatic perturbation.
+% 
+% % To study the impacts of PETM-modulated changes in hydrological cycling, we turn to the Piceance Basin,  \cnote.
+% 
+% A climate-induced change in hydrological cycling, therefore, is the most parsimonious explanation for observed facies changes and enrichment of sand in the Molina member.
+% However, to better understand how the mechanisms by which fluvial systems responded to altered hydrological cycling, it is necessary to distinguish between a scenario involving increased sediment and water flux and a scenario where average sediment supply and discharge were constant, but channel dynamics were different.
+% We will distinguish between these scenarios by employing detailed paleohydraulic reconstructions of Molina fluvial systems as contrasted with Atwell Gulch and Shire alluvial systems.
+% The main geometric attribute that is hypothesized to distinguish between these two scenarios are the size of channel deposits (particularly depth) and the reach-averaged slope of channels.
+% 
+% 
+% 
+% \mnote[We connect our estimates of paleohydraulic parameters to a simple box-model approach to determine how sand enrichment in the floodplain should vary as a function of channel dynamics versus sediment supply.]{are we actually going to use this?}
+% This model takes as parameters fluvial sediment flux, grain size distribution (sand v mud), basin geometries, and subsidence rate.
+% Floodplain sediment composition is determined in this model by the relative proportion of channel deposits vs overbank sediments, each of which have a predetermined sand concentration, where channels have a higher enrichment in sand.
+% Channel sand-bodies rework overbank sediments, replacing them with channel deposits.
+% By varying channel geometries and kinematic rates relative to subsidence rates, channel deposits occupy more or less of the morphodynamic reworking zone.
+% In this way, based on observations of the total enrichment in sand, the abundance of channel deposits, and the frequency of cross-cutting relationships, inferences are made of channel geometries and kinematic rates as a function of floodplain parameters.
+% 
+% 
+% 
 % \begin{figure}[H]
 % 	\centering
 % 	\includegraphics[width = 0.9\textwidth]{Figure_file.pdf}
@@ -345,86 +345,86 @@ In this way, based on observations of the total enrichment in sand, the abundanc
 % 	\label{fig:short_fig_name}
 % 	\end{minipage}
 % \end{figure}
-
+% 
 \printbibliography
-
+% 
 \end{document}
-
-
-\newpage
-
- subjected to higher sediment and water flux are predicted to experience enhanced progradation of coarse facies as compared a system with lower fluxes.
-Assuming constant subsidence rates, stratigraphy rich in coarse-grained channel deposits and depleted in fine-grained overbank floodplain deposition would be interpreted as representing a system with increased sediment and water supply. 
-
-However, other mechanisms exist to enrich floodplain stratigraphy in coarse-grained sediment.
-For example, river systems 
-
-
- transferring sediment from hillslopes to marine basins, while the alluvial basin itself fills by subsidence and aggradation, recording climatically-induced shifts in landscape dynamics.
- 
-Rivers with higher fluxes of sediment and water may 
-
-rivers with highly variable fluxes
-
- to 
-
-deeper, migrate laterally more rapidly, and avulse more frequently
-
-The stratigraphic ar of alluvial basins reflects a balance between the generation of accommodation space and
-
- geometry and kinematics of alluvial channels the sedimentological 
-
-
-Climate-modulated changes precipitation patterns have been implicated in changes to channel dynamics in alluvial basins \cnote.
-However, the physical mechanisms by which alluvial basin systems respond to altered precipitation
-
-
-Terrestrial alluvial basins buffer and modify climatic signals 
-
-
-In particular, changes in climate may alter the processes by which sediment is buffered in alluvial floodplains, and therefore change the composition and supply of sediment exported to continental margins.
-
-
-
-landscape evolution and sediment transport 
-
-An  depends on 
-
-The grain-size composition of terrestrial sediments supplied to continental margins is a first-order control on the grain-size composition of marine stratigraphy.
-Terrestrial sediment grain-size composition is controlled by: (1) the distribution of sediment supplied by erosional hillslope environments, (2) comminution of sediment particles through transport, and (3) sorting of grain sizes by sediment transport systems. 
-Records of paleoclimate stored in continental margin sediments are therefore impacted by the integrated response of these processes to changes in climate.
-
-On short time-scales ($<1$My), climate has limited influence on the distribution of grain sizes supplied by hillslopes \cnote and likely does not influence the comminution of particles through transport except in extreme cases (e.g. a transition from fluvial to glacial transport) \cnote.
-
-
-The composition and architecture of sedimentary basins is a product of 
-
-Alluvial sedimentary basins are the primary archives that hold terrestrial records of paleoenvironmental change.
-The dominant controls on the composition and character of alluvial strata are the interactions between accommodation space, sediment supply, and channel dynamics.
-While the balance between subsidence and sediment supply is generally controlled on long timescales by tectonic factors, climate can impact the 
-
-, most notably by controlling the concentration and distribution of sand and mud in the strata.
-Environmental 
-
-reflected in geochemical and biostratigraphic proxies are translated into stratigraphy through \mnote[net]{necessary or not?} deposition.
-The fidelity and character of the record is affected, however, by how severely the signal is filtered by sedimentary processes, which can in turn be affected by the environmental change they are recording.
-Untangling this linkage between environmental forcings and sedimentary processes is a critical step for interpreting the stratigraphic record of past environmental change.
-
-Climate-modulated changes in water and sediment supply have been shown to be responsible for adjustments in fluvial channel kinematic rates; in particular the rate of channel migration and avulsion \cnote[bryant and others].
-The rate of channel kinematics relative to the rate of overall subsidence controls the degree to which channel facies are distributed within the floodplain, and thus the rock record.
-More active rivers which migrate quickly and avulse frequently relative to subsidence will accordingly develop stratigraphy rich in channel deposits and coarse material.
-
-While the balance of subsidence and channel kinematics is one control on the stratigraphic arrangement of channel facies, there are many different candidate sedimentary and tectonic processes that can alter this balance.
-The particle size distribution of sediment supplied to the alluvial system, for example, can promote changes in channel morphology.
-If the ratio of sand to mud is increased, the width-to-depth ratio and migration rate of channels will increase, leading to more fine floodplain material being replaced by coarse deposits.
-Channel depth can also change the degree of reworking, where deep river systems excavate and replace fine material, especially if the net subsidence rate is slow relative to channel kinematic timescales.
-Every one of these processes can lead to changes in the density of fluvial channels, the degree of stratigraphic reworking, and the fidelity of geochemical records.
-
-Accurately reconstructing environmental signals in alluvial basins therefore requires identifying the combination of processes that affect signal preservation from amongst the wide range of candidates.
-In theory, this means that each process which could affect signal preservation must have independent constraints.
-However, it is rare to find a field example where the problem is so well-posed, and interpreting outcrop stratigraphy is often limited by non-unique alluvial responses and lack of constraints on key parameters.
-
-Here we revisit a field case in the Piceance Basin, where changes in channel stacking patterns have been attributed to altered hydrological cycling related to the Paleocene-Eocene Thermal Maximum (PETM).
-In this location though, the causal relationship connecting hydrological changes to alluvial processes remains unclear, with implications for interpreting the landscape responses to abrupt climate changes.
-Using new field observations and paleohydraulic techniques, this study provides additional constraints on alluvial processes in the Piceance Basin before, during, and after the PETM.
-We use this new data to offer a refined model for alluvial response to abrupt climate warming, and explore the implications for \pnote[something].
+% 
+% 
+% \newpage
+% 
+%  subjected to higher sediment and water flux are predicted to experience enhanced progradation of coarse facies as compared a system with lower fluxes.
+% Assuming constant subsidence rates, stratigraphy rich in coarse-grained channel deposits and depleted in fine-grained overbank floodplain deposition would be interpreted as representing a system with increased sediment and water supply. 
+% 
+% However, other mechanisms exist to enrich floodplain stratigraphy in coarse-grained sediment.
+% For example, river systems 
+% 
+% 
+%  transferring sediment from hillslopes to marine basins, while the alluvial basin itself fills by subsidence and aggradation, recording climatically-induced shifts in landscape dynamics.
+% 
+% Rivers with higher fluxes of sediment and water may 
+% 
+% rivers with highly variable fluxes
+% 
+%  to 
+% 
+% deeper, migrate laterally more rapidly, and avulse more frequently
+% 
+% The stratigraphic ar of alluvial basins reflects a balance between the generation of accommodation space and
+% 
+%  geometry and kinematics of alluvial channels the sedimentological 
+% 
+% 
+% Climate-modulated changes precipitation patterns have been implicated in changes to channel dynamics in alluvial basins \cnote.
+% However, the physical mechanisms by which alluvial basin systems respond to altered precipitation
+% 
+% 
+% Terrestrial alluvial basins buffer and modify climatic signals 
+% 
+% 
+% In particular, changes in climate may alter the processes by which sediment is buffered in alluvial floodplains, and therefore change the composition and supply of sediment exported to continental margins.
+% 
+% 
+% 
+% landscape evolution and sediment transport 
+% 
+% An  depends on 
+% 
+% The grain-size composition of terrestrial sediments supplied to continental margins is a first-order control on the grain-size composition of marine stratigraphy.
+% Terrestrial sediment grain-size composition is controlled by: (1) the distribution of sediment supplied by erosional hillslope environments, (2) comminution of sediment particles through transport, and (3) sorting of grain sizes by sediment transport systems. 
+% Records of paleoclimate stored in continental margin sediments are therefore impacted by the integrated response of these processes to changes in climate.
+% 
+% On short time-scales ($<1$My), climate has limited influence on the distribution of grain sizes supplied by hillslopes \cnote and likely does not influence the comminution of particles through transport except in extreme cases (e.g. a transition from fluvial to glacial transport) \cnote.
+% 
+% 
+% The composition and architecture of sedimentary basins is a product of 
+% 
+% Alluvial sedimentary basins are the primary archives that hold terrestrial records of paleoenvironmental change.
+% The dominant controls on the composition and character of alluvial strata are the interactions between accommodation space, sediment supply, and channel dynamics.
+% While the balance between subsidence and sediment supply is generally controlled on long timescales by tectonic factors, climate can impact the 
+% 
+% , most notably by controlling the concentration and distribution of sand and mud in the strata.
+% Environmental 
+% 
+% reflected in geochemical and biostratigraphic proxies are translated into stratigraphy through \mnote[net]{necessary or not?} deposition.
+% The fidelity and character of the record is affected, however, by how severely the signal is filtered by sedimentary processes, which can in turn be affected by the environmental change they are recording.
+% Untangling this linkage between environmental forcings and sedimentary processes is a critical step for interpreting the stratigraphic record of past environmental change.
+% 
+% Climate-modulated changes in water and sediment supply have been shown to be responsible for adjustments in fluvial channel kinematic rates; in particular the rate of channel migration and avulsion \cnote[bryant and others].
+% The rate of channel kinematics relative to the rate of overall subsidence controls the degree to which channel facies are distributed within the floodplain, and thus the rock record.
+% More active rivers which migrate quickly and avulse frequently relative to subsidence will accordingly develop stratigraphy rich in channel deposits and coarse material.
+% 
+% While the balance of subsidence and channel kinematics is one control on the stratigraphic arrangement of channel facies, there are many different candidate sedimentary and tectonic processes that can alter this balance.
+% The particle size distribution of sediment supplied to the alluvial system, for example, can promote changes in channel morphology.
+% If the ratio of sand to mud is increased, the width-to-depth ratio and migration rate of channels will increase, leading to more fine floodplain material being replaced by coarse deposits.
+% Channel depth can also change the degree of reworking, where deep river systems excavate and replace fine material, especially if the net subsidence rate is slow relative to channel kinematic timescales.
+% Every one of these processes can lead to changes in the density of fluvial channels, the degree of stratigraphic reworking, and the fidelity of geochemical records.
+% 
+% Accurately reconstructing environmental signals in alluvial basins therefore requires identifying the combination of processes that affect signal preservation from amongst the wide range of candidates.
+% In theory, this means that each process which could affect signal preservation must have independent constraints.
+% However, it is rare to find a field example where the problem is so well-posed, and interpreting outcrop stratigraphy is often limited by non-unique alluvial responses and lack of constraints on key parameters.
+% 
+% Here we revisit a field case in the Piceance Basin, where changes in channel stacking patterns have been attributed to altered hydrological cycling related to the Paleocene-Eocene Thermal Maximum (PETM).
+% In this location though, the causal relationship connecting hydrological changes to alluvial processes remains unclear, with implications for interpreting the landscape responses to abrupt climate changes.
+% Using new field observations and paleohydraulic techniques, this study provides additional constraints on alluvial processes in the Piceance Basin before, during, and after the PETM.
+% We use this new data to offer a refined model for alluvial response to abrupt climate warming, and explore the implications for \pnote[something].
