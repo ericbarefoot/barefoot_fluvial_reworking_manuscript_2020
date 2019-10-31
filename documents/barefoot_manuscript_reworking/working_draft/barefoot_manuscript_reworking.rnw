@@ -217,51 +217,104 @@ Therefore we offer here a new interpretation of landscape response to shifting h
 
 \section{Conclusions and Implications}
 
-Changes in paleodischarge and sediment flux has been previously invoked to explain sedimentological differences in the Piceance Basin, as well as other localities.
-However, in the Piceance Basin, we do not find this interpretation to be strictly supported by paleohydraulic estimates of fluvial channel geometries.
-Our results suggest that sedimentological shifts during the PETM are instead driven by changes in channel kinematic rates.
-We propose that increased seasonality of precipitation during the PETM is responsible for sequestering more channel sediment in floodplain deposits by varying the lateral migration rate and avulsion timescales of the channel system.
+% 1 
 
-Before the PETM, the \mnote[initial]{not a great word choice} hydrological regime favored meandering channels that seldom avulsed and laterally migrated through bar accretion.
-The outcome of this style of fluvial system is the preferential deposition of channel-derived sand bodies in thin ribbons.
-Low precipitation seasonality corresponds to low flooding intensity in the river system, a condition thought to induce strong, confining river banks that promote low width-to-depth ratio channels that migrate slowly an avulse seldomly.
-A low width-to-depth ratio induces high shear stresses on the bed, ensuring that coarse sediment is transported primarily in the thalweg, and low Froude numbers promote \pnote[something].
-Accordingly, with high bank strength, due both to vegetation density and cohesive material, channels would have migrated laterally at reduced rates, and increased shear stress year-round on the bed would have reduced in-channel sedimentation, forestalling superelevation of the riverbed, and therefore forcing less frequent avulsions.
+Contemporary global climate change has the potential to impact natural systems in complex ways that may threaten human communities and infrastructure. 
+\mnote{should think about introducing this challange in the intro a little more too.}
+Part of understanding the hazard posed by rapidly changing climate is interpreting the paleoclimate record and inferring landscape responses. 
+The PETM is the best-known analogue to modern conditions, but interpretations of the stratigraphic record of PETM warming in marine and terrestrial basins are hindered by incomplete models for how climate affects fluvial processes.
 
-In contrast, as a result of the PETM, an more intense flooding regime and peakier hydrograph increased channel activity, driving more channel sediment to be deposited in floodplains.
+In many localities, changes in paleodischarge and sediment flux have been invoked to explain sedimentological differences during the PETM, but competing scenarios are also plausible due to uncertainties in paleohydraulic estimates.
+For example, a scenario where total sediment flux increases will carry significantly different implications for sediment dispersal patterns and element cycling in the floodplain as compared to a scenario where total sediment flux is constant. 
+These ramifications can all impact the climate signal encoded in sediment and biogeochemical proxies ultimately recorded in marine basins.
+
+In this study, we applied a suite of paleohydraulic techiques to better constrain floodplain processes, showing that sedimentological shifts during the PETM in the Piceance Creek Basin are driven by changes in channel kinematic rates without concomitant changes in channel geometries.
+The lack of detectable change in either channel depths or gradients suggests that total sediment fluxlikely did not increase during the PETM, and paleosol records point to a mild decrease in mean annual precipitation in the Piceance Basin.
+However, paleosol chemistry does indicate increased seasonality of precipitation, which we propose is responsible for accelerating the lateral migration rate and channel avulsion timescales.
+
+Existing equilibrium channel theory, does not suggest a clear way for channel avulsions and migration rates to increase without overall increases in sediment or water flux. 
+However, experimental studies and field investigations have demonstrated that channels subject to highly variable discharge exhibit different sedimentology and channel kinematics.
+An important consequence of highly variable discharge these studies highlight is that channel mobility through migration and avusion is high, allowing rivers to rework floodplain deposits.
+Therefore, all else being equal, terrestrial floodplains subjected to high discharge variability and active channels will be effective traps for sandy sediment.
+In contrast, channels in alluvial basins with low discharge variability can act as conduits for sandy material to bypass terrestrial floodplains to shorelines and marine basins. 
+
+This result is seen clearly in the Piceance Basin, where when discharge variability was low, i.e. in Atwell Gulch and Shire times, only fine-grained silt and mud was transported over levees to floodplain deposits.
+In contrast, during Molina time high discharge variability drove rapid channel kinematics relative to subsidence rates, ensuring that channels visited locations across the floodplain surface frequently, and that flood-stage flows could transport coarse sediment effectively to the overbank environment.
+Changes in floodplain vegetation due to seasonal aridity have been invoked both in the Piceance Basin and in other PETM stratigraphic sections to explain increased channel mobility.
+However, experimental results demonstrate that increased lateral mobility of channels can occur in the absence of vegetation, with only a change in discharge variability.
+Accordingly, new theory for channel dynamics must be developed that incorporates discharge variablity to explain channel mobility and hydraulic geometries. 
+
+\pnote[I think this is where we outline a new model for channel geometry and lateral motion across variable flow conditions]
+
+In contrast, as a result of the PETM, a more intense flooding regime and peakier hydrograph increased channel activity, driving more channel sediment to be deposited in floodplains.
 The primary mechanisms for increasing channel kinematic rates is through destabilized banks.
 It is thought that decreased riparian vegetation density via seasonal drying and more intense flood peaks worked in tandem to increase the width-to-depth ratio of PETM rivers in the Piceance Basin.
 Higher width-to-depth ratios in PETM rivers probably raised local Froude numbers of flows, potentially into critical, or even super-critical flows during flood stages.
 This increases the potential for significant in-channel sedimentation during low flows, and less confining ability for the channel during high flows.
 Both the infilling of channels during low flow, and low confinement during high flow, increase the likelihood of avulsion, thereby increasing avulsion frequency.
 
-Our integrated observations of paleohydraulics favor a scenario where Piceance river systems were slow-moving and confined by strong banks during Atwell Gulch and Shire time, before and after the PETM.
-In contrast, during the PETM Piceance river systems had weak banks and moved rapidly across the floodplain surface during Molina time.
-The result of this see-saw change in fluvial system dynamics across the PETM was a change in the relative partitioning of coarse and fine sediment into floodplain deposits.
+This model suggests a physical in-channel mechanism for accelerated avulsions and channel migration with small changes to hydraulic geometries. 
+Applying this model to the Piceance Basin, we propose that an increase in discharge variability conncected to the PETM increased in-channel sedimentation during low flows, exposing river banks to elevated shear stresses during high flows. 
+The integrated effect was an increase in the lateral migration rate, and increased likelihood of avulsion during high flows. 
 
-When river banks were strong, i.e. in Atwell Gulch and Shire times, low intensity flooding in Piceance rivers allowed only fine-grained silt and mud to be transported over levees to the floodplain.
-Coarser sand was instead transported in the thalweg, and low lateral migration rates relative to subsidence rates meant that thalweg deposits constitute a smaller fraction of the overall deposit.
-The result was that during Atwell Gulch and Shire time, river channels were most likely long-lived stable conduits conveying coarse material through the system without depositing it in the floodplain.
-In this way, we can consider Atwell Gulch and Shire rivers to be efficient transporters of sand, preferentially retaining mud and silt in the floodplain while allowing sand to bypass the depocenter.
+Climate models evaluated for PETM-like conditions generally predict increases in discharge variability across many regions as a result of warming. 
+An important effect of these processes in the Piceance basin was that deposits were re-excavated more frequently during Molina time as compared to Atwell Gulch or Shire time.
+Fine silt and mud deposits were more likely to be re-mobilized during Molina time, and were therefore preferentially bypassed to downstream basins.
+Our model and data from the Piceance Basin provides a physical basis for connecting this increase in discharge variability to increases in terrestrial mud flux in marine basins during the PETM.
 
-Correspondingly, during Molina time, weak river banks and rapid channel kinematics relative to subsidence rates ensured that channels visited locations across the floodplain surface frequently, and that flood-stage flows could transport coarse sediment more effectively to the overbank environment.
-More frequent visitation of the river across the floodplain surface likely meant that deposits were re-excavated more frequently than during Atwell Gulch or Shire time, and fine silt and mud deposits were more likely to be re-mobilized during Molina time and replaced by coarse sand.
-Additionally, a higher incidence of crevasse splays and overbank coarse deposition preferentially sequestered coarse material in non-channel deposits.
-The integrated effect of these accelerated processes was that coarse sandy sediment was retained more often in the floodplain.
-As such, Piceance rivers during Molina time were inefficient transporters of sand, preferentially bypassing fine-grained silt and mud to downstream basins.
+Organic carbon is preferentially hosted in fine-grained floodplain deposits, so repeated excavation of organic-rich floodplain deposits by more active rivers during the PETM would have exposed this normally-sequestered carbon to respiration.
+Eecent studies have highlighted that the PETM is associated with a sustained period of \del{13}{C}{}-depleted carbon release, which they hypothesize could be due to increased export of fossil carbon from soils.
+Our observations and model suggest that increased seasonality of precipitation is a viable mechanism to promote increased reworking of fossil carbon reservoirs, promoting a shift in the balance of carbon sequestration vs respiration in floodplains.
+As such, changes to hydrological cycling during the PETM may have initiated a feedback whereby increased lateral mobility of fluvial systems served as a mechanism to release additional carbon, extending climate conditions beyond the inital warming phase of the PETM. 
 
-These results imply that hydrologically-modulated channel dynamics affect the distribution of sediment grain-size fractions retained in continental depocenters in unintuitive ways.
-Accelerated rates of lateral migration, for instance, have traditionally been thought to increase the diffusivity of floodplains, allowing coarser facies to prograde further into the basin system.
-Accordingly, lower rates of channel kinematics would be expected to inhibit the transport of coarse facies to distal portions of the basin.
-In fact, our finding suggest that the opposite may be true, and during periods of dampened channel kinematics, coarse sediment is actually preferentially bypassed through the system, and deposited even more distally than with active channels.
 
-The preferential partitioning of grain-size fractions due to channel kinematic rates could have implications for understanding carbon cycling.
-As recent studies have highlighted \cnote[Lyons], the PETM is associated with a sustained period of \del{13}{C}{}-depleted carbon release, which they hypothesize could be due to increased export of fossil carbon from soils.
-The primary evidence for this claim is the increased accumulation of fossil carbon and increased accumulation of fine-grained sediment in marine sequences.
-However, \cnote[Lyons] do not invoke a precise mechanism for the increased reworking of soil fossil carbon, only stating that by some process, floodplain material is reworked to expose fossil soil carbon to respiration.
-Our observations suggest that increased seasonality of precipitation is a viable mechanism to promote increased reworking of fossil carbon reservoirs.
-In the process of excavating fine-grained silt and sand reservoirs, Molina rivers would have also re\"exposed carbon stored in those floodplain deposits to respiration.
-We propose that a global increase in precipitation seasonality may be the mechanism driving the excess flux in soil carbon after the initial PETM onset.
+
+% sequestering more channel sediment in floodplain deposits by varying
+% 
+% % 2
+% 
+% Before the PETM, the \mnote[initial]{not a great word choice} hydrological regime favored meandering channels that seldom avulsed and laterally migrated through bar accretion.
+% The outcome of this style of fluvial system is the preferential deposition of channel-derived sand bodies in thin ribbons.
+% Low precipitation seasonality corresponds to low flooding intensity in the river system, a condition thought to induce strong, confining river banks that promote low width-to-depth ratio channels that migrate slowly an avulse seldomly.
+% A low width-to-depth ratio induces high shear stresses on the bed, ensuring that coarse sediment is transported primarily in the thalweg, and low Froude numbers promote \pnote[something].
+% Accordingly, with high bank strength, due both to vegetation density and cohesive material, channels would have migrated laterally at reduced rates, and increased shear stress year-round on the bed would have reduced in-channel sedimentation, forestalling superelevation of the riverbed, and therefore forcing less frequent avulsions.
+% 
+% % 3
+% 
+% When river banks were strong, i.e. in Atwell Gulch and Shire times, low intensity flooding in Piceance rivers allowed only fine-grained silt and mud to be transported over levees to the floodplain.
+% Coarser sand was instead transported in the thalweg, and low lateral migration rates relative to subsidence rates meant that thalweg deposits constitute a smaller fraction of the overall deposit.
+% The result was that during Atwell Gulch and Shire time, river channels were most likely long-lived stable conduits conveying coarse material through the system without depositing it in the floodplain.
+% In this way, we can consider Atwell Gulch and Shire rivers to be efficient transporters of sand, preferentially retaining mud and silt in the floodplain while allowing sand to bypass the depocenter.
+% 
+% 
+% Our integrated observations of paleohydraulics favor a scenario where Piceance river systems were slow-moving and confined by strong banks during Atwell Gulch and Shire time, before and after the PETM.
+% In contrast, during the PETM Piceance river systems had weak banks and moved rapidly across the floodplain surface during Molina time.
+% The result of this see-saw change in fluvial system dynamics across the PETM was a change in the relative partitioning of coarse and fine sediment into floodplain deposits.
+% 
+% 
+% 
+% Additionally, a higher incidence of crevasse splays and overbank coarse deposition preferentially sequestered coarse material in non-channel deposits.
+% The integrated effect of these accelerated processes was that coarse sandy sediment was retained more often in the floodplain.
+% As such, Piceance rivers during Molina time were inefficient transporters of sand, preferentially bypassing fine-grained silt and mud to downstream basins.
+% 
+% % 4
+% 
+% 
+% 
+% These results imply that hydrologically-modulated channel dynamics affect the distribution of sediment grain-size fractions retained in continental depocenters in unintuitive ways.
+% Accelerated rates of lateral migration, for instance, have traditionally been thought to increase the diffusivity of floodplains, allowing coarser facies to prograde further into the basin system.
+% Accordingly, lower rates of channel kinematics would be expected to inhibit the transport of coarse facies to distal portions of the basin.
+% In fact, our finding suggest that the opposite may be true, and during periods of dampened channel kinematics, coarse sediment is actually preferentially bypassed through the system, and deposited even more distally than with active channels.
+
+% 5 
+
+% 6
+
+
+
+% 7
+
+
 
 % In certain circumstances, the impact of climate modulation on channel dynamics may adjust conventional notions of where petroleum reservoirs are emplaced along the source-to-sink continuum.
 % For example, a system under a highly seasonal hydrology would be expected to partition sand preferentially in the proximal parts of the source-to-sink system, and off-shore deposits would be expected to be rich in mud.
@@ -274,7 +327,7 @@ We propose that a global increase in precipitation seasonality may be the mechan
 % Higher-intensity flooding in some regions may drive significant increases in channel mobility, threatening adjacent floodplain communities.
 % Increased risk of avulsions due to changes in hydrological cycling would also present a threat to communities.
 
-\pnote[how to wrap up? Come up with some kind of good ending idea.]
+% \pnote[how to wrap up? Come up with some kind of good ending idea.]
 
 % %====================%%
 % % Maybe move everything in here down to the discussion when you talk about global sediment partitioning.
