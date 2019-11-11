@@ -19,7 +19,7 @@ combined = readRDS(file = here('data', 'derived_data', 'piceance_field_model_dat
 
 just_bars_models = model %>% filter(interpretations %in% c('full','partial','truncated'))
 
-model_boots = just_bars_models %>% nest(-formation) %>% mutate(boots = map(data, ~ bootstraps(., times = 200))) %>% unnest(boots)
+model_boots = just_bars_models %>% nest(-formation) %>% mutate(boots = map(data, ~ bootstraps(., times = 4))) %>% unnest(boots)
  
 calcFullFrac = function(split)
 {
