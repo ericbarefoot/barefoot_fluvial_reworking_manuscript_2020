@@ -176,8 +176,12 @@ for t = 2:nits
         % adjust channel index location for lateral mobility direction
         ch_idx(t) = ch_idx(t) + floor(lat_mob(t)/2);
         
-        
-        %%%%%%%%%%%%%%%%%%% CLUSTERED TIMESTEPS: RANDOM-WALK
+        if ch_idx(t) > model_w % if the new channel index is too far to the right
+            ch_idx(t) = ch_idx(t) - (model_w-ch_w(1));
+        elseif ch_idx(t) < (ch_w(t)/2)  % if the new channel index is too far to the left
+            ch_idx(t) = (model_w-ch_w(1)) + ch_idx(t); % move the index to the right side of the model domain
+        end
+ %%%%%%%%%%%%%%%%%%% CLUSTERED TIMESTEPS: RANDOM-WALK
         
     elseif avuls_type(t-1) == 0
         
@@ -308,6 +312,11 @@ end
 % keyboard
 
 %% Calculate channel preservation
+id = 'MATLAB:polyshape:repairedBySimplify';
+warning('off', id)
+id = 'MATLAB:polyshape:boolOperationFailed';
+warning('off', id)
+
 %
 % Preallocate matrix to store percent preservation of every channel body at
 % every timestep
