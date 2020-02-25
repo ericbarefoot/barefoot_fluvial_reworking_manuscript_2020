@@ -1,4 +1,6 @@
 
+*.m~
+
 *.zip
 *.oc3
 *.files

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<batchjobs version="1.5.2" save_project="true">
+  <job name="AlignPhotos" target="all">
+    <adaptive_fitting>true</adaptive_fitting>
+    <downscale>0</downscale>
+    <mask_tiepoints>false</mask_tiepoints>
+    <network_distribute>true</network_distribute>
+  </job>
+  <job name="OptimizeCameras" target="all"/>
+  <job name="BuildDenseCloud" target="all">
+    <network_distribute>true</network_distribute>
+    <point_colors>false</point_colors>
+    <store_depth>false</store_depth>
+  </job>
+  <job name="BuildModel" target="all">
+    <face_count>2</face_count>
+    <vertex_colors>false</vertex_colors>
+  </job>
+</batchjobs>
