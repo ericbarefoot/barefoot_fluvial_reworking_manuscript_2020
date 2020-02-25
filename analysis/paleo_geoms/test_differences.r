@@ -37,6 +37,7 @@ depths = field_depths$meas_a
 formations = field_depths$formation
 
 fit = conover.test(depths, formations, method = 'bonferroni', table = 'false', kw = 'false')
+# fit = conover.test(depths, formations, method = 'bonferroni')
 
 p_comp_AG_M = fit$P[1]
 p_comp_AG_S = fit$P[2]
@@ -70,6 +71,7 @@ slopes = paleohydroset$S
 formations = paleohydroset$formation
 
 fit_slope = conover.test(slopes, formations, method = 'bonferroni', table = 'false', kw = 'false')
+# fit_slope = conover.test(slopes, formations, method = 'bonferroni')
 
 p_comp_AG_M_slope = fit_slope$P[1]
 p_comp_AG_S_slope = fit_slope$P[2]
