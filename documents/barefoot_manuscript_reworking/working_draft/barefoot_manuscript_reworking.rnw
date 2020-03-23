@@ -110,53 +110,11 @@ Finally, we estimate relative sand bypass and fractionation across the PETM in t
 
 \section{Results and Interpretations}
 
-\begin{figure}[H]
-	% \centering
-	% \includegraphics[width = 0.9\textwidth]{Figure_file.pdf}
-	% \begin{minipage}{0.9\textwidth}
-	% \vspace*{2mm}
-	% \caption{Caption_Here}
-	% \label{fig:short_fig_name}
-	% \end{minipage}
-  
-  \centering
-  \begin{subfigure}[t]{0.25\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_depth_piceance_frequency.png}
-  % \caption{Lorem ipsum}
-  \end{subfigure}%
-  ~ 
-  \begin{subfigure}[t]{0.25\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_grainsize_piceance_frequency.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  ~ 
-  \begin{subfigure}[t]{0.4\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_slope_piceance_frequency.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  \caption{Caption place holder}
-  \label{fig:paleo_geom}
-\end{figure}
 
 Despite clear differences in sedimentology between the Molina Member and the bounding Atwell Gulch and Shire members, our measurements from the Piceance Creek indicate that paleoflow depths were \mnote[statistically stationary]{Something like this\ldots} across the PETM boundary (see Table \ref{tab:paleo_geom} and Figure \ref{fig:paleo_geom}a).
 Paleoslope estimates also indicate no statistical difference between the river gradients in the Molina as compared to the Atwell Gulch or Shire members (see Table \ref{tab:paleo_geom} and Figure \ref{fig:paleo_geom}b). 
 Taken together, these results suggest that within the resolution of current paleohydraulic methods, rivers in the Piceance Basin did not necessarily carry an increased sediment flux or higher discharge as a result of changes to regional climate and hydrological cycling.
 
-\begin{table}[H]
-\centering
-\begin{tabular}{l | l | l}
-comparison & depth p-value & slope p-value \\
-\hline
-Atwell Gulch -- Molina & \Sexpr{signif(p_comp_AG_M, digits = 3)} & \Sexpr{signif(p_comp_AG_M_slope, digits = 3)} \\
-Shire -- Molina & \Sexpr{signif(p_comp_AG_S, digits = 3)} & \Sexpr{signif(p_comp_AG_S_slope, digits = 3)} \\
-Atwell Gulch -- Shire & \Sexpr{signif(p_comp_S_M, digits = 3)} & \Sexpr{signif(p_comp_S_M_slope, digits = 3)} \\
-\end{tabular}
-\caption{Conover-Iman test results for comparing flow depths in different members of the Wasatch Formation.}
-\label{tab:paleo_geom}
-\end{table}
 
 Mapping sedimentary structure preservation throughout the Wasatch Formation shows that barforms in the Molina member crosscut each other more frequently, and are less well preserved than in either the Shire or Atwell Gulch members (p-value = \Sexpr{signif(p_comp_reworking, digits = 3)}).
 Our data also indicate that avulsion style changed during Molina time, when incisional avulsions were more abundant than progradational avulsions. 
@@ -173,22 +131,6 @@ Given that barform geometries indicate no change in depth or slope, more abundan
 % \caption{Conover-Iman test results for comparing flow depths in different members of the Wasatch Formation.}
 % \end{table}
 
-\begin{figure}[H]  
-  \centering
-  \begin{subfigure}[t]{0.4\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_bar_preservation.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  ~ 
-  \begin{subfigure}[t]{0.4\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_sediment_retention.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  \caption{Caption place holder}
-  \label{fig:paleo_preservation}
-\end{figure}
 
 We take our estimates of bar preservation in the Wasatch Formation, and compare them to a suite of numerical experiments conducted using the model developed in \textcite{chamberlin_interpreting_2015}. 
 This reduced-complexity model allows avulsion style, as well as key parameters like avulsion rate, channel dimensions, and subsidence to be controlled independently, producing synthetic stratigraphy. 
@@ -268,6 +210,68 @@ As such, changes to hydrological cycling during the PETM may have initiated a fe
 % 	\end{minipage}
 % \end{figure}
 % 
+\begin{figure}[H]
+	% \centering
+	% \includegraphics[width = 0.9\textwidth]{Figure_file.pdf}
+	% \begin{minipage}{0.9\textwidth}
+	% \vspace*{2mm}
+	% \caption{Caption_Here}
+	% \label{fig:short_fig_name}
+	% \end{minipage}
+
+  \centering
+  \begin{subfigure}[t]{0.25\textwidth}
+  \centering
+  \includegraphics[height=2in, draft=false]{petm_depth_piceance_frequency.png}
+  % \caption{Lorem ipsum}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[t]{0.25\textwidth}
+  \centering
+  \includegraphics[height=2in, draft=false]{petm_grainsize_piceance_frequency.png}
+  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{0.4\textwidth}
+  \centering
+  \includegraphics[height=2in, draft=false]{petm_slope_piceance_frequency.png}
+  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+  \end{subfigure}
+  \caption{Caption place holder}
+  \label{fig:paleo_geom}
+\end{figure}
+%
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l | l | l}
+comparison & depth p-value & slope p-value \\
+\hline
+Atwell Gulch -- Molina & \Sexpr{signif(p_comp_AG_M, digits = 3)} & \Sexpr{signif(p_comp_AG_M_slope, digits = 3)} \\
+Shire -- Molina & \Sexpr{signif(p_comp_AG_S, digits = 3)} & \Sexpr{signif(p_comp_AG_S_slope, digits = 3)} \\
+Atwell Gulch -- Shire & \Sexpr{signif(p_comp_S_M, digits = 3)} & \Sexpr{signif(p_comp_S_M_slope, digits = 3)} \\
+\end{tabular}
+\caption{Conover-Iman test results for comparing flow depths in different members of the Wasatch Formation.}
+\label{tab:paleo_geom}
+\end{table}
+
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[t]{0.4\textwidth}
+  \centering
+  \includegraphics[height=2in, draft=false]{petm_bar_preservation.png}
+  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[t]{0.4\textwidth}
+  \centering
+  \includegraphics[height=2in, draft=false]{petm_sediment_retention.png}
+  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+  \end{subfigure}
+  \caption{Caption place holder}
+  \label{fig:paleo_preservation}
+\end{figure}
 \printbibliography
 % 
 \end{document}
