@@ -45,6 +45,7 @@ if (remake_models_bool)
 }
 source(here('analysis', 'paleo_geoms', 'test_differences.r'))
 source(here('analysis', 'analyzing_reworking', 'test_differences.r'))
+source(here('figures', 'src', 'piceance_manuscript_data_plot.r'))
 # load()
 @
 
@@ -211,35 +212,35 @@ As such, changes to hydrological cycling during the PETM may have initiated a fe
 % \end{figure}
 % 
 \begin{figure}[H]
-	% \centering
-	% \includegraphics[width = 0.9\textwidth]{Figure_file.pdf}
-	% \begin{minipage}{0.9\textwidth}
-	% \vspace*{2mm}
-	% \caption{Caption_Here}
-	% \label{fig:short_fig_name}
-	% \end{minipage}
-
-  \centering
-  \begin{subfigure}[t]{0.25\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_depth_piceance_frequency.png}
-  % \caption{Lorem ipsum}
-  \end{subfigure}%
-  ~
-  \begin{subfigure}[t]{0.25\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_grainsize_piceance_frequency.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  ~
-  \begin{subfigure}[t]{0.4\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_slope_piceance_frequency.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  \caption{Caption place holder}
-  \label{fig:paleo_geom}
+	\centering
+	\includegraphics[width = 0.9\textwidth, draft=false]{petm_data.pdf}
+	\begin{minipage}{0.9\textwidth}
+	\vspace*{2mm}
+	\caption{Caption here}
+	\label{fig:paleo_geom}
+	\end{minipage}
 \end{figure}
+
+  % \centering
+  % \begin{subfigure}[t]{0.25\textwidth}
+  % \centering
+  % \includegraphics[height=2in, draft=false]{petm_depth_piceance_frequency.png}
+  % % \caption{Lorem ipsum}
+  % \end{subfigure}%
+  % ~
+  % \begin{subfigure}[t]{0.25\textwidth}
+  % \centering
+  % \includegraphics[height=2in, draft=false]{petm_grainsize_piceance_frequency.png}
+  % % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+  % \end{subfigure}
+  % ~
+  % \begin{subfigure}[t]{0.4\textwidth}
+  % \centering
+  % \includegraphics[height=2in, draft=false]{petm_slope_piceance_frequency.png}
+  % % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+  % \end{subfigure}
+  % \label{fig:paleo_geom}
+% \end{figure}
 %
 
 \begin{table}[H]
@@ -256,22 +257,22 @@ Atwell Gulch -- Shire & \Sexpr{signif(p_comp_S_M, digits = 3)} & \Sexpr{signif(p
 \end{table}
 
 
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}[t]{0.4\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_bar_preservation.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  ~
-  \begin{subfigure}[t]{0.4\textwidth}
-  \centering
-  \includegraphics[height=2in, draft=false]{petm_sediment_retention.png}
-  % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  \end{subfigure}
-  \caption{Caption place holder}
-  \label{fig:paleo_preservation}
-\end{figure}
+% \begin{figure}[H]
+%   \centering
+%   \begin{subfigure}[t]{0.4\textwidth}
+%   \centering
+%   \includegraphics[height=2in, draft=false]{petm_bar_preservation.png}
+%   % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+%   \end{subfigure}
+%   ~
+%   \begin{subfigure}[t]{0.4\textwidth}
+%   \centering
+%   \includegraphics[height=2in, draft=false]{petm_sediment_retention.png}
+%   % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
+%   \end{subfigure}
+%   \caption{Caption place holder}
+%   \label{fig:paleo_preservation}
+% \end{figure}
 \printbibliography
 % 
 \end{document}

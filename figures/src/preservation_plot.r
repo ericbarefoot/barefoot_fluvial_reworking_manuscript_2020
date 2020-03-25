@@ -42,20 +42,24 @@ barpres = barpres %>% rename(frac_elems = 'perc_full') %>% ungroup()
 
 barpres_pred = barpres %>% mutate(frac_supply = predict(chamb_model, newdata = .)) %>%
 mutate(formID = case_when(
-  formation == 'ohio_creek' ~ 3, 
-  formation == 'atwell_gulch' ~ 2, 
-  formation == 'molina' ~ 1, 
+  formation == 'ohio_creek' ~ 3,
+  formation == 'atwell_gulch' ~ 2,
+  formation == 'molina' ~ 1,
   formation == 'shire' ~ 0))
 
 barpres_pred_means = barpres_pred %>% group_by(formation) %>% summarize(mean_supply = mean(frac_supply), mean_elems = mean(frac_elems), mean_input = mean(frac_input)) %>%
 mutate(formID = case_when(
-  formation == 'ohio_creek' ~ 3, 
-  formation == 'atwell_gulch' ~ 2, 
-  formation == 'molina' ~ 1, 
+  formation == 'ohio_creek' ~ 3,
+  formation == 'atwell_gulch' ~ 2,
+  formation == 'molina' ~ 1,
   formation == 'shire' ~ 0))
 
-petm_bar_preservation = ggplot() + 
-geom_step(aes(x = frac_elems, y = ..density.., color = reorder(formation, formID)), data = barpres_pred, bins = 20, stat = 'bin', size = 1.5) + 
+legend_ord = levels(with(barpres_pred, reorder(formation, formID)))
+legend_ord = levels(with(barpres_pred_means, reorder(formation, formID)))
+
+
+petm_bar_preservation = ggplot() +
+geom_step(aes(x = frac_elems, y = ..density.., color = reorder(formation, formID)), data = barpres_pred, bins = 20, stat = 'bin', size = 1.5) +
 theme_minimal() + # xlim(0,1) + ylim(0.2,1) +
 scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) +
 labs(x = 'Fraction of fully preserved bars', y = 'Probability Density', color = 'Member') +
@@ -63,8 +67,8 @@ facet_wrap(vars(formID), ncol = 1) +
 theme(strip.background = element_blank(), strip.text.x = element_blank(), legend.position = 'none')
 
 
-petm_sediment_retention = ggplot() + 
-geom_step(aes(x = frac_supply, y = ..density.., color = reorder(formation, formID)), data = barpres_pred, bins = 20, stat = 'bin', size = 1.5) + 
+petm_sediment_retention = ggplot() +
+geom_step(aes(x = frac_supply, y = ..density.., color = reorder(formation, formID)), data = barpres_pred, bins = 20, stat = 'bin', size = 1.5) +
 theme_minimal() + # xlim(0,1) + ylim(0.2,1) +
 scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) +
 labs(x = 'Fraction of sediment supply retained', y = NULL, color = 'Member') +
@@ -78,4 +82,3 @@ h1 = 3.1
 ggsave(plot = petm_bar_preservation, filename = "petm_bar_preservation.png", path = figdir, width = w1, height = h1, units = "in")
 
 ggsave(plot = petm_sediment_retention, filename = "petm_sediment_retention.png", path = figdir, width = w2, height = h1, units = "in")
-  

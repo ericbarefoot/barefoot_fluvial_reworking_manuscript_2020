@@ -30,162 +30,183 @@ chamb_model = readRDS(file = here('data','derived_data', 'chamberlin_stat_model.
 model = readRDS(file = here('data','derived_data','piceance_3d_model_data.rds'))
 field = readRDS(file = here('data','derived_data','piceance_field_data.rds'))
 combined = readRDS(file = here('data', 'derived_data', 'piceance_field_model_data.rds'))
-barpres = readRDS(file = here('data', 'derived_data', 'piceance_bar_preservation.rds'))
+barpres_raw = readRDS(file = here('data', 'derived_data', 'piceance_bar_preservation.rds'))
+
+barpres = barpres_raw %>%
+rename(frac_elems = 'perc_full') %>% ungroup() %>%
+mutate(formID = case_when(
+  formation == 'ohio_creek' ~ 3,
+  formation == 'atwell_gulch' ~ 2,
+  formation == 'molina' ~ 1,
+  formation == 'shire' ~ 0)
+) %>%
+select(formID, id, frac_elems) %>%
+mutate(depth = NA, slope = NA) %>%
+slice(1:round(n() * 0.5))
+
+barpres_means = barpres %>% group_by(formID) %>%
+summarize(mean_elems = median(frac_elems)) %>%
+mutate(depth = NA, slope = NA)
 
 cpal = hcl(h = c(80, 120, 240), c = rep(100, 3), l = c(85, 65, 20))
 
-field_depths = field %>% filter(structure %in% c('bar','channel') & meas_type %in% c('thickness', 'dimensions')) %>% mutate(meas_a = case_when(meas_type == 'thickness' ~ meas_a, meas_type == 'dimensions' ~ meas_b)) 
-
-model_depths = model %>% filter(interpretations %in% c('full'))
-
-all_depths = bind_rows(field_depths, model_depths, .id = 'data_source') %>% mutate(data_source = recode(.$data_source, `1` = 'field', `2` = 'model'))
-
-all_depths = all_depths %>% mutate(formID = case_when(formation == 'ohio_creek' ~ 3, formation == 'atwell_gulch' ~ 2, formation == 'molina' ~ 1, formation == 'shire' ~ 0))
-
-legend_ord = levels(with(all_depths, reorder(formation, formID)))
-
-formation_labeller = as_labeller(c(`0` = 'Shire', `1` = 'Molina', `2` = 'Atwell Gulch'))
-source_labeller = as_labeller(c('field' = 'Field Data', 'model' = '3D Model Data'))
-
-depth_freq_field = ggplot() +
-stat_bin(aes(x = meas_a, y = ..density.., color = reorder(formation, formID)), geom = 'step', position = "identity", bins = 20, size = 1.5, data = filter(all_depths, data_source == 'field')) +
-theme_minimal() + 
-scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + 
-labs(x = 'Flow Depth (m)', y = 'Probability Density') + facet_wrap(vars(formID), ncol = 1, labeller = formation_labeller) + 
-theme(strip.background = element_blank(), strip.text.x = element_blank(), legend.position = 'none')
-
-bedloadSamples = field %>% 
-filter(meas_type == 'sample' & !(structure %in% c('outcrop', 'formation', 'bar_drape')) & meas_a < 2000) %>% 
-mutate(D50 = meas_a * 1e-6) %>% 
+field_depths = field %>%
+filter(structure %in% c('bar','channel') & meas_type %in% c('thickness', 'dimensions')) %>%
+mutate(depth = case_when(meas_type == 'thickness' ~ meas_a, meas_type == 'dimensions' ~ meas_b)) %>%
+select(formation, set_id, depth) %>%
 mutate(formID = case_when(
-  formation == 'ohio_creek' ~ 3, 
-  formation == 'atwell_gulch' ~ 2, 
-  formation == 'molina' ~ 1, 
-  formation == 'shire' ~ 0))
+  formation == 'ohio_creek' ~ 3,
+  formation == 'atwell_gulch' ~ 2,
+  formation == 'molina' ~ 1,
+  formation == 'shire' ~ 0)
+)
 
-legend_ord = levels(with(bedloadSamples, reorder(formation, formID)))
+bedloadSamples = field %>%
+filter(meas_type == 'sample' & !(structure %in% c('outcrop', 'formation', 'bar_drape')) & meas_a < 2000) %>%
+transmute(set_id = set_id, D50 = meas_a * 1e-6)
 
-grainsize_freq = bedloadSamples %>% ggplot() + 
-stat_bin(aes(x = D50 * 1e6, y = ..density.., color = reorder(formation, formID)), geom = 'step', position = "identity", binwidth = 65, size = 1.5) + 
-theme_minimal() + 
-scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + 
-labs(x = expression(paste('Bedload Sample ', D[50], ' (', mu, 'm)')), y = NULL) + 
-facet_wrap(vars(formID), ncol = 1, labeller = formation_labeller) + 
-theme(strip.background = element_blank(), strip.text.x = element_blank(), legend.position = 'none')
+slopes =
+inner_join(field_depths, bedloadSamples, by = 'set_id') %>%
+group_by(formID, set_id) %>% summarize(depth = median(depth), D50 = median(D50)) %>%
+mutate(slope = atan(trampush_slp(D50, depth)) * (90 / pi)) %>%
+select(formID, slope) %>%
+mutate(id = NA, frac_elems = NA, mean_elems = NA, depth = NA)
 
-samples_for_slope = bedloadSamples %>% select(set_id, D50, textures, composition, samp_ind, samp_code, samp_description)
-depths_for_slope = all_depths %>% filter(data_source == 'field') %>% select(-c(textures, composition, samp_ind, samp_code, samp_description))
+depths = field_depths %>% select(formID, depth) %>%
+mutate(id = NA, frac_elems = NA, mean_elems = NA, slope = NA)
 
-paleohydroset = inner_join(samples_for_slope, depths_for_slope, by = 'set_id') %>% 
-mutate(S = trampush_slp(D50, meas_a))
+data_table = bind_rows(depths, slopes, barpres, barpres_means, .id = 'split') %>%
+mutate(formID = as.factor(formID)) %>% select(-id) %>%
+pivot_longer(c(depth, slope, frac_elems, mean_elems), names_to = 'meas', values_to = 'vals') %>%
+mutate(meas = ifelse(meas == 'mean_elems', 'frac_elems', meas)) %>%
+mutate(meas = as.factor(
+  case_when(
+  meas == 'depth' ~ 100,
+  meas == 'slope' ~ 200,
+  meas == 'frac_elems' ~ 300)
+)
+)
 
-slope_freq = paleohydroset %>% ggplot() + stat_bin(aes(x = S, y = ..density.., color = reorder(formation, formID)), geom = 'step', position = 'identity', bins = 8, size = 1.5) +
-scale_x_log10(breaks = c(1e-04, 2e-04, 3e-04, 5e-04, 0.001, 0.002, 0.003), labels = c(expression(10^-4), expression(2%*%10^-4), expression(3%*%10^-4), expression(5%*%10^-4), expression(10^-3), expression(2%*%10^-3), expression(3%*%10^-3))) +
-theme_minimal() + 
-scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + 
-labs(x = 'Slope (-)', y = NULL) + 
-facet_wrap(vars(formID), ncol = 1)+ 
-theme(strip.background = element_blank(), strip.text.x = element_blank())
+labels = as_labeller(c(`0` = 'Shire', `1` = 'Molina', `2` = 'Atwell Gulch', `100` = 'Flow Depth (m)', `200` = 'Fluvial Slope (º)', `300` = '% Fully Preserved Bars'))
+form_labs = c('Shire','Molina','Atwell Gulch')
 
-w1 = 2.45
-w2 = 3.5
-h1 = 3.1
-# This ^ is highly ineffective, come back to this and make it a grob thing
+data_figure = ggplot() +
+# plot depths
+stat_bin(data = filter(data_table, split == 1),
+aes(x = vals, y = ..count.., fill = formID),
+geom = 'bar', position = "identity", bins = 20, color = 'black', size = 0.5) +
+# plot slopes
+stat_bin(data = filter(data_table, split == 2),
+aes(x = vals, y = ..count.., fill = formID),
+geom = 'bar', position = "identity", bins = 7, color = 'black', size = 0.5) +
+# plot histogram of % bar estimates from bootstrapping
+stat_bin(data = filter(data_table, split == 3),
+aes(x = vals, y = ..count.., fill = formID, color = formID),
+geom = 'bar', position = "identity", bins = 20, size = 0.5, alpha = 0.4) +
+# plot mean line
+geom_vline(data = filter(data_table, split == 4),
+aes(xintercept = vals, color = formID), size = 2) +
+# adjust other parameters for the whole plot.
+scale_fill_manual(values = cpal, name = 'Stratigraphic Member', labels = form_labs) +
+scale_color_manual(values = cpal) +
+facet_grid(rows = vars(formID), cols = vars(meas), scales = 'free_x', labeller = labels) +
+labs(x = NULL, y = 'Frequency') +
+theme_classic() +
+theme(strip.background = element_blank(), strip.text.y = element_blank(), legend.position = 'bottom') +
+guides(color = 'none')
 
-ggsave(plot = slope_freq, filename = "petm_slope_piceance_frequency.png", path = figdir, width = w2, height = h1, units = "in")
+# save figure
 
-ggsave(plot = grainsize_freq, filename = "petm_grainsize_piceance_frequency.png", path = figdir, width = w1, height = h1, units = "in")
-
-ggsave(plot = depth_freq_field, filename = "petm_depth_piceance_frequency.png", path = figdir, width = w1, height = h1, units = "in")
+ggsave(plot = data_figure, filename = "petm_data.pdf", path = figdir, width = 6, height = 4, units = "in")
 
 ########################################################
-# Old scripts to make some plots like this one. 
+# Old scripts to make some plots like this one.
 ########################################################
 # # first step is to generate a dataset which has all the same attributes but
 # # estimates the depth based on paleohydro.
-# 
+#
 # # group the data by formation and the set_id, which indicates a set of paleohydro
 # # measurements for a single location/outcrop in time. can only compare/combine
 # # measurements from the same set to calculate slope, etc.
-# 
+#
 # fieldDataGrouped = field_data %>% group_by(formation, set_id) %>% filter(set_id != 'FORMANA')
-# 
+#
 # fieldDataGrouped_BZF = field_data %>% group_by(formation, set_id)
-# 
+#
 # # calculate the depth based on a x-set to depth calculation.  May fine-tune this
 # # later, but for now chooses the most ham-fisted option.  TODO: provide for
 # # selecting different methods based on field observations of certain kinds, or
 # # the availability of certain data.
-# 
-# 
+#
+#
 # flowDepthSetXset = fieldDataGrouped %>% filter(structure == "cross_set" & meas_type ==
 #     "thickness") %>% summarize(xsetDepth = suppressMessages(xset2depthSimple(meas_a)))
-# 
+#
 # # calculate the depth based on channel scour fill thicknesses.  TODO: estimate
 # # some compaction estimation.
-# 
+#
 # flowDepthSetChannel = fieldDataGrouped %>% filter(structure == "channel" & meas_type ==
 #     "thickness") %>% summarize(channelDepth = mean(meas_a))
-# 
+#
 # # calculate the depth based on point bar thicknesses.
-# 
+#
 # flowDepthSetBarThick = fieldDataGrouped %>% filter(structure == "bar" & meas_type ==
 #     "thickness") %>% summarize(barDepthThick = mean(meas_a))
-# 
+#
 # # calculate the depth based on point bar y dimensions as measured from outcrop.
-# 
+#
 # flowDepthSetBarDims = fieldDataGrouped %>% filter(structure == "bar" & meas_type ==
 #     "dimensions") %>% summarize(barDepthDims = mean(meas_b))
-# 
+#
 # # merge these all back together into one tibble.
-# 
+#
 # flowDepthsSetAll = Reduce(function(...) {
 #     full_join(..., by = c(formation = "formation", set_id = "set_id"))
 # }, list(flowDepthSetChannel, flowDepthSetBarThick, flowDepthSetBarDims))
-# 
+#
 # # reshape for easier summary.
-# 
+#
 # flowDepthsSetAll = flowDepthsSetAll %>% gather(key = "measType", value = "depth",
 #     c(-formation, -set_id))
-# 
+#
 # # assign weights to each of the techniques for estimating depth. x-set
 # # measurements, though the most heavily weighted, have significant uncertainties,
 # # although simply by virtue of the fact that I have a lot of them and they are at
 # # all the sites, I am going to consider them the most important ones.
-# 
+#
 # # They are, in order: xset thicknesses, channel thicknesses, bar thicknesses, and
 # # bar ydimensions (thicknesses) TODO: figure out how to weight bar measuments by
 # # grade. Future stuff.
-# 
+#
 # weightByType = tibble(measType = unique(flowDepthsSetAll$measType), weight = c(10, 10, 10))
-# 
+#
 # # join the weight vector to the table.
-# 
+#
 # flowDepthsSetAll = left_join(flowDepthsSetAll, weightByType, by = "measType")
-# 
+#
 # # group variables by formation, then by set id.
-# 
+#
 # flowDepthSet = group_by(flowDepthsSetAll, formation, set_id)
-# 
+#
 # # take a weighted mean of the different techniques by set, then by formation.
-# 
+#
 # flowDepthSetMean = flowDepthSet %>% summarize(depth = weighted.mean(x = depth, w = weight,
 #     na.rm = T))
 # flowDepthFormMean = flowDepthSetMean %>% summarize(depth = mean(depth, na.rm = T))
-# 
+#
 # # exploratory plots of the distributions.
-# 
+#
 # # Now that we have depth, the next thing we really need is grain size. I don't
 # # have any data on this yet, so I'll just build the framework for now. The data
 # # for each sample is going to come in as a separate dataset. I can provide here a
 # # list of sample names.
-# 
+#
 # sampleData = fieldDataGrouped %>% filter(meas_type == 'sample')
-# 
+#
 # bedloadSamples = sampleData %>% filter(structure != 'outcrop' & structure != 'formation' & structure != 'bar_drape' & meas_a < 2000)
-# 
+#
 # bedloadSamples = bedloadSamples %>% mutate(D50 = meas_a * 1e-6)
-# 
+#
 # # sampCodes = as.vector(na.omit(unique(fieldDataGrouped$samp_code)))
 # #
 # # sample_info = fieldDataGrouped %>% filter(!is.na(samp_code)) %>% select(samp_code,
@@ -216,16 +237,16 @@ ggsave(plot = depth_freq_field, filename = "petm_depth_piceance_frequency.png", 
 # # }
 # #
 # # sizeGuess = tibble(D50 = D50, D95 = D95, samp_code = sampCodes)
-# 
+#
 # # sampSizes = left_join(sample_info, sizeGuess, by = "samp_code")
-# 
+#
 # # flowDepthSetGrainSize = left_join(flowDepthSetMean, ungroup(sampSizes) %>%
 # # select(-(samp_description:observations), -formation), by = "set_id")
-# 
-# 
+#
+#
 # flowDepthSetGrainSize = inner_join(flowDepthSetMean, bedloadSamples %>% ungroup() %>% group_by(set_id) %>% summarize(D50 = mean(D50)), by = "set_id")
-# 
-# 
+#
+#
 # # slopeShearEstimates = flowDepthSetGrainSize %>% mutate(S = trampush_slp(D = D50, H = depth)) %>% mutate(tau = 1000 * 9.8 * depth * S)
 # #
 # # # flowDepthSetGrainSize$D50[is.na(flowDepthSetGrainSize$samp_code)] = 3e-04
@@ -252,22 +273,22 @@ ggsave(plot = depth_freq_field, filename = "petm_depth_piceance_frequency.png", 
 # #
 # # paleoHydroSetEst = left_join(flowDepthSetGrainSize, tibb_slopeF, by = "set_id") %>%
 # #     mutate(tau = 1000 * 9.8 * depth * S)
-# 
-# 
+#
+#
 # paleoHydroSetEst = flowDepthSetGrainSize %>% mutate(S = trampush_slp(D = D50, H = depth)) %>% mutate(tau = 1000 * 9.8 * depth * S)
-# 
+#
 # paleoHydroSetEst = ungroup(flowDepthSetGrainSize) %>% group_by(formation) %>% mutate(S = trampush_slp(D = D50, H = depth)) %>% mutate(tau = 1000 * 9.8 * depth * S)
-# 
+#
 # paleoHydroFormEst = paleoHydroSetEst %>% summarize(h = median(depth), depthsd = sd(depth), slope = median(S), slopesd = sd(S), tau = median(tau), Dbed = median(D50, na.rm = TRUE), D50sd = sd(D50), n = n())
-# 
+#
 # paleoHydroFormEst = paleoHydroSetEst %>% summarize(depth = median(depth), slope = median(S), tau = median(tau), D50 = median(D50, na.rm = TRUE), n = n())
-# 
+#
 # cpal = hcl(h = c(80, 120, 240), c = rep(100, 3), l = c(85, 65, 20))
-# 
+#
 # paleoHydroSetEst = paleoHydroSetEst %>% mutate(formID = case_when(formation == 'ohio_creek' ~ 3, formation == 'atwell_gulch' ~ 2, formation == 'molina' ~ 1, formation == 'shire' ~ 0))
-# 
+#
 # # df = field_data %>% mutate(formID = case_when(formation == 'ohio_creek' ~ 3, formation == 'atwell_gulch' ~ 2, formation == 'molina' ~ 1, formation == 'shire' ~ 0))
-# 
+#
 # legend_ord = levels(with(paleoHydroSetEst, reorder(formation, formID)))
 # #
 # # df %>% group_by(formID, loc_x, loc_y, formation) %>%
@@ -275,91 +296,91 @@ ggsave(plot = depth_freq_field, filename = "petm_depth_piceance_frequency.png", 
 # # ggplot() + aes(x = loc_x, y = loc_y, color = reorder(formation, formID)) +
 # # scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch','Ohio Creek'), breaks = legend_ord) +
 # # geom_point() + labs(x = 'Longitude', y = 'Latitude') + theme_minimal()
-# 
+#
 # # slope_plot
-# 
+#
 # slope_freq = paleoHydroSetEst %>% ggplot() + stat_bin(aes(x = S, y = ..density.., color = reorder(formation, formID)), geom = 'line', position = 'identity', bins = 8, size = 1.5) +
 # scale_x_log10(breaks = c(1e-04, 2e-04, 3e-04, 5e-04, 7e-04, 0.001, 0.002, 0.003), labels = c(expression(10^-4), expression(2%*%10^-4), expression(3%*%10^-4), expression(5%*%10^-4), expression(7%*%10^-4), expression(10^-3), expression(2%*%10^-3), expression(3%*%10^-3))) +
 # theme_minimal() + scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + labs(x = 'Slope (-)', y = 'Probability Density')
-# 
+#
 # # slope_freq
-# 
+#
 # # depth plot
-# 
+#
 # depth_freq = paleoHydroSetEst  %>% ggplot() + stat_bin(aes(x = depth, y = ..density.., color = reorder(formation, formID)), geom = 'line', position = "identity", binwidth = 0.7, size = 1.5) + theme_minimal() + scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + labs(x = 'Flow Depth (m)', y = 'Probability Density')
-# 
+#
 # # depth_freq
-# 
+#
 # # grain size plot
-# 
+#
 # grainsize_freq = paleoHydroSetEst %>% ggplot() + stat_bin(aes(x = D50 * 1e6, y = ..density.., color = reorder(formation, formID)), geom = 'line', position = "identity", binwidth = 65, size = 1.5) + theme_minimal() + scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + labs(x = expression(paste('Bedload Sample ', D[50], ' (', mu, 'm)')), y = 'Probability Density')
-# 
+#
 # # grainsize_freq
-# 
+#
 # # slope_plot
-# 
+#
 # slope_curves = paleoHydroSetEst %>% ggplot() + stat_density(aes(x = S, color = reorder(formation, formID)), geom = 'line', position = "identity", bw = 0.15) +
 # scale_x_log10(breaks = c(1e-04, 2e-04, 3e-04, 5e-04, 7e-04, 0.001, 0.002, 0.003), labels = c(expression(10^-4), expression(2%*%10^-4), expression(3%*%10^-4), expression(5%*%10^-4), expression(7%*%10^-4), '0.001', '0.002', '0.003')) + theme_minimal() +
 # scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + labs(x = 'Slope (-)', y = 'Probability Density')
-# 
+#
 # # slope_curves
 # # depth plot
-# 
+#
 # depth_curves = paleoHydroSetEst  %>% ggplot() + stat_density(aes(x = depth, color = reorder(formation, formID)), geom = 'line', position = "identity", bw = 0.7) + theme_minimal() + scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + labs(x = 'Flow Depth (m)', y = 'Probability Density')
-# 
+#
 # # grain size plot
-# 
+#
 # grainsize_curves = paleoHydroSetEst %>% ggplot() + stat_density(aes(x = D50 * 1e6, color = reorder(formation, formID)), geom = 'line', position = "identity", bw = 50) + theme_minimal() + scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + labs(x = expression(paste('Sample ', D[50], ' (', mu, 'm)')), y = 'Probability Density')
-# 
+#
 # # ggsave(plot = slope_curves, filename = "petm_slope_piceance_density_estimates.pdf", path = figdir, width = 7, height = 4, units = "in")
 # #
 # # ggsave(plot = grainsize_curves, filename = "petm_grainsize_piceance_density_estimates.pdf", path = figdir, width = 7, height = 4, units = "in")
 # #
 # # ggsave(plot = depth_curves, filename = "petm_depth_piceance_density_estimates.pdf", path = figdir, width = 7, height = 4, units = "in")
-# 
+#
 # ggsave(plot = slope_freq, filename = "petm_slope_piceance_frequency.png",
 #     path = figdir, width = 7, height = 4, units = "in")
-# 
+#
 # ggsave(plot = grainsize_freq, filename = "petm_grainsize_piceance_frequency.png",
 #     path = figdir, width = 7, height = 4, units = "in")
-# 
+#
 # ggsave(plot = depth_freq, filename = "petm_depth_piceance_frequency.png",
 #     path = figdir, width = 7, height = 4, units = "in")
-# 
+#
 # save(file = here("data", "derived_data", "paleoHydroFormationEstimates.rda"), paleoHydroFormEst)
 # save(file = here("data", "derived_data", "paleoHydroSetEstimates.rda"), paleoHydroSetEst)
-# 
-# 
+#
+#
 # # formNames = list('Ohio Creek','Shire','Molina','Atwell Gulch')
 # #
 # # formlabels = function(var,v) {
 # #   return(formNames[[v]])
 # # }
-# 
+#
 # SizeplotDepth = paleoHydroSetEst %>% ggplot() + theme_minimal() + scale_color_manual(values = cpal, name = 'Member', labels = c('Shire','Molina','Atwell Gulch'), breaks = legend_ord) + labs(x = expression(paste('Grain Size (', mu, 'm)')), y = 'Flow Depth (m)') + facet_grid(rows = vars(formation)) +
 # geom_smooth(method = 'lm', aes(x = D50 * 1e6, y = depth, color = reorder(formation, formID)), fill = hcl(c = 0, l = 85), level = 0.99) + theme(legend.position = 'bottom') + geom_point(aes(x = D50 * 1e6, y = depth, color = reorder(formation, formID)), position = "identity")
-# 
+#
 # ggsave(plot = SizeplotDepth, filename = "petm_depth_grainsize_piceance.pdf",
 #     path = figdir, width = 4, height = 7, units = "in")
-# 
+#
 # # and once we have a list of the names, which will be the data frame names, we
 # # just need to calculate the D50 of each, and the Dmaxs of each, and compile them
 # # here.
-# 
+#
 # ######################################################################################################################## Some code extracting the D50 from each sample code, ending in a predictably
 # ######################################################################################################################## named dataset grainSizeSamples
-# 
+#
 # # left_join(fieldDataGrouped, grainSizeSamples, by = 'set_id')
-# 
+#
 # ######################################################################################################################## Some code generating some fake grainsize data based on notes.  coarse/medium
 # ######################################################################################################################## sand = 500 micron medium/fine sand = 200 micron medium silt = 20 micron
-# 
-# 
+#
+#
 # paleoHydroFormEst = paleoHydroFormEst %>% mutate(formID = case_when(formation == 'ohio_creek' ~ 0, formation == 'atwell_gulch' ~ 1, formation == 'molina' ~ 2, formation == 'shire' ~ 3))
-# 
-# 
+#
+#
 # stratdat = paleoHydroFormEst %>% mutate(D50 = D50 * 10^6, slope = slope * 10^4) %>% gather(var, data, -c(formation,formID))
-# 
+#
 # stratplot = stratdat %>% filter(var != 'n') %>% ggplot() + aes(y = formID, x = data) + geom_path() + geom_point() + facet_grid(cols = vars(var), scales = 'free_x') + theme_minimal()
-# 
+#
 # stratplot
