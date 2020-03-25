@@ -24,7 +24,7 @@ data/*
 # documents/*
 images/*
 figures/outputs/*
-
+documents/barefoot_manuscript_reworking/working_draft/*.tex
 *.pdf
 
 *.tmp
