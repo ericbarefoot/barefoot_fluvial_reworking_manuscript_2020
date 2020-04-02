@@ -109,12 +109,13 @@ aes(xintercept = vals, color = formID), size = 2) +
 # adjust other parameters for the whole plot.
 scale_fill_manual(values = cpal, name = 'Stratigraphic Member', labels = form_labs) +
 scale_color_manual(values = cpal) +
-facet_grid(rows = vars(formID), cols = vars(meas), scales = 'free_x', labeller = labels) +
+facet_grid(rows = vars(formID), cols = vars(meas), scales = 'free_x', labeller = labels, switch = 'x') +
 labs(x = NULL, y = 'Frequency') +
-theme_classic() +
-theme(strip.background = element_blank(), strip.text.y = element_blank(), legend.position = 'bottom') +
+theme_minimal() +
+theme(strip.background = element_blank(), legend.position = 'none', strip.placement = "outside") +
 guides(color = 'none')
 
 # save figure
 
 ggsave(plot = data_figure, filename = "petm_data.pdf", path = figdir, width = 6, height = 4, units = "in")
+ggsave(plot = data_figure, filename = "petm_data.png", path = figdir, width = 6, height = 4, units = "in")
