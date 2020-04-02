@@ -82,66 +82,35 @@ In this study, we revisit the well-studied Piceance Basin (Colorado, USA), where
 New paleohydraulic techniques are used in conjunction with additional measurements of channel geometries to assess changes to fluvial dynamics during the PETM.
 These field data are combined with insights from a geometric numerical model \parencite{chamberlin_using_2019} to analyze the impact of altered fluvial dynamics on sediment dispersal during the PETM in the Piceance Basin.
 
+\section{Study Locality and Paleohydraulic Methods}
 
-% As an example, a scenario where total sediment flux increases will carry significantly different implications for sediment dispersal patterns and element cycling in the floodplain as compared to a scenario where total sediment flux is constant.
-% These ramifications can all impact the climate signal encoded in sediment and biogeochemical proxies ultimately recorded in marine basins \parencite{foreman_autogenic_2017, trampush_identifying_2017, straub_influence_2013}.
+To study the impacts of PETM-modulated changes in hydrological cycling on fluvial systems, we turn to the Piceance Basin (Colorado, USA), an intermontane Laramide depocenter active throughout the Paleogene and Eocene \parencite{johnson_history_2003}.
+Sedimentary fill of the Piceance Creek Basin is conformable across the Paleocene-Eocene boundary, and the PETM interval is marked in the Piceance Basin by a distinctive \del{13}{C}{} isotope excursion, correlating with a distinctive sand-rich unit known as the Molina member of the Wasatch Formation \parencite{foreman_fluvial_2012}.
 
+Juxtaposed between mud-rich units, sedimentological characteristics of the sandy Molina member contrast starkly with the underlying Atwell Gulch and the overlying Shire members of the Wasatch Formation \parencite{donnell_paleocene_1969}.
+While the Atwell Gulch and Shire members largely consist of a matrix of muddy floodplain paleosols containing isolated channel sand bodies, the Molina member comprises interconnected, sheetlike amalgamated sand bodies with relatively thin intervening layers of floodplain mud.
 
-% Insights derived from the paleoenvironmental record of the PETM can be leveraged to guide and improve climate models and long-term hazard forecasts.
+While tectonic factors could have driven sand enrichment in the Molina member, detrital zircon analysis and basin-scale deposit geometries in the Wasatch Formation argue against a wholesale increase in sediment supply due to increased uplift rates or unroofing of sand-rich units in the hinterland \parencite{foreman_fluvial_2012}.
+Additionally, the great distance of the paleo-shoreline ($>1000$ km) and a lack of evidence for temporally-variable subsidence indicate that a change in accommodation is unlikely to have influenced sedimentation in the Piceance Basin \parencite{johnson_history_2003}.
 
+In their study, \textcite{foreman_fluvial_2012} indicate that the distinctive changes in channel stacking patterns and sand enrichment in the Molina member are best explained as a fluvial response to climate-induced changes in hydrological cycling during the PETM.
+In particular, their data indicate that Piceance Basin rivers deepened and widened to convey more intense flows during the PETM, and further suggest that changing precipitation evacuated sediment from hillslopes, driving high fluxes during the PETM.
+However, data on changing fluvial geometries like depth and slope from other basins are more equivocal with regard to both paleo-discharge and sediment flux \parencite[e.g.][]{chen_estimating_2018}.
 
+Part of the source of this discrepancy is that paleohydraulic inversion techniques based on fluvial geometries carry substantial uncertainty \parencite{trampush_empirical_2014}.
+Additional information can be gained by combining geometry-based methods with techniques to evaluate fluvial kinematics.
+For example, work by \cnote[jones and Hajek] suggests that the predominant avulsion style in an alluvial basin may be indicative of \mnote[channel-floodplain processes]{seek language in the paper for this.}, while \textcite{chamberlin_using_2019} indicate that reworking of fluvial bar structures can indicate the relative rate of fluvial reworking in the floodplain.
+In this study, we evaluate the impact of the PETM on fluvial systems in the Piceance Basin by quantifying four key paleohydraulic parameters in the Piceance Basin: (1) channel flow depth, (2) fluvial slope, (3) lateral migration, and (4) avulsion style.
 
-
-% The PETM is the best-known analogue to modern conditions, but interpretations of the stratigraphic record of PETM warming in marine and terrestrial basins are hindered by incomplete models for how climate affects fluvial processes \parencite{mcinerney_paleocene-eocene_2011, romans_environmental_2016}.
-%
-%  sedimentary basins are the primary archives holding records of paleoenvironmental change , .
-%
-% Alluvial basins form the central link in the terrestrial sediment transport system, where climate modulates the supply of sediment and water from upstream sources \parencite{romans_environmental_2016}, thereby modifying river dynamics like channel geometries and avulsion rates \parencite{bryant_experimental_1995, heller_downstream_1996}.
-% The volume and character of sediment exported downstream from alluvial basins is controlled by the balance between subsidence and fluvial dynamics \parencite{allen_studies_1978, leeder_quantitative_1977, bridge_simulation_1979}.
-% When rivers are large, and migrate or avulse rapidly relative to subsidence rates, channels can rework the floodplain surface before sediment subsides below a characteristic compensation depth \parencite{hajek_flow-depth_2012, wickert_river_2013}.
-% Floodplain stratigraphy built by active rivers that re-excavate floodplain deposits are therefore characterized by densely stacked channel deposits \parencite{heller_downstream_1996}.
-%
-% It follows that since channel deposits are primarily composed of sand, deep channelized systems with accelerated kinematic rates preferentially fractionate sand into alluvial strata, in the extreme case depriving shorelines of sand and bypassing mud to marine basins.
-% However, interpreting a change in the concentration of mud and sand in the stratigraphic record as a climatic signal is challenging, since a broad range of terrestrial processes could promote sand enrichment in alluvial floodplains \parencite{wright_sequence_1993, straub_influence_2013, allen_studies_1978}.
-% For example, an increase in the fraction of sand supplied by hillslopes or a decrease in subsidence rate are both sufficient to enrich sand in the floodplain without requiring a change in fluvial dynamics or climate.
-%
-% To isolate the influence of climate on sand fractionation in alluvial systems, it is necessary to place independent constraints on subsidence and sediment provenance as well as channel dimensions and kinematics.
-% Here we apply this approach to the well-studied Piceance Basin (Colorado, USA), where changes in channel stacking patterns and sand enrichment have been attributed to altered hydrological cycling related to the Paleocene-Eocene Thermal Maximum (PETM).
-% Subsidence and sediment provenance are well understood for the Piceance Basin, so we constrain channel geometries and kinematics with a new suite of paleohydraulic data, and offer a refined model for alluvial response to abrupt climate warming. We apply this model to explore the impacts of sediment fractionation in alluvial systems on sediment export during the PETM.
-% \pnote[may be worth expanding this bit later.]
-
-\section{Methods}
-
-\subsection{Study Locality}
-
-Laramide tectonism drove subsidence in the Piceance Basin, where alluvial deposits are conformable across the Paleocene-Eocene boundary and record climate conditions integrated over approximately 60,000 km$^2$ of drainage area during the PETM \parencite{johnson_history_2003}.
-The PETM interval is marked in the Piceance Basin by a distinctive \del{13}{C}{} isotope excursion, correlating with a distinctive sand-rich unit known as the Molina member of the Wasatch Formation \parencite{foreman_fluvial_2012}.
-
-Juxtaposed between mud-rich units, sedimentological characteristics of the sandy Molina member contrast starkly with the underlying Atwell Gulch Member and the overlying Shire member of the Wasatch Formation \parencite{donnell_paleocene_1969}.
-While the Atwell Gulch and Shire members are composed largely of a matrix of muddy floodplain paleosols containing isolated channel sand bodies, the Molina member comprises interconnected, sheetlike amalgamated sand bodies with relatively thin intervening layers of floodplain mud.
-The distinctive sand enrichment in the Molina member has been explained as a fluvial response to climate-induced changes in hydrological cycling during the PETM \parencite{foreman_fluvial_2012}.
-
-This interpretation connects the response in the Piceance with that in other basins around the world, where sedimentological shifts have been interpreted to be due to more intense monsoonal precipitation during the PETM and enhanced sediment flux from hillslopes \parencite{pujalte_massive_2015, schmitz_abrupt_2007, foreman_fluvial_2012, foreman_climate-driven_2014}.
-It is important to note that a sustained increase in sediment flux to alluvial basins can drive disparate responses in alluvial systems, where river channel geometries like width, depth, and slope would have adjusted to accommodate higher sediment fluxes and more intense flows \parencite[][and others]{strong_mass-balance_2005, bryant_experimental_1995}.
-The nature of the response carries implications for sediment dispersal throughout the terrestrial transport system.
-For example, systems that developed higher gradients would accumulate coarse facies proximal to mountain uplifts, whereas a shallowing in gradient would allow coarse facies to prograde distally \parencite{heller_downstream_1996, armitage_transformation_2011}.
-Evaluating the effects of PETM precipitation on sediment fluxes and distinguishing between different scenarios of sediment dispersal requires constraints on key paleohydraulic parameters.
-However, while \textcite{foreman_fluvial_2012} indicate that Piceance Basin rivers deepened and widened to convey higher flows, data from other basins are more equivocal \parencite{chen_estimating_2018}.
-It is even less clear how river gradients or avulsion rates responded to the shift in flooding regime, key parameters for reconstructing paleolandscape dynamics.
-
-The Piceance Creek Basin is a uniquely suited locale in which to test hypothesized histories of landscape responses to climate perturbation using paleohydraulic techniques.
-While climate varies throughout the Wasatch Formation, detrital zircon analysis and basin-scale deposit geometries argue against a wholesale increase in sediment supply due to tectonic uplift or unroofing of sand-rich units in the hinterland \parencite{foreman_fluvial_2012}.
-Additionally, the great distance of the paleo-shoreline ($>1000$ km) and a lack of evidence for temporally-variable subsidence indicate that neither of these allogenic mechanisms are likely to have influenced sedimentation in the Piceance Basin \parencite{johnson_history_2003}.
-
-\subsection{Paleohydraulic Techniques}
-
-We use recently developed paleohydraulic techniques to quantify three key paleohydraulic parameters in the Piceance Creek Basin.
-Using data collected during field campaigns from 2017-2019, we quantify changes in paleo-flow depth through the Wasatch Formation by measuring the relief on fully-preserved fluvial barforms \parencite{mohrig_interpreting_2000}.
+Paleohydraulic data were collected during three field campaigns from 2017-2019 as well as aggregated from previous literature and unpublished data.
+Changes in paleo-flow depth through the Wasatch Formation by measuring the relief on fully-preserved fluvial barforms \parencite{mohrig_interpreting_2000}\mnote{what's the other one?}.
 These paleo-flow depths were combined with co-located measurements of median bedload grain size interpreted using a hand lens and grain-size card to estimate paleoslope via the empirical scaling introduced by \textcite{trampush_empirical_2014}.
-We also collected drone imagery for 12 outcrops in the Piceance Creek Basin, and mapped barform preservation and sand concentration throughout the Wasatch Formation.
-These data were used to estimate a relative increase in reworking \parencite{chamberlin_using_2019}.
-Finally, we estimate relative sand bypass and fractionation across the PETM in the Piceance Creek Basin.
-\mnote[The dataset of paleoflow depths was augmented with additional data from previous literature and unpublished field work in the Piceance Basin, as well as data documenting avulsion styles in the Wasatch Formation.]{This is what we would like Liz to contribute.}
+To estimate barform preservation, and relative floodplain reworking, drone imagery was collected for 12 outcrops in the Piceance Creek Basin, and photogrammetry was used to construct 3D digital models of the outcrop surface.
+Bar clinoforms were mapped on the 3D digital outcrops, and barforms were classified as either fully preserved, partially preserved, or truncated after \textcite{chamberlin_using_2019}.
+Avulsion style was classified from field observations in all three members of the Wasatch formation using criteria in \cnote[Jones \& Hajek].
+
+
+
 
 \section{Results}
 
@@ -152,17 +121,6 @@ Taken together, these results suggest that within the resolution of current pale
 Mapping sedimentary structure preservation throughout the Wasatch Formation shows that barforms in the Molina member crosscut each other more frequently, and are less well preserved than in either the Shire or Atwell Gulch members (p-value = \Sexpr{signif(p_comp_reworking, digits = 3)}).
 Our data also indicate that avulsion style changed during Molina time, when incisional avulsions were more abundant than progradational avulsions.
 Given that barform geometries indicate no change in depth or slope, more abundant cross-cutting and incisional avulsions imply that river channels revisited locations frequently, cross-cutting previously deposited structures and reworking the floodplain surface.
-
-% \begin{table}[H]
-% \centering
-% \begin{tabular}{l | l}
-% comparison & p-value \\
-% \hline
-% bar preservation & \Sexpr{} \\
-% \end{tabular}
-% \label{tab:preservation}
-% \caption{Conover-Iman test results for comparing flow depths in different members of the Wasatch Formation.}
-% \end{table}
 
 We take our estimates of bar preservation in the Wasatch Formation, and compare them to a suite of numerical experiments conducted using the model developed in \textcite{chamberlin_interpreting_2015}.
 This reduced-complexity model allows avulsion style, as well as key parameters like avulsion rate, channel dimensions, and subsidence to be controlled independently, producing synthetic stratigraphy.
