@@ -176,15 +176,25 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 
 \newpage
 
-% \begin{figure}[H]
-% 	\centering
-% 	\includegraphics[width = 0.9\textwidth]{map.pdf}
-% 	\begin{minipage}{0.9\textwidth}
-% 	\vspace*{2mm}
-% 	\caption{Caption_Here}
-% 	\label{fig:short_fig_name}
-% 	\end{minipage}
-% \end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.9\textwidth]{map.pdf}
+	\begin{minipage}{0.9\textwidth}
+	\vspace*{2mm}
+	\caption{Caption_Here}
+	\label{fig:map}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.9\textwidth]{photos.pdf}
+	\begin{minipage}{0.9\textwidth}
+	\vspace*{2mm}
+	\caption{Caption_Here}
+	\label{fig:outcrops}
+	\end{minipage}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
@@ -195,28 +205,6 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 	\label{fig:paleo_geom}
 	\end{minipage}
 \end{figure}
-
-  % \centering
-  % \begin{subfigure}[t]{0.25\textwidth}
-  % \centering
-  % \includegraphics[height=2in, draft=false]{petm_depth_piceance_frequency.png}
-  % % \caption{Lorem ipsum}
-  % \end{subfigure}%
-  % ~
-  % \begin{subfigure}[t]{0.25\textwidth}
-  % \centering
-  % \includegraphics[height=2in, draft=false]{petm_grainsize_piceance_frequency.png}
-  % % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  % \end{subfigure}
-  % ~
-  % \begin{subfigure}[t]{0.4\textwidth}
-  % \centering
-  % \includegraphics[height=2in, draft=false]{petm_slope_piceance_frequency.png}
-  % % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-  % \end{subfigure}
-  % \label{fig:paleo_geom}
-% \end{figure}
-%
 
 \begin{table}[H]
 \centering
@@ -230,25 +218,6 @@ Atwell Gulch -- Shire & \Sexpr{signif(p_comp_S_M, digits = 3)} & \Sexpr{signif(p
 \caption{Conover-Iman test results for comparing flow depths in different members of the Wasatch Formation.}
 \label{tab:paleo_geom}
 \end{table}
-
-
-% \begin{figure}[H]
-%   \centering
-%   \begin{subfigure}[t]{0.4\textwidth}
-%   \centering
-%   \includegraphics[height=2in, draft=false]{petm_bar_preservation.png}
-%   % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-%   \end{subfigure}
-%   ~
-%   \begin{subfigure}[t]{0.4\textwidth}
-%   \centering
-%   \includegraphics[height=2in, draft=false]{petm_sediment_retention.png}
-%   % \caption{Lorem ipsum, lorem ipsum,Lorem ipsum, lorem ipsum,Lorem ipsum}
-%   \end{subfigure}
-%   \caption{Caption place holder}
-%   \label{fig:paleo_preservation}
-% \end{figure}
-
 
 \printbibliography
 %
