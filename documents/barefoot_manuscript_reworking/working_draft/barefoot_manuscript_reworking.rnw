@@ -109,8 +109,16 @@ To estimate barform preservation, and relative floodplain reworking, drone image
 Bar clinoforms were mapped on the 3D digital outcrops, and barforms were classified as either fully preserved, partially preserved, or truncated after \textcite{chamberlin_using_2019}.
 Avulsion style was classified from field observations in all three members of the Wasatch formation using criteria in \cnote[Jones \& Hajek].
 
+\section{Results}
 
+Our new dataset of paleoflow depth, which includes literature values, indicates that paleoflow depths are statistically indistinguishable throughout the Wasatch Formation at a 95\% confidence level, as shown in Table \ref{tab:paleo_geom} and Figure \ref{fig:paleo_geom}a.
+Additionally, our estimates of paleoslope in the Piceance Basin indicate no difference between the Molina member and the bounding members at a 95\% confidence level (Figure \ref{fig:paleo_geom}b).
+This demonstrates that within the resolution of current paleohydraulic methods, rivers were likely not substantially deeper or steeper during the PETM as opposed to before or after.
 
+Mapping sedimentary structure preservation throughout the Wasatch Formation shows that barforms in the Molina member crosscut each other more frequently, and are less well preserved than in either the Shire or Atwell Gulch members.
+In the Molina member, only \Sexpr{signif(molinaPerc, digits = 4)}\% of barforms were fully preserved, whereas in the Atwell Gulch and Shire members, \Sexpr{signif(atwellPerc, digits = 4)}\% and \Sexpr{signif(shirePerc, digits = 4)}\% of barforms were fully preserved, respectively.
+Using a $\chi^2$ test, we find that there are significantly fewer preserved barforms in the Molina member ($\chi^2$(\Sexpr{barpres_test$parameter}, n~=~\Sexpr{sum(barpres_test$observed)}) = \Sexpr{signif(barpres_test$statistic, digits = 3)}, p = \Sexpr{signif(barpres_test$p.value, digits = 3)} (2-tailed)).
+\mnote[Our data also indicate that avulsion style changed during Molina time, and that incisional avulsions were more abundant than progradational avulsions.]{this is what we would like Liz to contribute}
 
 \section{Results}
 
