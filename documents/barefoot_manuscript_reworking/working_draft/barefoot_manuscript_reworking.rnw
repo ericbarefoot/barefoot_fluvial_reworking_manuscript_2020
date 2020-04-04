@@ -208,12 +208,30 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 
 \begin{table}[H]
 \centering
-\begin{tabular}{l | l | l}
-comparison & depth p-value & slope p-value \\
+\begin{tabular}{lllll}
+Formation & Depth (m) $\pm \sigma$  & Slope (--) $\pm \sigma$ & \% reworked bars $\pm \sigma$ & avulsion style \\
 \hline
-Atwell Gulch -- Molina & \Sexpr{signif(p_comp_AG_M, digits = 3)} & \Sexpr{signif(p_comp_AG_M_slope, digits = 3)} \\
-Shire -- Molina & \Sexpr{signif(p_comp_AG_S, digits = 3)} & \Sexpr{signif(p_comp_AG_S_slope, digits = 3)} \\
-Atwell Gulch -- Shire & \Sexpr{signif(p_comp_S_M, digits = 3)} & \Sexpr{signif(p_comp_S_M_slope, digits = 3)} \\
+Shire         &
+\Sexpr{signif(geoms$meanDepth[3], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdDepth[3], digits = 3)}  &
+\Sexpr{signif(geoms$meanSlope[3], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdSlope[3], digits = 3)} &
+\Sexpr{signif(pres$meanPres[3], digits = 3)} $\pm$ \Sexpr{signif(pres$sdPres[3], digits = 3)} &
+? $\pm$ ? \\
+Molina        &
+\Sexpr{signif(geoms$meanDepth[2], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdDepth[2], digits = 3)}  &
+\Sexpr{signif(geoms$meanSlope[2], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdSlope[2], digits = 3)}  &
+\Sexpr{signif(pres$meanPres[2], digits = 3)} $\pm$ \Sexpr{signif(pres$sdPres[2], digits = 3)} &
+? $\pm$ ? \\
+Atwell Gulch  &
+\Sexpr{signif(geoms$meanDepth[1], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdDepth[1], digits = 3)}  &
+\Sexpr{signif(geoms$meanSlope[1], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdSlope[1], digits = 3)}  &
+\Sexpr{signif(pres$meanPres[1], digits = 3)} $\pm$ \Sexpr{signif(pres$sdPres[1], digits = 3)} &
+? $\pm$ ? \\
+\hline
+Atwell Gulch -- Molina  & $\Sexpr{p_comp_AG_M}$ & $\Sexpr{p_comp_AG_M_slope}$  &
+\multirow{3}{*}{$\Sexpr{p_comp_reworking}$} & \multirow{3}{*}{$p = ??$} \\
+Shire -- Molina         & $\Sexpr{p_comp_AG_S}$ & $\Sexpr{p_comp_AG_S_slope}$  & & \\
+Atwell Gulch -- Shire   & $\Sexpr{p_comp_S_M}$  & $\Sexpr{p_comp_S_M_slope}$   & & \\
+\hline
 \end{tabular}
 \caption{Conover-Iman test results for comparing flow depths in different members of the Wasatch Formation.}
 \label{tab:paleo_geom}
