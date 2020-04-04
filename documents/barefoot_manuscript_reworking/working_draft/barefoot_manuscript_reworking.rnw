@@ -38,15 +38,18 @@ options(formatR.arrow=TRUE,width=90)
 
 <<initial_stuff>>=
 remake_models_bool = FALSE
+recalculate_stats = FALSE
 library(here)
 if (remake_models_bool)
 {
   source(here('analysis', 'data_io', 'io_toolbox.r'))
+} else if (recalculate_stats) {
+  source(here('analysis', 'paleo_geoms', 'test_differences.r'))
+  source(here('analysis', 'analyzing_reworking', 'test_differences.r'))
+  source(here('figures', 'src', 'piceance_manuscript_data_plot.r'))
 }
-source(here('analysis', 'paleo_geoms', 'test_differences.r'))
-source(here('analysis', 'analyzing_reworking', 'test_differences.r'))
-source(here('figures', 'src', 'piceance_manuscript_data_plot.r'))
-# load()
+load(here('data','data_summaries', 'paleo_geom.rda'))
+load(here('data','data_summaries', 'paleo_pres.rda'))
 @
 
 
