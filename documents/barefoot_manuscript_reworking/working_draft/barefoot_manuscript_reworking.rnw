@@ -178,20 +178,27 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = 0.9\textwidth]{map.pdf}
+	\includegraphics[width = 4in, draft = false]{manuscript_map.pdf}
 	\begin{minipage}{0.9\textwidth}
 	\vspace*{2mm}
-	\caption{Caption_Here}
+	\caption{The Piceance Basin is located in western Colorado, shown in the inset in dark grey, with key nearby cities and towns.
+  The Wasatch Formation is exposed as shown in the grey shading in the map, surrounding the town of De Beque, and outcropping along the I-70 corridor.
+  Color-coded dots indicate outcrops that were analyzed for this study.
+  The color scheme is consistent through the paper, where yellow will always signify the Shire member, green the Molina, and blue the Atwell Gulch.
+  }
 	\label{fig:map}
 	\end{minipage}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = 0.9\textwidth]{photos.pdf}
+	\includegraphics[width = 4.5in, draft=false]{annotated_outcrops_figure.pdf}
 	\begin{minipage}{0.9\textwidth}
 	\vspace*{2mm}
-	\caption{Caption_Here}
+	\caption{Example outcrops showing key sedimentological features in each member of the Wasatch Formation.
+  Color-coded lines indicate high-order bounding surfaces between channel storeys, whereas the white lines in each photograph indicate bar faces and scour surfaces.
+  Note the neatly stacking clinoform bar faces in the Atwell Gulch and Shire members, indicating full preservation.
+  In contrast, extensively cross-cutting bar scours and faces in the Molina member indicate scour and truncation.}
 	\label{fig:outcrops}
 	\end{minipage}
 \end{figure}
@@ -201,7 +208,10 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 	\includegraphics[width = 0.9\textwidth, draft=false]{petm_data.pdf}
 	\begin{minipage}{0.9\textwidth}
 	\vspace*{2mm}
-	\caption{Caption here}
+	\caption{Estimates of paleohydraulic parameters in the Piceance Basin.
+  Paleoflow depth is consistent across all three members of the Wasatch Formation, as is paleoslope.
+  The Molina member shows significantly fewer fully preserved bars as opposed to the Atwell Gulch or Shire members.
+  Additionally, the Molina member experiences many more transitional-type avulsions.}
 	\label{fig:paleo_geom}
 	\end{minipage}
 \end{figure}
@@ -233,7 +243,9 @@ Shire -- Molina         & $\Sexpr{p_comp_AG_S}$ & $\Sexpr{p_comp_AG_S_slope}$  &
 Atwell Gulch -- Shire   & $\Sexpr{p_comp_S_M}$  & $\Sexpr{p_comp_S_M_slope}$   & & \\
 \hline
 \end{tabular}
-\caption{Conover-Iman test results for comparing flow depths in different members of the Wasatch Formation.}
+\caption{Data for Wasatch Formation in the Piceance Basin.
+Included for each member of the Formation are paleoflow depths measured from barforms, paleoslopes, the proportion of fully preserved bars, the prevalance of transitional avulsions, and the associated uncertainty for each term.
+The second part of the table indicates significance values for Conover-Iman tests comparing flow depths and slope in different members of the Wasatch Formation, as well as results from a $\chi^2$ test for the proportion of fully preserved bars and abundance of avulsion styles.}
 \label{tab:paleo_geom}
 \end{table}
 
