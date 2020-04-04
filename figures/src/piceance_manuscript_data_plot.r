@@ -16,6 +16,7 @@ library(colorspace)
 library(paleohydror)
 library(purrr)
 library(rsample)
+library(extrafont)
 
 if (interactive()) {
     require(colorout)
@@ -41,7 +42,7 @@ mutate(formID = case_when(
   formation == 'shire' ~ 0)
 ) %>%
 select(formID, id, frac_elems) %>%
-mutate(depth = NA, slope = NA) %>%
+mutate(depth = NA, slope = NA, frac_elems = frac_elems * 100) %>%
 slice(1:round(n() * 0.5))
 
 barpres_means = barpres %>% group_by(formID) %>%
@@ -87,6 +88,26 @@ mutate(meas = as.factor(
 )
 )
 
+barpresN = model %>% filter(interpretations %in% c('full','partial','truncated')) %>% group_by(formation) %>% summarize(n = n()) %>% mutate(formID = as.factor(case_when(
+  formation == 'ohio_creek' ~ 3,
+  formation == 'atwell_gulch' ~ 2,
+  formation == 'molina' ~ 1,
+  formation == 'shire' ~ 0)),
+  meas = as.factor(300)
+) %>% select(-formation)
+
+depthSlopeN = data_table %>% filter(!is.na(vals), meas != 300) %>% group_by(formID, meas) %>% summarize(n = n())
+
+anno_1 = tibble(
+  meas = rep(c('100','200','300'), each = 3),
+  exx = c(7,7,7,0.05,0.05,0.05,15,40,15),
+  why = rep(15, 9),
+  formID = rep(c('0','1','2'), 3)
+)
+
+anno = inner_join(anno_1, bind_rows(barpresN, depthSlopeN), by = c('formID', 'meas')) %>%
+mutate(n = paste('n =', n))
+
 labels = as_labeller(c(`0` = 'Shire', `1` = 'Molina', `2` = 'Atwell Gulch', `100` = 'Flow Depth (m)', `200` = 'Fluvial Slope (º)', `300` = '% Fully Preserved Bars'))
 form_labs = c('Shire','Molina','Atwell Gulch')
 
@@ -106,14 +127,19 @@ geom = 'bar', position = "identity", bins = 20, size = 0.5, alpha = 0.4) +
 # plot mean line
 geom_vline(data = filter(data_table, split == 4),
 aes(xintercept = vals, color = formID), size = 2) +
+# add n = text
+geom_text(aes(x = exx, y = why, label = n), color = 'grey35', size = 3, data = anno, family = "CMU Serif") +
 # adjust other parameters for the whole plot.
 scale_fill_manual(values = cpal, name = 'Stratigraphic Member', labels = form_labs) +
 scale_color_manual(values = cpal) +
 facet_grid(rows = vars(formID), cols = vars(meas), scales = 'free_x', labeller = labels, switch = 'x') +
 labs(x = NULL, y = 'Frequency') +
 theme_minimal() +
-theme(strip.background = element_blank(), legend.position = 'none', strip.placement = "outside") +
+theme(strip.background = element_blank(), legend.position = 'none', strip.placement = "outside", text = element_text(family = "CMU Serif")) +
 guides(color = 'none')
+
+
+# data_figure
 
 # save figure
 
