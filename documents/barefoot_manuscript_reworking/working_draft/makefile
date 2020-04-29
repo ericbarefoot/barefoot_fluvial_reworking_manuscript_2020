@@ -3,6 +3,7 @@ all: barefoot_manuscript_reworking.pdf clean
 clean:
 	rm -f *.aux *.aux *.lof *.log *.lot *.fls *.out *.toc *.fmt
 	rm -f *.fot *.cb *.cb2 .*.lb *.bcf *.run.xml *.bbl *.blg *.tex.bak
+	rm -f *.tex
 
 figures:
 	cp ../../../figures/outputs/manuscript_figures/* figures/

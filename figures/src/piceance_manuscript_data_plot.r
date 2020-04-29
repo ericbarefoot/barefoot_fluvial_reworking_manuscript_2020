@@ -76,6 +76,11 @@ mutate(id = NA, frac_elems = NA, mean_elems = NA, depth = NA)
 depths = field_depths %>% select(formID, depth) %>%
 mutate(id = NA, frac_elems = NA, mean_elems = NA, slope = NA)
 
+# This is a template for what it might look like to get new avulsion data from Liz
+# and how I would incorporate it into the dataset to make a 4 column figure
+# avuls = avulsions %>% select(formID, style) %>%
+# mutate(id = NA, frac_elems = NA, mean_elems = NA, slope = NA, depth = NA)
+
 data_table = bind_rows(depths, slopes, barpres, barpres_means, .id = 'split') %>%
 mutate(formID = as.factor(formID)) %>% select(-id) %>%
 pivot_longer(c(depth, slope, frac_elems, mean_elems), names_to = 'meas', values_to = 'vals') %>%
@@ -138,6 +143,8 @@ theme_minimal() +
 theme(strip.background = element_blank(), legend.position = 'none', strip.placement = "outside", text = element_text(family = "CMU Serif")) +
 guides(color = 'none')
 
+
+# + theme(text = element_text(family = "Decima WE"))
 
 # data_figure
 
