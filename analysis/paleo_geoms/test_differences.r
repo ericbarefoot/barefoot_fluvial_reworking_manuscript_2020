@@ -91,11 +91,20 @@ slope_summary = paleohydroset %>% group_by(formation) %>% summarize(meanSlope = 
 
 geoms = inner_join(slope_summary, depth_summary, by = 'formation')
 
-save(p_comp_AG_M_slope,
-p_comp_AG_S_slope,
-p_comp_S_M_slope,
-p_comp_AG_M,
-p_comp_AG_S,
-p_comp_S_M,
-geoms,
-file = here('data', 'data_summaries', 'paleo_geom.rda'))
+# find out how many new data points we have.
+
+ndata = field_depths %>% mutate(mine = ifelse(set_id == 'FORMANA', 'no', 'yes')) %>% group_by(mine) %>% summarize(n = n()) %>% pull(n)
+
+nold = ndata[1]
+nnew = ndata[2]
+
+save(nold,
+  nnew,
+  p_comp_AG_M_slope,
+  p_comp_AG_S_slope,
+  p_comp_S_M_slope,
+  p_comp_AG_M,
+  p_comp_AG_S,
+  p_comp_S_M,
+  geoms,
+  file = here('data', 'data_summaries', 'paleo_geom.rda'))
