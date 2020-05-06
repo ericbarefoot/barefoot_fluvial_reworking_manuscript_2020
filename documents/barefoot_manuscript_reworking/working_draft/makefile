@@ -18,9 +18,10 @@ barefoot_manuscript_reworking.pdf: barefoot_manuscript_reworking.rnw  reworking_
 	pdflatex	-interaction batchmode	barefoot_manuscript_reworking.tex
 	pdflatex	-interaction batchmode	barefoot_manuscript_reworking.tex
 	make clean
+	make barefoot_manuscript_reworking.docx
 
-barefoot_manuscript_reworking.docx:  barefoot_manuscript_reworking.tex #reworking_enrichment.bib
-	pandoc --reference-doc=pandoc_reference_doc.docx -o barefoot_manuscript_reworking.docx barefoot_manuscript_reworking.tex
+barefoot_manuscript_reworking.docx:  barefoot_manuscript_reworking.tex makefile #reworking_enrichment.bib
+	pandoc --reference-doc=pandoc_reference_doc.docx -o barefoot_manuscript_reworking.docx barefoot_manuscript_reworking.tex --bibliography=reworking_enrichment.bib --filter pandoc-crossref
 
 fix_biber:
 	rm -rf `biber --cache`
