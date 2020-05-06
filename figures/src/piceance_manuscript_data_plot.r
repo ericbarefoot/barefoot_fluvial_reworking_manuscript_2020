@@ -17,6 +17,7 @@ library(paleohydror)
 library(purrr)
 library(rsample)
 library(extrafont)
+library(scales)
 
 if (interactive()) {
     require(colorout)
@@ -69,7 +70,7 @@ transmute(set_id = set_id, D50 = meas_a * 1e-6)
 slopes =
 inner_join(field_depths, bedloadSamples, by = 'set_id') %>%
 group_by(formID, set_id) %>% summarize(depth = median(depth), D50 = median(D50)) %>%
-mutate(slope = atan(trampush_slp(D50, depth)) * (90 / pi)) %>%
+mutate(slope = trampush_slp(D50, depth)) %>%
 select(formID, slope) %>%
 mutate(id = NA, frac_elems = NA, mean_elems = NA, depth = NA)
 
@@ -87,9 +88,9 @@ pivot_longer(c(depth, slope, frac_elems, mean_elems), names_to = 'meas', values_
 mutate(meas = ifelse(meas == 'mean_elems', 'frac_elems', meas)) %>%
 mutate(meas = as.factor(
   case_when(
-  meas == 'depth' ~ 100,
-  meas == 'slope' ~ 200,
-  meas == 'frac_elems' ~ 300)
+  meas == 'depth' ~ 'AAA',
+  meas == 'slope' ~ 'BBB',
+  meas == 'frac_elems' ~ 'CCC')
 )
 )
 
@@ -98,14 +99,15 @@ barpresN = model %>% filter(interpretations %in% c('full','partial','truncated')
   formation == 'atwell_gulch' ~ 2,
   formation == 'molina' ~ 1,
   formation == 'shire' ~ 0)),
-  meas = as.factor(300)
+  meas = as.factor('CCC')
 ) %>% select(-formation)
 
-depthSlopeN = data_table %>% filter(!is.na(vals), meas != 300) %>% group_by(formID, meas) %>% summarize(n = n())
+depthSlopeN = data_table %>% filter(!is.na(vals), meas != 'CCC') %>% group_by(formID, meas) %>% summarize(n = n())
 
 anno_1 = tibble(
-  meas = rep(c('100','200','300'), each = 3),
-  exx = c(7,7,7,0.05,0.05,0.05,15,40,15),
+  meas = rep(c('AAA','BBB','CCC'), each = 3),
+  exx = c(7,7,7,2e-4,2e-4,2e-4,15,40,15),
+  # exx = c(7,7,7,2000.05,2000.05,2000.05,15,40,15),
   why = rep(15, 9),
   formID = rep(c('0','1','2'), 3)
 )
@@ -113,8 +115,42 @@ anno_1 = tibble(
 anno = inner_join(anno_1, bind_rows(barpresN, depthSlopeN), by = c('formID', 'meas')) %>%
 mutate(n = paste('n =', n))
 
-labels = as_labeller(c(`0` = 'Shire', `1` = 'Molina', `2` = 'Atwell Gulch', `100` = 'Flow Depth (m)', `200` = 'Fluvial Slope (º)', `300` = '% Fully Preserved Bars'))
+labels = as_labeller(c(`0` = 'Shire', `1` = 'Molina', `2` = 'Atwell Gulch', 'AAA' = 'Flow Depth (m)', 'BBB' = 'Fluvial Slope (-)', 'CCC' = '% Fully Preserved Bars'))
 form_labs = c('Shire','Molina','Atwell Gulch')
+
+# Add a transformation to make scales for every plot.
+
+br = breaks_extended()
+brl = breaks_log()
+
+piceance_multipanel_transform = function() {
+  scales::trans_new('multipanel_piceance',
+    transform = function(x) {
+      xt = case_when(
+        between(x, 0, 0.01) ~ log10(x),
+        TRUE ~ x
+      )
+      return(xt)
+    },
+    inverse = function(xt) {
+      x = case_when(
+        xt < 0 ~ 10^xt,
+        TRUE ~ xt
+      )
+      return(x)
+    },
+    breaks = function(x) {
+      if (all(between(x,0,0.01))) {
+        brks = brl(x)
+      } else {
+        brks = br(x)
+      }
+      return(brks)
+    }
+)
+}
+
+data_table = data_table %>% filter(!is.na(vals))
 
 data_figure = ggplot() +
 # plot depths
@@ -137,14 +173,13 @@ geom_text(aes(x = exx, y = why, label = n), color = 'grey35', size = 3, data = a
 # adjust other parameters for the whole plot.
 scale_fill_manual(values = cpal, name = 'Stratigraphic Member', labels = form_labs) +
 scale_color_manual(values = cpal) +
+# introduce a special custom scale to make the slope values log-scaled.
+scale_x_continuous(trans = piceance_multipanel_transform()) +
 facet_grid(rows = vars(formID), cols = vars(meas), scales = 'free_x', labeller = labels, switch = 'x') +
 labs(x = NULL, y = 'Frequency') +
 theme_minimal() +
 theme(strip.background = element_blank(), legend.position = 'none', strip.placement = "outside", text = element_text(family = "CMU Serif")) +
 guides(color = 'none')
-
-
-# + theme(text = element_text(family = "Decima WE"))
 
 # data_figure
 
