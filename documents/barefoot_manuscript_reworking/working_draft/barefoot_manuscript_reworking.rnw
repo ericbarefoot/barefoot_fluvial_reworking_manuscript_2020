@@ -18,6 +18,7 @@
 
 \graphicspath{{figures/}}
 
+\newcommand{\R}[1]{\label{#1}\linelabel{#1}}
 \newcommand{\del}[3]{\ce{\delta^#1#2_{#3}}}
 
 \title{Climate-driven increases in channel mobility sequesters \\ coarse sediment in terrestrial floodplain deposits}
@@ -63,7 +64,7 @@ This model suggests that observed increases in sand deposition in fluvial enviro
 
 \section{Introduction}
 
-Contemporary global climate change is predicted to impact the hydrological cycle, threatening communities and infrastructure situated on river corridors \parencite[e.g.][]{dankers_climate_2008}, and interpretations of the geologic record of paleoclimate are needed to better understand the hazards posed by climate change.
+\R{A1} Contemporary global climate change is predicted to impact the hydrological cycle, threatening communities and infrastructure situated on river corridors \parencite[e.g.][]{dankers_climate_2008}, and interpretations of the geologic record of paleoclimate are needed to better understand the hazards posed by climate change.
 Continental margin stratigraphy are used to reconstruct paleoenvironmental conditions, since both the sedimentology and biogeochemical proxies of strata can reflect hydrological changes in terrestrial environments \parencite[e.g.][]{slotnick_large_2012}.
 However, stochastic sediment transport processes can distort and mask the signal of changing climate, hindering interpretations of the marine stratigraphic record \parencite{foreman_autogenic_2017, romans_environmental_2016, armitage_transformation_2011}.
 Reconstructing the impacts of past climate change therefore depends on understanding how climate alters sediment production, transport, and deposition in terrestrial environments.
