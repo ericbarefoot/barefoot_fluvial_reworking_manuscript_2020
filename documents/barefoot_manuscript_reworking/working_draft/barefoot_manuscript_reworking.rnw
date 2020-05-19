@@ -54,13 +54,15 @@ load(here('data','data_summaries', 'paleo_pres.rda'))
 
 \section{Abstract}
 
-The Paleocene-Eocene Thermal Maximum (PETM) is the most extreme example of abrupt climate change in the Cenozoic, and is widely cited as an analogue for contemporary climate change.
-Increased deposition of terrigenous mud in marginal marine environments during the PETM is thought to represent elevated sediment flux and water discharge from fluvial systems, indicating a more active hydrological cycle.
-However, other studies suggest that the hydrological response to the PETM was more complicated, and that in some regions, average precipitation may have decreased but also become more seasonal.
-In this study, paleohydraulic estimates of channel geometry are combined with estimates of fluvial reworking to constrain fluvial response to the PETM in the Piceance Basin of western Colorado.
-Flow depths and channel slopes are found to be consistent across the PETM interval, whereas fluvial bar structures are poorly preserved during the PETM, indicating that channels migration and avulsion accelerated, but overall water and sediment fluxes likely did not change.
-These findings suggest a conceptual model, wherein seasonal precipitation drives channel migration and avulsion, reworking the floodplain surface and preferentially sequestering coarser deposits while mobilizing mud and silt to bypass downstream.
-This model suggests that observed increases in sand deposition in fluvial environments and mud in marginal marine environments during the PETM can be explained without invoking overall increases in water and sediment flux.
+The Paleocene-Eocene Thermal Maximum (PETM) is the most extreme example of an abrupt climate perturbation in the Cenozoic, and is widely cited as an analog for contemporary climate conditions and future change.
+Accumulation of terrigenous mud in marginal shelf environments and coarsening in terrestrial deposits during the PETM are both thought to indicate increased water and sediment discharge from fluvial systems.
+However, geochemical precipitation proxies and climate models support an alternative scenario, where the intra-annual variability of runoff increased while mean annual precipitation remained unchanged. 
+Herein, we use measurements of channel geometry, sediment grain size, preservation of channel bar structures, and avulsion deposits to assess the fluvial response to hydrological change during the PETM from fluvial deposits in the Piceance Basin, western Colorado.
+We find that the depth and slope of channel systems are consistent across the PETM interval, suggesting that overall water and sediment flux did not appreciably change.
+In contrast, fluvial bar structures are poorly preserved during the PETM and avulsion style changes substantially, both indicating enhanced fluvial floodplain reworking due to accelerated channel migration and avulsion.
+Taken together, these findings are consistent with an intensified hydrological regime characterized by increased precipitation variability without a change in mean runoff.
+As a consequence of enhanced fluvial reworking, bed material sediment was partitioned into floodplain deposits, while mud was preferentially remobilized and transported downstream as washload.
+This interpretation explains sedimentological variations in PETM stratigraphy across depositional environments without invoking sustained increases in sediment and water discharge.
 
 \section{Introduction}
 
