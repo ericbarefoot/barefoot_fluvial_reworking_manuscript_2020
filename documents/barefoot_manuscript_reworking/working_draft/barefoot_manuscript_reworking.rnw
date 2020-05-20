@@ -66,29 +66,30 @@ This interpretation explains sedimentological variations in PETM stratigraphy ac
 
 \section{Introduction}
 
-\R{A1} Contemporary global climate change is predicted to impact the hydrological cycle, threatening communities and infrastructure situated on river corridors \parencite[e.g.][]{dankers_climate_2008}, and interpretations of the geologic record of paleoclimate are needed to better understand the hazards posed by climate change.
-Continental margin stratigraphy are used to reconstruct paleoenvironmental conditions, since both the sedimentology and biogeochemical proxies of strata can reflect hydrological changes in terrestrial environments \parencite[e.g.][]{slotnick_large_2012}.
+\R{A1} Contemporary global climate change is predicted to impact the hydrological cycle, threatening communities and infrastructure situated on river corridors \parencite[e.g.][]{dankers_climate_2008}.
+The hazards posed by modern climate change can be better understood by analyzing the sedimentology and biogeochemical proxies preserved in continental margin stratigraphy, since both can be used to reconstruct hydrological changes in terrestrial environments \parencite[e.g.][]{slotnick_large_2012}.
 However, stochastic sediment transport processes can distort and mask the signal of changing climate, hindering interpretations of the marine stratigraphic record \parencite{foreman_autogenic_2017, romans_environmental_2016, armitage_transformation_2011}.
 Reconstructing the impacts of past climate change therefore depends on understanding how climate alters sediment production, transport, and deposition in terrestrial environments.
 
 The Paleocene Eocene Thermal Maximum (PETM) is the most severe climate perturbation known in the Cenozoic Era \parencite{zachos_early_2008}.
 Characterized by precipitation extremes, rapid warming, and accumulation of atmospheric carbon \parencite{carmichael_hydrological_2017}, the PETM is considered the best geologic analogue for contemporary climate warming \parencite{mcinerney_paleocene-eocene_2011}.
 The PETM is identified in strata around the world by a negative carbon isotope excursion \parencite{kennett_abrupt_1991}, and often coincides with drastic changes in sedimentology.
-In marginal marine environments, the PETM is most commonly associated with increased deposition of terrigenous clay \parencite{stassen_perturbation_2012, john_north_2008, slotnick_large_2012, gibson_stratigraphic_2000}, which is often attributed to elevated sediment flux on continents overall during the PETM: a so-called ``system-clearing'' event affecting rivers and floodplains on a global scale \parencite{foreman_fluvial_2012, jerolmack_shredding_2010}.
+In marginal marine environments, the PETM is most commonly associated with increased deposition of terrigenous clay \parencite{stassen_perturbation_2012, john_north_2008, slotnick_large_2012, gibson_stratigraphic_2000}, which is often attributed to elevated sediment flux from continents during the PETM: a so-called ``system-clearing'' event affecting rivers and floodplains on a global scale \parencite{foreman_fluvial_2012, jerolmack_shredding_2010}.
 
 Studies of terrestrial alluvial systems generally find that strata deposited during the PETM are channel-dominated and coarser than bounding units \parencite[e.g.][]{schmitz_abrupt_2007, pujalte_massive_2015, foreman_climate-driven_2014}.
-Differences in river channel geometries interpreted from the strata, including width and depth, as well as slope, are taken as evidence that water discharge increased during the PETM.
-Sediment flux is thought to have increased with discharge, allowing coarse sediment to prograde into alluvial basins, thus augmenting fine sediment deposition in offshore environments \parencite{chen_estimating_2018, foreman_fluvial_2012}.
-However, the paleohydraulic techniques used to reconstruct channel geometries carry significant uncertainty \parencite[e.g.][]{trampush_empirical_2014}, and competing scenarios are also plausible given the same data.
+Differences in river channel geometries interpreted from the strata, including width and depth, as well as slope, are taken as evidence that water discharge increased during the PETM \parencite{foreman_fluvial_2012, chen_estimating_2018}.
+Sediment flux is thought to have increased with discharge, allowing coarse sediment to \mnote[prograde]{``prograde'' is a relative word. It's prograding from wherever it was before. In a sense, it just means ``more distal'', so specifying from where doesn't mean much.} into alluvial basins, promoting fine sediment deposition downstream.
+However, the paleohydraulic techniques used to reconstruct discharge carry significant uncertainty \parencite[e.g.][]{trampush_empirical_2014}, and competing scenarios are also plausible given the same data.
 
-It is particularly unclear whether discharge and sediment flux increased overall or precipitation became more seasonal during the PETM.
-Evidence from modern systems and the rock record suggests that seasonally intense flooding influences fluvial morphodynamics \parencite{plink-bjorklund_morphodynamics_2015, fielding_role_2018}, and \textcite{esposito_sediment_2018} showed experimentally that introducing intense flooding while holding overall water and sediment flux constant caused channels to migrate more rapidly and avulse more often.
-In the experiments, the accelerated channel kinematics promoted floodplain reworking, which increased the concentration of channel deposits in the strata.
+In particular, it remains unclear if sedimentological differences in PETM strata in fact represent a secular increase in the average discarge and sediment flux.
+An alternative model argues that discharge averaged over annual to decadal time scales may have remained constant while runoff became more variable, perhaps via intensified monsoon seasons and more arid dry seasons.
+Evidence from modern systems and the rock record suggests that river systems dominated by seasonal runoff differ in morphology and sedimentology from rivers with less variable flow \parencite{plink-bjorklund_morphodynamics_2015, fielding_role_2018}, and \textcite{esposito_sediment_2018} showed experimentally that introducing intense flooding while holding overall water and sediment flux constant caused channels to migrate more rapidly and avulse more frequently.
+% \textcite{esposito_sediment_2018} showed experimentally that introducing intense flooding caused channels to migrate more rapidly and avulse more frequently as compared to a control where water and sediment flux were held constant, and the total water and sediment flux averaged over a given flood cycle was equivalent for both the flooding and control case.
+\mnote[In the experiments, accelerated channel kinematics promoted floodplain reworking, which increased the concentration of channel deposits in the strata, reminiscent of channel-dominated strata observed in continental basins \parencite{pujalte_massive_2015, foreman_climate-driven_2014}.]{In the paper, they make no analysis of grain size actually, and no mention of export of fines, that is a novel finding to make in our experimental paper.}
 
-Thus, coarse channel-dominated floodplain deposits could have arisen during the PETM either from increased water and sediment flux or through intensified seasonal flooding.
+Thus, coarse channel-dominated floodplain deposits observed in PETM strata could have arisen either from a secular increase in water and sediment flux or through intensified seasonal flooding with constant average discharge.
 Distinguishing between these contrasting scenarios of fluvial response during the PETM is critical for interpreting sediment dispersal patterns and biogeochemical proxy data recorded in marine basins \parencite{foreman_autogenic_2017, trampush_identifying_2017, straub_influence_2013}.
 In this study, we revisit the well-studied Piceance Basin (Colorado, USA), where changes in channel stacking patterns and sand enrichment have been attributed to increased water and sediment fluxes due to altered hydrology during the PETM \parencite{foreman_fluvial_2012}.
-We evaluate the impact of the PETM on fluvial systems in the Piceance Basin by quantifying four key paleohydraulic parameters in the Piceance Basin: (1) channel flow depth, (2) fluvial slope, (3) lateral migration, and (4) avulsion style.
 
 \section{Study Locality and Paleohydraulic Methods}
 
@@ -104,6 +105,8 @@ However, paleohydraulic data from other localities present a more equivocal hist
 Comparisons between these records and morphodynamic processes in the Piceance Basin are hindered by the limited channel geometry data available.
 A more complete picture of channel morphodynamics can be gained by combining geometry-based methods with techniques to evaluate fluvial kinematics.
 Work by \textcite{hajek_is_2014} suggests that the predominant avulsion style in an alluvial basin may be a characteristic of the channel-floodplain system, and \textcite{chamberlin_using_2019} show that a preponderance of poorly preserved or truncated bars in channel deposits can indicate the rate of fluvial reworking in the floodplain relative to the rate of subsidence.
+
+We evaluate the impact of the PETM on fluvial systems in the Piceance Basin by quantifying four key paleohydraulic parameters in the Piceance Basin: (1) channel flow depth, (2) fluvial slope, (3) lateral migration, and (4) avulsion style.
 
 Data were collected during three field campaigns from 2017--2019, as well as aggregated from previous literature and unpublished data.
 Estimates of paleo-flow depth through the Wasatch Formation were obtained by measuring the relief on fully-preserved fluvial barforms for a total of \Sexpr{nnew} new flow depth estimates, nearly doubling the existing dataset \parencite{ethridge_reconstructing_1977, mohrig_interpreting_2000}.
