@@ -1,4 +1,4 @@
-\documentclass[draft]{compact_proposal}
+\documentclass[draft,11pt]{compact_proposal}
 
 \usepackage[utf8]{inputenc}
 \usepackage[style=authoryear,isbn=false,url=false,maxcitenames=2,uniquename=false,uniquelist=false]{biblatex}
@@ -90,8 +90,8 @@ Evidence from modern systems and the rock record suggests that river systems dom
 Thus, coarse channel-dominated floodplain deposits observed in PETM strata could have arisen either from a secular increase in water and sediment flux or through intensified seasonal flooding with constant average discharge.
 Distinguishing between these contrasting scenarios of fluvial response during the PETM is critical for interpreting sediment dispersal patterns and biogeochemical proxy data recorded in marine basins \parencite{foreman_autogenic_2017, trampush_identifying_2017, straub_influence_2013}.
 In this study, we revisit the well-studied Piceance Basin (Colorado, USA), where changes in channel stacking patterns and sand enrichment have been attributed to increased water and sediment fluxes due to altered hydrology during the PETM \parencite{foreman_fluvial_2012}.
+\section{Study Locality}
 
-\section{Study Locality and Paleohydraulic Methods}
 
 The impact of PETM-modulated hydrological changes on fluvial systems is assessed from studies in the Piceance Basin (Colorado, USA; Figure \ref{fig:map}).
 As an intermontane Laramide depocenter active throughout the Paleogene \parencite{johnson_history_2003}, sedimentary fill of the Piceance Basin is conformable across the Paleocene-Eocene boundary.
@@ -105,6 +105,7 @@ However, paleohydraulic data from other localities present a more equivocal hist
 Comparisons between these records and morphodynamic processes in the Piceance Basin are hindered by the limited channel geometry data available.
 A more complete picture of channel morphodynamics can be gained by combining geometry-based methods with techniques to evaluate fluvial kinematics.
 Work by \textcite{hajek_is_2014} suggests that the predominant avulsion style in an alluvial basin may be a characteristic of the channel-floodplain system, and \textcite{chamberlin_using_2019} show that a preponderance of poorly preserved or truncated bars in channel deposits can indicate the rate of fluvial reworking in the floodplain relative to the rate of subsidence.
+\section{Methods}
 
 We evaluate the impact of the PETM on fluvial systems in the Piceance Basin by quantifying four key paleohydraulic parameters in the Piceance Basin: (1) channel flow depth, (2) fluvial slope, (3) lateral migration, and (4) avulsion style.
 
@@ -145,6 +146,7 @@ In the Wasatch Formation, basin-wide estimates of sediment thickness demonstrate
 
 We therefore interpret that a climatically-modulated shift to more seasonal precipitation during the PETM led to an increase in lateral mobility and a switch to transitional-style avulsions, the combined effect of which was to partition sandy sediment preferentially to the floodplain, enriching floodplain deposits with sand.
 In contrast, before and after the PETM, we interpret that the opposite is true: fine sediment was preferentially sequestered in the floodplain, while coarse sediment was confined to channels, which acted as conduits to advect sand downstream.
+\R{A2}
 Despite regional heterogeneity in climate impacts during the PETM, most studies in continental basins observe coarsening in alluvial strata \parencite[e.g.][]{schmitz_abrupt_2007, pujalte_massive_2015}, and increased clay deposition in marginal marine strata \parencite[e.g.][]{john_north_2008}.
 In a source-to-sink framework, increased fluvial reworking due to changes in precipitation seasonality during the PETM would sequester sand in floodplains, and promote mud bypass and deposition downstream.
 While more analysis is needed to make a definitive connection, the conceptual model presented here could provide a mechanism to explain sedimentological trends in PETM stratigraphy, without invoking continent-scale increases in sediment and water flux.
