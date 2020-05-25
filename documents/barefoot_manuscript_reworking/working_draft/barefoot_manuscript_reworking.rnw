@@ -131,27 +131,28 @@ A~$\chi^2$~test shows that there are significantly fewer preserved barforms in t
 
 \section{Discussion}
 
-Elevated water and sediment fluxes due to the PETM have previously been invoked to explain the observed increase in sand concentration and amalgamation of channel deposits in the Molina member \parencite{foreman_fluvial_2012}.
-However, the analysis of the Wasatch Formation in this study shows no detectable change in either channel depth or slope, both of which are predicted to adjust in tandem with an increase in discharge and sediment flux \parencite{leopold_hydraulic_1953}.
-In fact, climate model simulations of the PETM generally predict overall drying conditions across the American Mountain West \parencite{carmichael_hydrological_2017}, and paleosol records in the Piceance Basin and nearby Bighorn Basin support the notion that regional mean annual precipitation did not increase during the PETM, and may have actually decreased slightly \parencite{kraus_transient_2007, lesko_increased_2019}
+The preponderance of truncated and partially preserved fluvial bar deposits we observe in the Molina member is indicative of enhanced fluvial reworking during the PETM as compared to the intervals before and after.
+In order to rework previous channel deposits before they subsided below river incision depths, river channels during Molina time must have revisited locations on the floodplain frequently relative to the subsidence rate.
+Given that tectonic subsidence in the Piceance Basin was stable throughout the PETM, enhanced fluvial reworking of floodplain deposits therefore suggests that channel migration rates themselves accelerated as a result of the changing hydroclimate.
 
-Without strong evidence for an overall increase in discharge during the PETM, the data in this study imply that precipitation seasonality may be the determining factor instead of mean annual precipitation.
-In general, rivers subject to more variable flow tend to migrate more rapidly and avulse more often than rivers with low-variability flow \parencite{fielding_role_2018, leier_mountains_2005}.
-Precipitation seasonality is primarily thought to affect channel dynamics via changes in floodplain vegetation \parencite{wing_plant_2013}, but experimental studies have demonstrated that increased lateral mobility of channels can occur in the absence of vegetation, with only a change in discharge variability \parencite{esposito_sediment_2018}.
+While channel migration and avulsion rates are sensitive to changes in long-term average water and sediment discharge, our other data do not support a secular increase in runoff.
+Paleo-flow depth and slope data both indicate that equilibrium channel geometry did not adjust to convey greater flows during the PETM.
+We therefore interpret that the long-term average runoff was essentially stable through the PETM, in agreement with paleosol studies and climate model results.
 
-As in the experiments, we observe a preponderance of channel deposits and truncated barforms during Molina time, suggesting that fluvial systems likely experienced accelerated channel migration during the PETM, which in turn drove heavy reworking of the near-surface floodplain stratigraphy.
-Since fluvial channel deposits primarily consist of sand, reworking by channel migration reentrains mud and silt in overbank deposits, replacing fine material with coarser channel deposits and enriching the floodplain in sand.
-Additionally, the switch from abrupt to transitional avulsions during Molina time suggests a fundamental shift in avulsion dynamics \parencite{jones_characterizing_2007, hajek_is_2014}.
-Associated with progradational avulsions, crevasse splays are found more commonly in the Molina member, which is inferred to mean that coarse sediment was easily advected out of river channels during flooding events.
-In contrast, the relative lack of crevasse splays and abundance of abrupt avulsions suggests in Atwell Gulch and Shire time, coarse sediment was confined to channels during floods while silt and mud were advected to the floodplain.
-In the Wasatch Formation, basin-wide estimates of sediment thickness demonstrate the combined effect of these processes, where during the PETM (Molina), the stratigraphy consists of approximately \mnote[40\%]{check} sand, whereas before (Atwell Gulch) and after (Shire), only \mnote[20\%]{check} of the strata is sandy \parencite{donnell_paleocene_1969, johnson_history_2003}.
+Having ruled out a secular change in discharge, the abundant bar reworking in the Molina member is most consistent with an increase in short-term runoff variability in the Piceance Basin.
+While our results do not directly provide a mechanism connecting flow variability with channel migration, the channel-dominated strata and intensified reworking we observe in the Piceance Basin closely parallel observations in modern systems and experimental studies.
+Using the framework put forward in these studies, we attribute accelerated migration in the flashier Molina fluvial systems to the excess stress exerted by high-intensity flow on the banks, promoting enhanced lateral erosion.
+Additionally, coarse bed material entrained by high-intensity flows and transported to overbank environments through levee breaches matches our observation that avulsion deposits are dominated by crevasse splays in the Molina member.
 
-We therefore interpret that a climatically-modulated shift to more seasonal precipitation during the PETM led to an increase in lateral mobility and a switch to transitional-style avulsions, the combined effect of which was to partition sandy sediment preferentially to the floodplain, enriching floodplain deposits with sand.
-In contrast, before and after the PETM, we interpret that the opposite is true: fine sediment was preferentially sequestered in the floodplain, while coarse sediment was confined to channels, which acted as conduits to advect sand downstream.
-\R{A2}
-Despite regional heterogeneity in climate impacts during the PETM, most studies in continental basins observe coarsening in alluvial strata \parencite[e.g.][]{schmitz_abrupt_2007, pujalte_massive_2015}, and increased clay deposition in marginal marine strata \parencite[e.g.][]{john_north_2008}.
-In a source-to-sink framework, increased fluvial reworking due to changes in precipitation seasonality during the PETM would sequester sand in floodplains, and promote mud bypass and deposition downstream.
-While more analysis is needed to make a definitive connection, the conceptual model presented here could provide a mechanism to explain sedimentological trends in PETM stratigraphy, without invoking continent-scale increases in sediment and water flux.
+Together, the effect of increased lateral mobility and more frequent avulsions was a net enrichment of the floodplain in coarse bed material.
+Vigorously migrating channels reworked the near-surface floodplain stratigraphy, preferentially deposited bed material while finer overbank material was entrained and transported downstream as washload.
+Thus, during the PETM (Molina meber), when rivers experienced highly variable precipitation and runoff, mud bypassed the floodplain surface through a morphodynamic reworking process, while sand was retained in the basin.
+As a corollary, during periods of lower variability flow (the Shire and Atwell Gulch members), slower channel migration and infrequent crevassing led to preferential deposition of mud in overbank environments.
+A lack of intense flows would have meant that coarse material was confined to channels, and therefore bypassed the floodplain, while mud was retained.
+
+This framework predicts that during the PETM, enhanced reworking acted to retain sand in proximal basins, while mud bypassed from proximal basins should accumulate in downstream basins, generating a steep source-to-sink gradient in grain size.
+In general, the trend is borne out in basin studies of the PETM, where proximal intermontane basins like the Piceance Basin and Bighorn Basin generally record an increase in grain size associated with the PETM, while continental margins exhibit an increase in terrigenous mud accumulation.
+Importantly, this conceptual model of fluvial response to changing hydroclimate during the PETM explains grain-size trends across environments without requiring continent-scale increases in sediment and water flux.
 
 \section{Conclusions and Implications}
 
