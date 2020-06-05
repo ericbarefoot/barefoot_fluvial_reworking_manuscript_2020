@@ -9,6 +9,7 @@
 *.jpeg
 *.JPG
 *.jpg
+*.tif
 *.nef
 *.NEF
 *.mov
@@ -19,6 +20,7 @@
 .DS_Store
 ._.DS_Store
 *.mp4
+*.docx
 
 data/*
 # documents/*
