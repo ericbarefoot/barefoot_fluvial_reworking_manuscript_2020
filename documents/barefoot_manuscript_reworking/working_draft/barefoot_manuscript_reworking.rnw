@@ -144,40 +144,41 @@ A~$\chi^2$~test shows that there are significantly fewer fully preserved barform
 
 \section{Discussion}
 
-The preponderance of truncated and partially preserved fluvial bar deposits we observe in the Molina member is indicative of enhanced fluvial reworking during the PETM as compared to the intervals before and after.
-In order to rework previous channel deposits before they subsided below river incision depths, river channels during Molina time must have revisited locations on the floodplain frequently relative to the subsidence rate \parencite{chamberlin_using_2019}.
+The preponderance of truncated and partially preserved fluvial bar deposits we observe in the Molina member is indicative of enhanced fluvial reworking during the PETM as compared to the intervals before (Atwell Gulch) and after (Shire).
+In order to rework previous channel deposits before they subside below the river incision depth, river channels during Molina time must could revisited locations on the floodplain frequently relative to the subsidence rate \parencite{chamberlin_using_2019}.
 Given that tectonic subsidence in the Piceance Basin was stable throughout the PETM \parencite{foreman_fluvial_2012}, enhanced fluvial reworking of floodplain deposits therefore suggests that channel migration rates themselves accelerated as a result of the changing hydroclimate.
 
 While channel migration rates are sensitive to changes in long-term average water and sediment discharge \parencite{hickin_lateral_1984}, our other data do not support a secular increase in runoff.
-Paleo-flow depth and slope data both indicate that equilibrium channel geometry did not adjust to convey greater flows during the PETM.
-We therefore interpret that the long-term average runoff in the Piceance Basin was essentially stable through the PETM, in agreement with paleosol studies and climate model results.
+Paleo-flow depth and slope data both indicate that channel geometry did not adjust in order to convey greater discharge as a result of the PETM.
+As depth and slope are the first-order controls on sediment flux, calculating the Shields parameter from these data shows that sediment flux also did not change within uncertainty (see Table \ref{tab:paleo_geom}).
+We therefore interpret that the long-term average runoff and average sediment flux in the Piceance Basin was practically stable.
+This is also in agreement with paleosol studies and climate model results, which point to consistent runoff throughout the PETM in this region.
 
-Having ruled out a secular change in discharge, the evidence for more active bar reworking in the Molina member is most consistent with an increase in short-term runoff variability in the Piceance Basin.
-While our results do not directly provide a mechanism connecting flow variability with channel migration, the channel-dominated strata and intensified reworking we observe in the Piceance Basin closely parallel observations in modern systems and experimental studies \parencite{fielding_role_2018, esposito_sediment_2018}.
-Therefore, we attribute accelerated migration in the flashier Molina fluvial systems to the excess stress exerted by high-intensity flow on the banks, promoting enhanced lateral erosion.
+The evidence for more active bar reworking in the Molina member is consistent with the assessment that short-term runoff variability intensified.
+Intensified reworking interpreted from bar preservation and the channel-dominated nature of the strata parallel observations from modern systems and experimental studies \parencite{fielding_role_2018, esposito_sediment_2018}.
+Flashier discharge to the excess stress exerted by high-intensity flow on the banks, promoting enhanced bank erosion and accelerated lateral migration.
 Additionally, coarse bed material entrained by high-intensity flows and transported to overbank environments through levee breaches matches our observation that avulsion deposits are dominated by crevasse splays in the Molina member.
 
-Together, the effect of increased lateral mobility and crevasse-dominated avulsions was a net enrichment of the floodplain in coarse bed material.
-Vigorously migrating channels reworked the near-surface floodplain stratigraphy, preferentially deposited bed material while finer overbank material was entrained and transported downstream as washload.
-Thus, during the PETM (Molina member), when rivers experienced highly variable precipitation and runoff, mud bypassed the floodplain through morphodynamic reworking, while sand was retained in the basin.
-As a corollary, during periods of lower variability flow (the Shire and Atwell Gulch members), slower channel migration and infrequent crevassing led to preferential deposition of mud in overbank environments.
-A lack of intense flows would have meant that coarse material was confined to channels, and therefore bypassed the floodplain.
+The effect of increased lateral mobility and crevasse-dominated avulsions was a net enrichment of floodplain strata with coarse bed material.
+Migrating channels reworked near-surface deposits, preferentially coarsening sediment by entraining fines and transporting them downstream, while bed material partitioned into bank deposits.
+In this way, mud bypassed the floodplain through morphodynamic reworking, while sand was retained in the basin.
+The Shire and Atwell Gulch typify the opposite scenario, where accumulation of mud in overbank environments and evidence for less reworking indicates slower channel migration and infrequent crevassing.
+Both are interpreted as a lack of discharge varibilty, and as a result, coarse material was confined to channels, bypassing the floodplain and depositing in downstream basins.
 
-This framework predicts that during the PETM, enhanced reworking acted to retain sand in proximal basins, while the bypassed mud should accumulate in downstream basins, generating a steep source-to-sink grain size gradient.
-In general, the trend is borne out in studies of the PETM, where proximal intermontane basins like the Piceance Basin and Bighorn Basin generally record an increase in grain size associated with the PETM, while continental margins exhibit an increase in terrigenous mud accumulation.
-Importantly, this conceptual model of fluvial response to changing hydroclimate during the PETM explains these grain-size trends across environments without requiring continent-scale increases in sediment and water flux.
+With this framework, enhanced floodplain reworking retains sand proxiamlly, while mud bypasses and accumulates in distal basins, resulting in an accentuated downstream grain size gradient.
+Stepping back broadly, the trend is borne out in other studies of PETM deposits, where proximal intermontane basins like the Piceance and Bighorn record an increase in grain size, while continental margins exhibit an increase in terrigenous mud accumulation during the PETM.
+This model of fluvial response to changing hydroclimate during the PETM explains broad trends across depositional environments without requiring a continent-scale increase in sediment and water flux.
 
 \section{Conclusions and Implications}
 
-In this study, paleohydraulic techniques were applied in the Piceance Basin of western Colorado to better constrain changes in channel-floodplain processes connected with abrupt climate change during the PETM.
-The analysis of new data indicates that fluvial channel geometries such as depth and slope are consistent across the PETM boundary.
+In this study, paleohydraulic techniques were applied in the Piceance Basin of western Colorado to constrain changes in channel-floodplain processes connected with abrupt climate change during the PETM.
+The analyses indicate that fluvial channel geometries including depth and slope are consistent across the PETM boundary.
 However, fluvial structures are more often truncated and cross-cut during the PETM interval, and avulsions become transitional in nature.
-Taken together with experimental studies and records of paleosol chemistry, these findings suggest that sedimentological shifts during the PETM in the Piceance Basin are not driven by secular increases in water and sediment flux, but rather by accelerated channel migration and a shift in avulsion style.
+Taken together with experimental and observational studies of discharge variability and paleoclimate evidence from the region, these findings suggest that sedimentological shifts during the PETM in the Piceance Basin are not driven by secular increases in water and sediment flux, but rather by accelerated channel migration and a shift in avulsion style.
 
-The Piceance Basin serves as an example that, all else being equal, terrestrial floodplains subjected to seasonally intense precipitation experience accelerated channel dynamics, allowing rivers to rework floodplain deposits, enriching the stratigraphy in sand.
-As a corollary, reworked mud and silt that would be sequestered in the floodplain is bypassed downstream.
-In contrast, channels in alluvial basins with low discharge variability can act as conduits for sand to bypass terrestrial floodplains and be deposited on shorelines and in marine basins.
-This framework is advanced as an alternative to the ``global system-clearing event'' model of PETM landscape response, emphasizing that shifting hydrological regimes under global warming need not invoke transiently high sediment fluxes, but rather may simply re-apportion sediment through morphodynamic.
+The Piceance Basin serves as an example that, all else being equal, terrestrial floodplains subjected to seasonally intense precipitation experience accelerated channel dynamics, allowing rivers to rework floodplain deposits, enriching the stratigraphy in sand, while reworked mud and silt is bypassed downstream.
+In contrast, channels in alluvial basins with low discharge variability act as conduits for sand bypass, while terrestrial floodplains accumulate mud in overbank deposits.
+This framework is advanced as an alternative to the ``global system-clearing event'' model of PETM landscape response, emphasizing that shifting hydrological regimes under global warming need not invoke transiently high sediment fluxes, but rather may simply re-apportion sediment through morphodynamic sorting.
 
 \newpage
 
