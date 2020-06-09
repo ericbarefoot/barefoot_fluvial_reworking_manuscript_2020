@@ -22,8 +22,8 @@
 \newcommand{\R}[1]{\label{#1}\linelabel{#1}}
 \newcommand{\del}[3]{\ce{\delta^#1#2_{#3}}}
 
-\title{}
-\author{Eric Barefoot, Jeff Nittrouer, Brady Foreman, Gerald Dickens, \textit{Liz Hajek + students}}
+\title{Grain-size sorting in floodplains due to climate-driven precipitation seasonality during the PETM }
+\author{Eric Barefoot, Jeff Nittrouer, Brady Foreman, Gerald Dickens}
 \date{\today}
 
 <<setup, include=FALSE, cache=FALSE>>=
@@ -52,16 +52,6 @@ if (remake_models_bool)
 load(here('data','data_summaries', 'paleo_geom.rda'))
 load(here('data','data_summaries', 'paleo_pres.rda'))
 @
-
-\section{Options for reworked title}
-
-\begin{itemize}
-\item Source-to-sink grain size sorting driven by enhanced precipitation seasonality
-\item Enhanced precipitation seasonality due to climate change drives morphodynamic sorting in floodplains
-\item Inferring precipitation seasonality during climate extremes based on floodplain stratigraphy
-\item Morphodynamic sorting in floodplains due to enhanced seasonal precipitation during climate extremes
-\item Grain-size sorting by enhanced precipitation seasonality runoff, sediment transport, and channel dynamics during the PETM
-\end{itemize}
 
 \section{Abstract}
 
