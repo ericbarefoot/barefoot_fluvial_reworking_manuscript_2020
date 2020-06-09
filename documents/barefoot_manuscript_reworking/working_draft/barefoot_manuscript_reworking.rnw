@@ -15,6 +15,7 @@
 \usepackage{xcolor}
 \usepackage{subcaption}
 \usepackage{multirow}
+\usepackage{rotating}
 
 \graphicspath{{figures/}}
 
@@ -135,7 +136,8 @@ Transitional-style avulsions in an alluvial basin may indicate more active creva
 
 The data indicate that paleoflow depths are statistically indistinguishable throughout the Wasatch Formation at a 95\% confidence level (Table \ref{tab:paleo_geom} and Figure \ref{fig:paleo_geom}a).
 Additionally, estimates of paleoslope in the Piceance Basin indicate no difference between the Molina member and the bounding members at a 95\% confidence level (Figure \ref{fig:paleo_geom}b).
-This demonstrates that within the resolution of currently available paleohydraulic methods, rivers were likely not substantially deeper or steeper during the PETM (Molina) as opposed to before (Atwell Gulch) or after (Shire).
+A Shields parameter estimated using the combined depth-slope product shows that within uncertainty, sediment transport was also consistent between the Molina and the bounding members (see Table \ref{tab:paleo_geom}).
+Together, these results demonstrate that within the resolution of currently available paleohydraulic methods, sediment flux was consistent, and rivers were likely not substantially deeper or steeper during the PETM (Molina) as opposed to before (Atwell Gulch) or after (Shire).
 
 Mapping of sedimentary structures throughout the Wasatch Formation shows that in the Molina member, \Sexpr{signif(pres$meanPres[2], digits = 3)}\% of barforms are fully preserved, whereas in the Atwell Gulch and Shire members, \Sexpr{signif(pres$meanPres[1], digits = 3)}\% and \Sexpr{signif(pres$meanPres[3], digits = 3)}\% of barforms are fully preserved, respectively (Figure \ref{fig:paleo_geom}c).
 A~$\chi^2$~test shows that there are significantly fewer fully preserved barforms in the Molina member ($\chi^2$(\Sexpr{barpres_test$parameter},~n~=~\Sexpr{sum(barpres_test$observed)})~=~\Sexpr{signif(barpres_test$statistic, digits = 3)}, $\Sexpr{p_comp_reworking}$ (2-tailed)), indicating that barforms in the Molina member crosscut each other more frequently than in either the Shire or Atwell Gulch members.
@@ -187,10 +189,11 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 	\includegraphics[width = 6in, draft = false]{manuscript_map.pdf}
 	\begin{minipage}{0.9\textwidth}
 	\vspace*{2mm}
-	\caption{The Piceance Basin is located in western Colorado, shown in the inset in dark grey, with key nearby cities and towns.
-  The Wasatch Formation is exposed as shown in the grey shading in the map, surrounding the town of De Beque, and outcropping along the I-70 corridor.
-  Color-coded dots indicate outcrops that were analyzed for this study.
-  The color scheme is consistent through the paper, where yellow will always signify the Shire member, green the Molina, and blue the Atwell Gulch.
+	\caption{Inset: The Piceance Basin shown in dark grey superimposed on the US state of Colorado.
+  Map: The Wasatch Formation is exposed as shown in the grey shading on the map, surrounding the town of De Beque, and outcropping along the I-70 corridor.
+  Color-coded dots with white outlines indicate outcrops that were analyzed for this study, color-coded diamonds with black outlines are locations of photographs in Figure \ref{fig:outcrops}.
+  Yellow signifies the Shire, green the Molina, and dark blue the Atwell Gulch member.
+  Location data for all outcrops and measurements is included in the data repository.
   }
 	\label{fig:map}
 	\end{minipage}
@@ -202,9 +205,10 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 	\begin{minipage}{0.9\textwidth}
 	\vspace*{2mm}
 	\caption{Example outcrops showing key sedimentological features in each member of the Wasatch Formation.
-  Color-coded lines indicate high-order bounding surfaces between channel storeys, whereas the white lines in each photograph indicate bar faces and scour surfaces.
+  Color-coded lines indicate high-order bounding surfaces between channel storys, whereas the white lines in each photograph indicate bar faces and scour surfaces.
   Note the neatly stacking clinoform bar faces in the Atwell Gulch and Shire members, indicating full preservation.
-  In contrast, extensively cross-cutting bar scours and faces in the Molina member indicate scour and truncation.}
+  In contrast, extensively cross-cutting bar scours and faces in the Molina member indicate scour and truncation.
+  Locations for photographs are shown on Figure \ref{fig:map}}
 	\label{fig:outcrops}
 	\end{minipage}
 \end{figure}
@@ -217,45 +221,53 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 	\caption{Estimates of paleohydraulic parameters in the Piceance Basin.
   Paleoflow depth is consistent across all three members of the Wasatch Formation, as is paleoslope.
   The Molina member shows significantly fewer fully preserved bars as opposed to the Atwell Gulch or Shire members.
-  Additionally, the Molina member experiences many more transitional-type avulsions.}
+  Additionally, the Molina member experiences many more transitional-type avulsions.
+  Vertical lines represent the measured proportion of fully preserved bars.
+  The shaded histograms represent bootstrapped values to visualize the standard error.
+  Statistics and values found in Table \ref{tab:paleo_geom}.}
 	\label{fig:paleo_geom}
 	\end{minipage}
 \end{figure}
 
-\begin{table}[H]
-\centering
+\clearpage
+
+\begin{sidewaystable}
+% \centering
 \caption{Data for Wasatch Formation in the Piceance Basin.
-Included for each member of the Formation are paleoflow depths measured from barforms, paleoslopes, the proportion of fully preserved bars, the prevalance of transitional avulsions, and the associated uncertainty for each term.
+Included for each member of the Formation are paleoflow depths measured from barforms, paleoslopes, first order estimates of shields number, the proportion of fully preserved bars, the prevalance of transitional avulsions, and the associated uncertainty for each term.
 The second part of the table indicates significance values for Conover-Iman tests comparing flow depths and slope in different members of the Wasatch Formation, as well as results from a $\chi^2$ test for the proportion of fully preserved bars and abundance of avulsion styles.}
-\begin{tabular}{lllll}
-Formation & Depth (m) $\pm \sigma$  & Slope (--) $\pm \sigma$ & \% reworked bars $\pm \sigma$ & avulsion style \\
+\begin{tabular}{llllll}
+Formation & Depth (m) $\pm \sigma$  & Slope (--) $\pm \sigma$ & Shields number (--) $\pm \sigma$ & \% reworked bars $\pm \sigma$ & avulsion style \\
 \hline
 Shire         &
 \Sexpr{signif(geoms$meanDepth[3], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdDepth[3], digits = 3)}  &
 \Sexpr{signif(geoms$meanSlope[3], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdSlope[3], digits = 3)} &
+\Sexpr{signif(geoms$meanTau[3], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdTau[3], digits = 3)} &
 \Sexpr{signif(pres$meanPres[3], digits = 3)} $\pm$ \Sexpr{signif(pres$sdPres[3], digits = 3)} &
 ? $\pm$ ? \\
 Molina        &
 \Sexpr{signif(geoms$meanDepth[2], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdDepth[2], digits = 3)}  &
 \Sexpr{signif(geoms$meanSlope[2], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdSlope[2], digits = 3)}  &
+\Sexpr{signif(geoms$meanTau[2], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdTau[2], digits = 3)}  &
 \Sexpr{signif(pres$meanPres[2], digits = 3)} $\pm$ \Sexpr{signif(pres$sdPres[2], digits = 3)} &
 ? $\pm$ ? \\
 Atwell Gulch  &
 \Sexpr{signif(geoms$meanDepth[1], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdDepth[1], digits = 3)}  &
 \Sexpr{signif(geoms$meanSlope[1], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdSlope[1], digits = 3)}  &
+\Sexpr{signif(geoms$meanTau[1], digits = 3)} $\pm$ \Sexpr{signif(geoms$sdTau[1], digits = 3)}  &
 \Sexpr{signif(pres$meanPres[1], digits = 3)} $\pm$ \Sexpr{signif(pres$sdPres[1], digits = 3)} &
 ? $\pm$ ? \\
 \hline
-Atwell Gulch -- Molina  & $\Sexpr{p_comp_AG_M}$ & $\Sexpr{p_comp_AG_M_slope}$  &
+Atwell Gulch -- Molina  & $\Sexpr{p_comp_AG_M}$ & $\Sexpr{p_comp_AG_M_slope}$ & &
 \multirow{3}{*}{$\Sexpr{p_comp_reworking}$} & \multirow{3}{*}{$p = ??$} \\
-Shire -- Molina         & $\Sexpr{p_comp_AG_S}$ & $\Sexpr{p_comp_AG_S_slope}$  & & \\
-Atwell Gulch -- Shire   & $\Sexpr{p_comp_S_M}$  & $\Sexpr{p_comp_S_M_slope}$   & & \\
+Shire -- Molina         & $\Sexpr{p_comp_AG_S}$ & $\Sexpr{p_comp_AG_S_slope}$  & & & \\
+Atwell Gulch -- Shire   & $\Sexpr{p_comp_S_M}$  & $\Sexpr{p_comp_S_M_slope}$   & & & \\
 \hline
 \end{tabular}
 \label{tab:paleo_geom}
-\end{table}
+\end{sidewaystable}
 
-\newpage
+\clearpage
 
 \printbibliography
 %
