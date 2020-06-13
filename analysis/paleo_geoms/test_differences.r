@@ -73,7 +73,7 @@ samples_for_slope = bedloadSamples %>% select(set_id, D50, textures, composition
 depths_for_slope = all_depths %>% filter(data_source == 'field') %>% select(-c(textures, composition, samp_ind, samp_code, samp_description))
 
 paleohydroset = inner_join(samples_for_slope, depths_for_slope, by = 'set_id') %>%
-mutate(S = trampush_slp(D50, meas_a))
+mutate(S = trampush_slp(D50, meas_a), tau = (1000 * 9.8 * meas_a * S), taustar = tau / (1065 * 9.8 * D50), Rep = Rep(D50, (1650 / 1000), 9.8, 1.004e-6))
 
 # slope tests
 
@@ -82,6 +82,7 @@ formations = paleohydroset$formation
 
 fit_slope = conover.test(slopes, formations, method = 'bonferroni', table = 'false', kw = 'false')
 # fit_slope = conover.test(slopes, formations, method = 'bonferroni')
+# fit_tau = conover.test(paleohydroset$taustar, formations, method = 'bonferroni')
 
 p_comp_AG_M_slope = format_function(fit_slope$P[1])
 p_comp_AG_S_slope = format_function(fit_slope$P[2])
@@ -89,7 +90,10 @@ p_comp_S_M_slope = format_function(fit_slope$P[3])
 
 slope_summary = paleohydroset %>% group_by(formation) %>% summarize(meanSlope = mean(S), sdSlope = sd(S))
 
+tau_summary = paleohydroset %>% group_by(formation) %>% summarize(meanTau = mean(taustar), sdTau = sd(taustar))
+
 geoms = inner_join(slope_summary, depth_summary, by = 'formation')
+geoms = inner_join(geoms, tau_summary, by = 'formation')
 
 # find out how many new data points we have.
 
