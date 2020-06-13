@@ -1,4 +1,4 @@
-\documentclass[draft,11pt, nonotes]{compact_proposal}
+\documentclass[draft, 11pt, nonotes]{compact_proposal}
 
 \usepackage[utf8]{inputenc}
 \usepackage[style=authoryear,isbn=false,url=false,maxcitenames=2,uniquename=false,uniquelist=false]{biblatex}
@@ -22,8 +22,8 @@
 \newcommand{\R}[1]{\label{#1}\linelabel{#1}}
 \newcommand{\del}[3]{\ce{\delta^#1#2_{#3}}}
 
-\title{Grain-size sorting in floodplains due to climate-driven precipitation seasonality during the PETM }
-\author{Eric Barefoot, Jeff Nittrouer, Brady Foreman, Gerald Dickens}
+\title{Grain-size sorting in floodplains due to climate-driven \\ precipitation seasonality during the PETM }
+\author{Eric Barefoot, Jeff Nittrouer, Brady Foreman, Gerald Dickens, Elizabeth Hajek}
 \date{\today}
 
 <<setup, include=FALSE, cache=FALSE>>=
@@ -55,14 +55,14 @@ load(here('data','data_summaries', 'paleo_pres.rda'))
 
 \section{Abstract}
 
-The Paleocene-Eocene Thermal Maximum (PETM) is the most extreme example of abrupt climate perturbation in the Cenozoic, and is widely cited as an analog for contemporary \mnote[climate]{It feels very awkward to remove this.} change.
-Accumulation of terrigenous mud in marginal shelf environments and coarsening of terrestrial deposits during the PETM are both used to implicate an increase in water and sediment discharge in fluvial systems.
+The Paleocene-Eocene Thermal Maximum (PETM) is the most extreme example of an abrupt climate perturbation in the Cenozoic, and is widely cited as an analog for contemporary climate change.
+Accumulation of terrigenous mud in marginal shelf environments and coarsening of terrestrial deposits during the PETM are both used to infer an increase in water and sediment discharge in fluvial systems.
 However, geochemical proxies and climate models support an alternative scenario, where intra-annual runoff variability increased while mean annual precipitation remained unchanged.
-Herein, we use measurements of channel geometry, sediment grain size, channel bar structures, and avulsion deposits to assess fluvial response to hydrological change during the PETM.
-\mnote[Strata in the Piceance Basin (Colorado, USA), indicate that channel depth and slope are consistent across the PETM interval, and sediment transport models constructed using these data show that overall sediment flux did not appreciably change.
-Fluvial bar structures are poorly preserved, and avulsion style changes substantially during the PETM versus before and after.
+Herein, we use measurements of channel geometry, sediment grain size, channel bar structures, and avulsion deposits to assess the fluvial response to hydrological change during the PETM.
+Strata in the Piceance Basin (Colorado, USA), indicate that channel depth and slope are consistent across the PETM interval, and sediment transport estimates using these data show that overall sediment flux did not appreciably change.
+During the PETM, fluvial bar structures are poorly preserved, and avulsion style changes substantially versus before or after.
 Both imply enhanced floodplain reworking due to intensified channel migration and avulsion.
-Taken together, these results are consistent with a changing hydrological regime characterized by increased precipitation variability without a change in mean runoff during the PETM.]{The direct changes here were a little clunky. I massaged it a bit to smooth it out.}
+Taken together, these results are consistent with a changing hydrological regime characterized by increased precipitation variability without a change in mean runoff.
 As a consequence of enhanced fluvial reworking, bed material sediment was partitioned into floodplain deposits, while mud was preferentially remobilized and transported downstream as washload.
 This interpretation explains sedimentological variations in PETM stratigraphy across depositional environments from source to sink without invoking sustained increases in sediment and water discharge.
 
@@ -70,33 +70,33 @@ This interpretation explains sedimentological variations in PETM stratigraphy ac
 
 \R{A1} Contemporary global climate change is predicted to impact the hydrological cycle, threatening communities and infrastructure situated on river corridors \parencite[e.g.][]{dankers_climate_2008}.
 The hazards posed by modern climate change are understood by analyzing the sedimentology and biogeochemical proxies preserved in continental margin stratigraphy, since both can be used to reconstruct hydrological changes in terrestrial environments \parencite[e.g.][]{slotnick_large_2012}.
-However, stochastic sediment transport processes can distort and mask the signal of changing climate, hindering interpretations of the stratigraphic record \parencite{foreman_autogenic_2017, romans_environmental_2016, armitage_transformation_2011}.
+However, stochastic sediment transport processes can distort and mask the signal of changing climate, hindering interpretations of the stratigraphic record \parencite{romans_environmental_2016, armitage_transformation_2011}.
 Reconstructing past climate change based on the stratigraphic record therefore requires understanding how the hydrological cycle impacts sediment transport and accumulation in terrestrial settings.
 
 The Paleocene Eocene Thermal Maximum (PETM) is the most severe climate perturbation known in the Cenozoic Era \parencite{zachos_early_2008}.
 Characterized by precipitation extremes, rapid warming, and accumulation of atmospheric carbon \parencite{carmichael_hydrological_2017}, the PETM is considered the best geologic analogue for contemporary climate warming \parencite{mcinerney_paleocene-eocene_2011}.
 The PETM is identified in strata around the world by a negative \del{13}{C}{} carbon isotope excursion \parencite{kennett_abrupt_1991}, and often coincides with drastic changes in sedimentology.
-In marginal marine environments, the PETM is most commonly associated with increased deposition of terrigenous clay \parencite{stassen_perturbation_2012, john_north_2008, slotnick_large_2012, gibson_stratigraphic_2000}, which is attributed to elevated sediment flux from continents during the PETM: a so-called ``system-clearing'' event affecting rivers and floodplains on a global scale \parencite{foreman_fluvial_2012, jerolmack_shredding_2010}.
+In marginal marine environments, the PETM is most commonly associated with increased deposition of terrigenous clay \parencite{john_north_2008, gibson_stratigraphic_2000}, which is attributed to elevated sediment flux from continents during the PETM: a so-called ``system-clearing'' event affecting rivers and floodplains on a global scale \parencite{foreman_fluvial_2012, jerolmack_shredding_2010}.
 
-Studies of terrestrial alluvial systems generally find that strata deposited during the PETM are channel-dominated and coarser than bounding units \parencite[e.g.][]{schmitz_abrupt_2007, pujalte_massive_2015, foreman_climate-driven_2014}.
+Studies of terrestrial alluvial systems generally find that strata deposited during the PETM are channel-dominated and coarser than bounding units \parencite[e.g.][]{pujalte_massive_2015}.
 Differences in river channel geometries interpreted from the strata, including width and depth, as well as slope, are taken as evidence of a secular increase in water discharge during the PETM \parencite{chen_estimating_2018}.
 Sediment flux is thought to have scaled with discharge, causing coarse sediment to prograde in alluvial basins, and fine sediment to deposit downstream \parencite{foreman_fluvial_2012}.
 
-However, the paleohydraulic techniques used to reconstruct discharge in the geologic record carry significant uncertainty \parencite[1.3 to 14 $\times$ increase in][]{chen_estimating_2018}, and it remains unclear if sedimentological differences in PETM strata represent an increase in the average discharge and sediment flux.
-In an alternative scenario, the mean discharge averaged over annual to decadal time scales may have remained steady, while runoff on short time scales was more variable, producing wetter wet seasons and drier dry seasons.
-Evidence from modern systems and the rock record shows that ephemeral river systems characterized by intense seasonal runoff possess unique morphological and sedimentological characteristics as opposed to perrenial rivers with less flow variability \parencite{plink-bjorklund_morphodynamics_2015, fielding_role_2018}.
+However, the paleohydraulic techniques used to reconstruct discharge in the geologic record carry significant uncertainty \parencite[$1.3\times$ to $14\times$ increase in][]{chen_estimating_2018}, and it remains unclear if sedimentological differences in PETM strata represent an increase in the average discharge and sediment flux.
+In an alternative scenario, the mean discharge averaged over annual to decadal time scales may have remained steady, while runoff on short time scales was more variable, producing wetter wet seasons and drier dry seasons \parencite{schmitz_abrupt_2007}.
+Evidence from modern systems and the rock record shows that ephemeral river systems characterized by intense seasonal runoff possess unique morphological and sedimentological characteristics as opposed to perennial rivers with less flow variability \parencite{plink-bjorklund_morphodynamics_2015, fielding_role_2018}.
 Additionally, \textcite{esposito_sediment_2018} showed experimentally that introducing intense flooding while holding overall water and sediment flux constant causes channels to migrate rapidly and avulse more frequently.
 Accelerated channel kinematics promoted floodplain reworking, concentrating channel deposits in the strata.
 Coarse channel-dominated floodplain deposits observed in PETM strata \parencite{pujalte_massive_2015, foreman_climate-driven_2014} could potentially have arisen either from (1) a secular increase in water and sediment flux or through (2) intensified seasonal flooding with constant average discharge.
-Distinguishing between these contrasting scenarios of fluvial response during the PETM is critical for interpreting paleoclimate, as each carries different implications for sediment dispersal patterns and biogeochemical proxy responses \parencite{foreman_autogenic_2017, trampush_identifying_2017, straub_influence_2013}.
+Distinguishing between these contrasting scenarios of fluvial response during the PETM is critical for interpreting paleoclimate, as each carries different implications for sediment dispersal patterns and biogeochemical proxy responses \parencite{straub_influence_2013, esposito_sediment_2018}.
 
 \section{Study Locality}
 
-In this study, we revisit the well-studied Piceance Basin (Colorado, USA; Figure \ref{fig:map}), where changes in channel stacking patterns and sand enrichment have been attributed to a secular increase in water and sediment flux due to altered hydrology during the PETM \parencite{foreman_fluvial_2012}.
+In this study, we revisit the well-studied Piceance Basin (Colorado, USA; Figure \ref{fig:map}), where changes in channel stacking patterns and sand enrichment have been attributed to an increase in water and sediment flux during the PETM \parencite{foreman_fluvial_2012}.
 As an intermontane Laramide depocenter active throughout the Paleogene \parencite{johnson_history_2003}, sedimentary fill of the Piceance Basin is conformable across the Paleocene-Eocene boundary.
 The PETM interval is marked in the Piceance Basin by a \del{13}{C}{} isotope excursion, correlating with a distinctive sand-rich unit known as the Molina member of the Wasatch Formation \parencite{foreman_fluvial_2012}.
 
-Juxtaposed between mud-rich units, sedimentological characteristics of the sandy Molina member contrast starkly with the underlying Atwell Gulch and the overlying Shire members of the Wasatch Formation \parencite{donnell_paleocene_1969}.
+Juxtaposed between mud-rich units, sedimentological characteristics of the sandy Molina member contrast starkly with the underlying Atwell Gulch and the overlying Shire members of the Wasatch \parencite{donnell_paleocene_1969}.
 While the Atwell Gulch and Shire members largely consist of a matrix of muddy floodplain paleosols encasing isolated channel sand bodies, the Molina member comprises interconnected, sheetlike amalgamated sand bodies with relatively thin intervening layers of floodplain mud (Figure \ref{fig:outcrops}).
 \textcite{foreman_fluvial_2012} indicate that channels deepened and widened during Molina time, and interpret the distinctive sedimentology in the Molina member as a fluvial response to convey greater discharge, due to enhanced precipitation that evacuated sediment from hillslopes.
 
@@ -126,38 +126,38 @@ Transitional-style avulsions in an alluvial basin may indicate more active creva
 
 The data indicate that paleoflow depths are statistically indistinguishable throughout the Wasatch Formation at a 95\% confidence level (Table \ref{tab:paleo_geom} and Figure \ref{fig:paleo_geom}a).
 Additionally, estimates of paleoslope in the Piceance Basin indicate no difference between the Molina member and the bounding members at a 95\% confidence level (Figure \ref{fig:paleo_geom}b).
-A Shields parameter estimated using the combined depth-slope product shows that within uncertainty, sediment transport was also consistent between the Molina and the bounding members (see Table \ref{tab:paleo_geom}).
+Shields parameter estimates using the combined depth-slope product shows that within uncertainty, sediment transport was also consistent between the Molina and the bounding members (see Table \ref{tab:paleo_geom}).
 Together, these results demonstrate that within the resolution of currently available paleohydraulic methods, sediment flux was consistent, and rivers were likely not substantially deeper or steeper during the PETM (Molina) as opposed to before (Atwell Gulch) or after (Shire).
 
 Mapping of sedimentary structures throughout the Wasatch Formation shows that in the Molina member, \Sexpr{signif(pres$meanPres[2], digits = 3)}\% of barforms are fully preserved, whereas in the Atwell Gulch and Shire members, \Sexpr{signif(pres$meanPres[1], digits = 3)}\% and \Sexpr{signif(pres$meanPres[3], digits = 3)}\% of barforms are fully preserved, respectively (Figure \ref{fig:paleo_geom}c).
 A~$\chi^2$~test shows that there are significantly fewer fully preserved barforms in the Molina member ($\chi^2$(\Sexpr{barpres_test$parameter},~n~=~\Sexpr{sum(barpres_test$observed)})~=~\Sexpr{signif(barpres_test$statistic, digits = 3)}, $\Sexpr{p_comp_reworking}$ (2-tailed)), indicating that barforms in the Molina member crosscut each other more frequently than in either the Shire or Atwell Gulch members.
 
-\mnote[Our data also indicate that avulsion style changed during Molina time, and that incisional avulsions were more abundant than progradational avulsions.]{this is what we would like Liz to contribute}
+\mnote[Our data also indicate that avulsion style changed during Molina time, progradational/transitional avulsions were more abundant than incisional-type avulsions.]{this is what we would like Liz to contribute}
 
 \section{Discussion}
 
 The preponderance of truncated and partially preserved fluvial bar deposits we observe in the Molina member is indicative of enhanced fluvial reworking during the PETM as compared to the intervals before (Atwell Gulch) and after (Shire).
-In order to rework previous channel deposits before they subside below the river incision depth, river channels during Molina time must could revisited locations on the floodplain frequently relative to the subsidence rate \parencite{chamberlin_using_2019}.
-Given that tectonic subsidence in the Piceance Basin was stable throughout the PETM \parencite{foreman_fluvial_2012}, enhanced fluvial reworking of floodplain deposits therefore suggests that channel migration rates themselves accelerated as a result of the changing hydroclimate.
+In order to rework existing channel deposits before they subside below the river incision depth, river channels during Molina time must have revisited locations on the floodplain frequently relative to the subsidence rate \parencite{chamberlin_using_2019}.
+Given that tectonic subsidence in the Piceance Basin was stable throughout the PETM \parencite{foreman_fluvial_2012}, enhanced fluvial reworking of floodplain deposits implies that channel migration rates accelerated as a result of changing hydroclimate.
 
 While channel migration rates are sensitive to changes in long-term average water and sediment discharge \parencite{hickin_lateral_1984}, our other data do not support a secular increase in runoff.
-Paleo-flow depth and slope data both indicate that channel geometry did not adjust in order to convey greater discharge as a result of the PETM.
-As depth and slope are the first-order controls on sediment flux, calculating the Shields parameter from these data shows that sediment flux also did not change within uncertainty (see Table \ref{tab:paleo_geom}).
-We therefore interpret that the long-term average runoff and average sediment flux in the Piceance Basin was practically stable.
+Paleo-flow depth and slope data both indicate that channel geometries did not adjust to convey greater discharge as a result of the PETM.
+As depth and slope are first-order controls on sediment flux, calculating the Shields parameter from these data shows that sediment flux also did not change within uncertainty (see Table \ref{tab:paleo_geom}).
+We therefore interpret that the long-term average runoff and sediment flux in the Piceance Basin were practically stable.
 This is also in agreement with paleosol studies and climate model results, which point to consistent runoff throughout the PETM in this region.
 
-The evidence for more active bar reworking in the Molina member is consistent with the assessment that short-term runoff variability intensified.
-Intensified reworking interpreted from bar preservation and the channel-dominated nature of the strata parallel observations from modern systems and experimental studies \parencite{fielding_role_2018, esposito_sediment_2018}.
-Flashier discharge to the excess stress exerted by high-intensity flow on the banks, promoting enhanced bank erosion and accelerated lateral migration.
-Additionally, coarse bed material entrained by high-intensity flows and transported to overbank environments through levee breaches matches our observation that avulsion deposits are dominated by crevasse splays in the Molina member.
+On the other hand, evidence for more active bar reworking in the Molina member supports the assessment that short-term runoff variability did increase during the PETM.
+We propose that intervals of high-intensity flow would have exerted higher shear stress on channel banks, promoting enhanced erosion and accelerated lateral migration \parencite{konsoer_length_2017}.
+Avulsion deposits are also dominated by sandy crevasse splays in the Molina member, indicating that elevated bed shear stress during high intensity flows may have suspended bed material and transporting coarse sediment overbank \parencite{rouse_experiments_1939}.
+While our data do not directly connect discharge variability with peak shear stress conditions driving channel mobility and avulsions, the channel-dominated strata and lack of bar preservation in the Molina member parallel observations from modern systems and experimental studies \parencite{fielding_role_2018, esposito_sediment_2018}.
 
 The effect of increased lateral mobility and crevasse-dominated avulsions was a net enrichment of floodplain strata with coarse bed material.
-Migrating channels reworked near-surface deposits, preferentially coarsening sediment by entraining fines and transporting them downstream, while bed material partitioned into bank deposits.
+Migrating channels reworked near-surface deposits, preferentially coarsening sediment by entraining fines and transporting them downstream, while bed material partitioned into floodplain deposits.
 In this way, mud bypassed the floodplain through morphodynamic reworking, while sand was retained in the basin.
 The Shire and Atwell Gulch typify the opposite scenario, where accumulation of mud in overbank environments and evidence for less reworking indicates slower channel migration and infrequent crevassing.
-Both are interpreted as a lack of discharge varibilty, and as a result, coarse material was confined to channels, bypassing the floodplain and depositing in downstream basins.
+Both are interpreted to be the result of a lack of discharge variability, and as a result, coarse material was confined to channels, bypassing the floodplain and depositing in downstream basins.
 
-With this framework, enhanced floodplain reworking retains sand proxiamlly, while mud bypasses and accumulates in distal basins, resulting in an accentuated downstream grain size gradient.
+In this framework, enhanced floodplain reworking retains sand proximally, while mud bypasses and accumulates in distal basins, resulting in an accentuated downstream grain size gradient.
 Stepping back broadly, the trend is borne out in other studies of PETM deposits, where proximal intermontane basins like the Piceance and Bighorn record an increase in grain size, while continental margins exhibit an increase in terrigenous mud accumulation during the PETM.
 This model of fluvial response to changing hydroclimate during the PETM explains broad trends across depositional environments without requiring a continent-scale increase in sediment and water flux.
 
@@ -168,7 +168,7 @@ The analyses indicate that fluvial channel geometries including depth and slope 
 However, fluvial structures are more often truncated and cross-cut during the PETM interval, and avulsions become transitional in nature.
 Taken together with experimental and observational studies of discharge variability and paleoclimate evidence from the region, these findings suggest that sedimentological shifts during the PETM in the Piceance Basin are not driven by secular increases in water and sediment flux, but rather by accelerated channel migration and a shift in avulsion style.
 
-The Piceance Basin serves as an example that, all else being equal, terrestrial floodplains subjected to seasonally intense precipitation experience accelerated channel dynamics, allowing rivers to rework floodplain deposits, enriching the stratigraphy in sand, while reworked mud and silt is bypassed downstream.
+The Piceance Basin serves as an example that, all else being equal, terrestrial floodplains subjected to seasonally intense precipitation experience accelerated channel dynamics, allowing rivers to rework floodplain deposits, enriching the stratigraphy in sand, while reworked mud and silt bypasses downstream.
 In contrast, channels in alluvial basins with low discharge variability act as conduits for sand bypass, while terrestrial floodplains accumulate mud in overbank deposits.
 This framework is advanced as an alternative to the ``global system-clearing event'' model of PETM landscape response, emphasizing that shifting hydrological regimes under global warming need not invoke transiently high sediment fluxes, but rather may simply re-apportion sediment through morphodynamic sorting.
 
@@ -179,8 +179,8 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 	\includegraphics[width = 6in, draft = false]{manuscript_map.pdf}
 	\begin{minipage}{0.9\textwidth}
 	\vspace*{2mm}
-	\caption{Inset: The Piceance Basin shown in dark grey superimposed on the US state of Colorado.
-  Map: The Wasatch Formation is exposed as shown in the grey shading on the map, surrounding the town of De Beque, and outcropping along the I-70 corridor.
+	\caption{Inset: The Piceance Basin shown in dark gray superimposed on the US state of Colorado.
+  Map: The Wasatch Formation is exposed as shown in the gray shading on the map, surrounding the town of De Beque, and outcropping along the I-70 corridor.
   Color-coded dots with white outlines indicate outcrops that were analyzed for this study, color-coded diamonds with black outlines are locations of photographs in Figure \ref{fig:outcrops}.
   Yellow signifies the Shire, green the Molina, and dark blue the Atwell Gulch member.
   Location data for all outcrops and measurements is included in the data repository.
@@ -195,7 +195,7 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 	\begin{minipage}{0.9\textwidth}
 	\vspace*{2mm}
 	\caption{Example outcrops showing key sedimentological features in each member of the Wasatch Formation.
-  Color-coded lines indicate high-order bounding surfaces between channel storys, whereas the white lines in each photograph indicate bar faces and scour surfaces.
+  Color-coded lines indicate high-order bounding surfaces between channel stories, whereas the white lines in each photograph indicate bar faces and scour surfaces.
   Note the neatly stacking clinoform bar faces in the Atwell Gulch and Shire members, indicating full preservation.
   In contrast, extensively cross-cutting bar scours and faces in the Molina member indicate scour and truncation.
   Locations for photographs are shown on Figure \ref{fig:map}}
@@ -224,7 +224,7 @@ This framework is advanced as an alternative to the ``global system-clearing eve
 \begin{sidewaystable}
 % \centering
 \caption{Data for Wasatch Formation in the Piceance Basin.
-Included for each member of the Formation are paleoflow depths measured from barforms, paleoslopes, first order estimates of shields number, the proportion of fully preserved bars, the prevalance of transitional avulsions, and the associated uncertainty for each term.
+Included for each member of the Formation are paleoflow depths measured from barforms, paleoslopes, first order estimates of shields number, the proportion of fully preserved bars, the prevalence of transitional avulsions, and the associated uncertainty for each term.
 The second part of the table indicates significance values for Conover-Iman tests comparing flow depths and slope in different members of the Wasatch Formation, as well as results from a $\chi^2$ test for the proportion of fully preserved bars and abundance of avulsion styles.}
 \begin{tabular}{llllll}
 Formation & Depth (m) $\pm \sigma$  & Slope (--) $\pm \sigma$ & Shields number (--) $\pm \sigma$ & \% reworked bars $\pm \sigma$ & avulsion style \\
