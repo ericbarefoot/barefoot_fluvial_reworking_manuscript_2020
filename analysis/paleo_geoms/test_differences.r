@@ -10,9 +10,10 @@ library(broom)
 library(lme4)
 library(devtools)  # for the next thing
 library(colorspace)
-library(paleohydror)
 library(purrr)
 library(rsample)
+
+load_all('/Users/ericfoot/Dropbox/programs/git_repos/paleohydror')
 
 library(conover.test)
 
@@ -95,6 +96,22 @@ tau_summary = paleohydroset %>% group_by(formation) %>% summarize(meanTau = mean
 geoms = inner_join(slope_summary, depth_summary, by = 'formation')
 geoms = inner_join(geoms, tau_summary, by = 'formation')
 
+# calculating abundance of different avulsion types
+
+avuls = field %>% filter(structure == 'avulsion') %>%
+# avuls = field %>% filter(set_id == 'EHAJEKA', structure == 'avulsion') %>%
+# avuls = field %>% filter(set_id == 'FORMANA', structure == 'avulsion') %>%
+select(formation, interpretations) %>%
+transmute(formation = case_when(
+  formation == 'molina' ~ 'molina',
+  TRUE ~ 'bounding'),
+  interp = interpretations
+)
+
+avultest = chisq.test(table(avuls))
+
+p_comp_avulsion = format_function(avultest$p.value)
+
 # find out how many new data points we have.
 
 ndata = field_depths %>% mutate(mine = ifelse(set_id == 'FORMANA', 'no', 'yes')) %>% group_by(mine) %>% summarize(n = n()) %>% pull(n)
@@ -110,5 +127,7 @@ save(nold,
   p_comp_AG_M,
   p_comp_AG_S,
   p_comp_S_M,
+  p_comp_avulsion,
+  avultest,
   geoms,
   file = here('data', 'data_summaries', 'paleo_geom.rda'))

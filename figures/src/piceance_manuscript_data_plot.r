@@ -29,10 +29,11 @@ figdir = here('figures', 'outputs', 'manuscript_figures')
 
 chamb_data = readRDS(file = here('data','derived_data', 'chamberlin_model_data.rds'))
 chamb_model = readRDS(file = here('data','derived_data', 'chamberlin_stat_model.rds'))
-model = readRDS(file = here('data','derived_data','piceance_3d_model_data.rds'))
+model = readRDS(file = here('data','derived_data','piceance_3d_model_data_reinterpreted.rds'))
 field = readRDS(file = here('data','derived_data','piceance_field_data.rds'))
 combined = readRDS(file = here('data', 'derived_data', 'piceance_field_model_data.rds'))
 barpres_raw = readRDS(file = here('data', 'derived_data', 'piceance_bar_preservation.rds'))
+avuls_boots = readRDS(file = here('data', 'derived_data', 'piceance_avulsion_style.rds'))
 
 barpres = barpres_raw %>%
 rename(frac_elems = 'perc_full') %>% ungroup() %>%
@@ -43,12 +44,28 @@ mutate(formID = case_when(
   formation == 'shire' ~ 0)
 ) %>%
 select(formID, id, frac_elems) %>%
-mutate(depth = NA, slope = NA, frac_elems = frac_elems * 100) %>%
+mutate(depth = NA, slope = NA, frac_elems = frac_elems * 100, frac_trans = NA) %>%
+slice(1:round(n() * 0.5))
+
+avuls = avuls_boots %>%
+rename(frac_trans = 'perc_trans') %>% ungroup() %>%
+mutate(formID = case_when(
+  formation == 'ohio_creek' ~ 3,
+  formation == 'atwell_gulch' ~ 2,
+  formation == 'molina' ~ 1,
+  formation == 'shire' ~ 0)
+) %>%
+select(formID, id, frac_trans) %>%
+mutate(depth = NA, slope = NA, frac_elems = NA, frac_trans = frac_trans * 100) %>%
 slice(1:round(n() * 0.5))
 
 barpres_means = barpres %>% group_by(formID) %>%
 summarize(mean_elems = median(frac_elems)) %>%
-mutate(depth = NA, slope = NA)
+mutate(depth = NA, slope = NA, frac_trans = NA)
+
+avuls_means = avuls %>% group_by(formID) %>%
+summarize(mean_trans = median(frac_trans)) %>%
+mutate(depth = NA, slope = NA, frac_elems = NA)
 
 cpal = hcl(h = c(80, 120, 240), c = rep(100, 3), l = c(85, 65, 20))
 
@@ -79,18 +96,21 @@ mutate(id = NA, frac_elems = NA, mean_elems = NA, slope = NA)
 
 # This is a template for what it might look like to get new avulsion data from Liz
 # and how I would incorporate it into the dataset to make a 4 column figure
+
 # avuls = avulsions %>% select(formID, style) %>%
 # mutate(id = NA, frac_elems = NA, mean_elems = NA, slope = NA, depth = NA)
 
-data_table = bind_rows(depths, slopes, barpres, barpres_means, .id = 'split') %>%
+data_table = bind_rows(depths, slopes, barpres, barpres_means, avuls, avuls_means, .id = 'split') %>%
 mutate(formID = as.factor(formID)) %>% select(-id) %>%
-pivot_longer(c(depth, slope, frac_elems, mean_elems), names_to = 'meas', values_to = 'vals') %>%
+pivot_longer(c(depth, slope, frac_elems, mean_elems, frac_trans, mean_trans), names_to = 'meas', values_to = 'vals') %>%
 mutate(meas = ifelse(meas == 'mean_elems', 'frac_elems', meas)) %>%
+mutate(meas = ifelse(meas == 'mean_trans', 'frac_trans', meas)) %>%
 mutate(meas = as.factor(
   case_when(
   meas == 'depth' ~ 'AAA',
   meas == 'slope' ~ 'BBB',
-  meas == 'frac_elems' ~ 'CCC')
+  meas == 'frac_elems' ~ 'CCC',
+  meas == 'frac_trans' ~ 'DDD')
 )
 )
 
@@ -102,20 +122,28 @@ barpresN = model %>% filter(interpretations %in% c('full','partial','truncated')
   meas = as.factor('CCC')
 ) %>% select(-formation)
 
-depthSlopeN = data_table %>% filter(!is.na(vals), meas != 'CCC') %>% group_by(formID, meas) %>% summarize(n = n())
+avulsN = field %>% filter(structure == 'avulsion') %>% group_by(formation) %>% summarize(n = n()) %>% mutate(formID = as.factor(case_when(
+  formation == 'ohio_creek' ~ 3,
+  formation == 'atwell_gulch' ~ 2,
+  formation == 'molina' ~ 1,
+  formation == 'shire' ~ 0)),
+  meas = as.factor('DDD')
+) %>% select(-formation)
+
+depthSlopeN = data_table %>% filter(!is.na(vals), !(meas %in% c('CCC', 'DDD'))) %>% group_by(formID, meas) %>% summarize(n = n())
 
 anno_1 = tibble(
-  meas = rep(c('AAA','BBB','CCC'), each = 3),
-  exx = c(7,7,7,2e-4,2e-4,2e-4,15,40,15),
+  meas = rep(c('AAA','BBB','CCC','DDD'), each = 3),
+  exx = c(7,7,7,1e-3,1e-3,1e-3,25,30,20,50,50,50),
   # exx = c(7,7,7,2000.05,2000.05,2000.05,15,40,15),
-  why = rep(15, 9),
-  formID = rep(c('0','1','2'), 3)
+  why = rep(15, 12),
+  formID = rep(c('0','1','2'), 4)
 )
 
-anno = inner_join(anno_1, bind_rows(barpresN, depthSlopeN), by = c('formID', 'meas')) %>%
+anno = inner_join(anno_1, bind_rows(barpresN, depthSlopeN, avulsN), by = c('formID', 'meas')) %>%
 mutate(n = paste('n =', n))
 
-labels = as_labeller(c(`0` = 'Shire', `1` = 'Molina', `2` = 'Atwell Gulch', 'AAA' = 'Flow Depth (m)', 'BBB' = 'Fluvial Slope (-)', 'CCC' = '% Fully Preserved Bars'))
+labels = as_labeller(c(`0` = 'Shire', `1` = 'Molina', `2` = 'Atwell Gulch', 'AAA' = 'Flow Depth (m)', 'BBB' = 'Fluvial Slope (-)', 'CCC' = '% Fully Preserved Bars', 'DDD' = '% Transitional Avulsions'))
 form_labs = c('Shire','Molina','Atwell Gulch')
 
 # Add a transformation to make scales for every plot.
@@ -168,6 +196,13 @@ geom = 'bar', position = "identity", bins = 20, size = 0.5, alpha = 0.4) +
 # plot mean line
 geom_vline(data = filter(data_table, split == 4),
 aes(xintercept = vals, color = formID), size = 2) +
+# plot histogram of % transitional from bootstrapping
+stat_bin(data = filter(data_table, split == 5),
+aes(x = vals, y = ..count.., fill = formID, color = formID),
+geom = 'bar', position = "identity", bins = 20, size = 0.5, alpha = 0.4) +
+# plot mean line
+geom_vline(data = filter(data_table, split == 6),
+aes(xintercept = vals, color = formID), size = 2) +
 # add n = text
 geom_text(aes(x = exx, y = why, label = n), color = 'grey35', size = 3, data = anno, family = "CMU Serif") +
 # adjust other parameters for the whole plot.
@@ -181,9 +216,9 @@ theme_minimal() +
 theme(strip.background = element_blank(), legend.position = 'none', strip.placement = "outside", text = element_text(family = "CMU Serif")) +
 guides(color = 'none')
 
-# data_figure
+data_figure
 
 # save figure
 
-ggsave(plot = data_figure, filename = "petm_data.pdf", path = figdir, width = 6, height = 4, units = "in")
-ggsave(plot = data_figure, filename = "petm_data.png", path = figdir, width = 6, height = 4, units = "in")
+ggsave(plot = data_figure, filename = "petm_data.pdf", path = figdir, width = 6.5, height = 3.25, units = "in")
+ggsave(plot = data_figure, filename = "petm_data.png", path = figdir, width = 6.5, height = 3.25, units = "in")

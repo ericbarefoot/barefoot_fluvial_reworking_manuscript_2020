@@ -13,7 +13,7 @@ library(rsample)
 
 # load data (3D model, field, and combined)
 
-model = readRDS(file = here('data','derived_data','piceance_3d_model_data.rds'))
+model = readRDS(file = here('data','derived_data','piceance_3d_model_data_reinterpreted.rds'))
 field = readRDS(file = here('data','derived_data','piceance_field_data.rds'))
 combined = readRDS(file = here('data', 'derived_data', 'piceance_field_model_data.rds'))
 
@@ -22,7 +22,7 @@ combined = readRDS(file = here('data', 'derived_data', 'piceance_field_model_dat
 just_bars_models = model %>% filter(interpretations %in% c('full','partial','truncated'))
 
 model_boots = just_bars_models %>% nest(-formation) %>% mutate(boots = map(data, ~ bootstraps(., times = 100))) %>% unnest(boots)
- 
+
 calcFullFrac = function(split)
 {
   analysis(split) %>% group_by(interpretations) %>% summarize(count = n())
@@ -34,6 +34,6 @@ percent_preserved = boot_counts %>% unnest(stats) %>% group_by(id, formation) %>
 
 saveRDS(percent_preserved, file = here('data', 'derived_data', 'piceance_bar_preservation.rds'))
 
-# percent_preserved %>% ggplot() + geom_step(aes(x = perc_full, y = ..density.., color = formation), stat = 'bin') 
+# percent_preserved %>% ggplot() + geom_step(aes(x = perc_full, y = ..density.., color = formation), stat = 'bin')
 
 # geom_histogram(aes(x = perc_full, fill = formation)) + facet_wrap(vars(formation), ncol = 1)

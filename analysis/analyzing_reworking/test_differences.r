@@ -29,6 +29,15 @@ boots = readRDS(file = here('data', 'derived_data', 'piceance_bar_preservation.r
 
 # bootstrap sampling already done in calc_3D_model_stats.r
 
+format_function = function(pval, signif = 0.001) {
+  if (pval > signif) {
+    prep = paste('p =', signif(pval, 3))
+  } else {
+    prep = paste('p \\ll', signif)
+  }
+  return(prep)
+}
+
 # but maybe we want fewer resamples. modified script to only take four resamples.
 
 source(here('analysis', 'analyzing_reworking', 'calc_3D_model_stats.r'))
@@ -52,11 +61,13 @@ barpres_test = chisq.test(data_tab)
 
 # p_comp_reworking = summary(fit)[[1]][["Pr(>F)"]][1]
 
-if (barpres_test$p.value > 0.001) {
-  p_comp_reworking = paste('p =', barpres_test$p.value)
-} else {
-  p_comp_reworking = paste('p \\ll 0.001')
-}
+p_comp_reworking = format_function(barpres_test$p.value)
+
+# if (barpres_test$p.value > 0.001) {
+#   p_comp_reworking = paste('p =', barpres_test$p.value)
+# } else {
+#   p_comp_reworking = paste('p \\ll 0.001')
+# }
 
 # save(p_comp_reworking, file = here('data', 'data_summaries', 'reworking_pvalue.rda'))
 
